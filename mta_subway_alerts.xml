@@ -7,33 +7,14 @@
     <language>en-us</language>
     
         <item>
-            <title>[4] train are running with delays after we removed a train with a mechanical problem from service near 167 St.</title>
-            <description>[4] train service has resumed between 149 St-Grand Concourse and Woodlawn.</description>
-            <guid isPermaLink="false">lmm:alert:539414</guid>
-        </item>
-        <item>
-            <title>Uptown [F] and 71 Av-bound [M] trains are running with delays while we address a signal problem near W 4 St-Wash Sq.</title>
-            <description>Some uptown [F] and 71 Av-bound [M] trains will run express from W 4 St-Wash Sq to 34 St-Herald Sq.
-
-Listen for announcements to hear how your train will run.</description>
-            <guid isPermaLink="false">lmm:alert:539426</guid>
-        </item>
-        <item>
-            <title>Downtown [F] trains are running express from Kew Gardens-Union Tpke to Forest Hills-71 Av.
-EMS is responding to someone in need on a train at 75 Av.</title>
-            <description>If your stop is skipped, take a 179 St-bound [F].</description>
-            <guid isPermaLink="false">lmm:alert:539421</guid>
-        </item>
-        <item>
-            <title>Downtown [F] will run express from Kew Gardens-Union Tpke to Forest Hills-71 Av.
-If your stop is skipped, take a Jamaica-179 St-bound [F] train.</title>
-            <description>We are getting medical help for someone at 75 Av.</description>
-            <guid isPermaLink="false">lmm:alert:539429</guid>
-        </item>
-        <item>
-            <title>Uptown [B][D] trains are delayed while we remove a train with a mechanical problem from service at 145 St.</title>
+            <title>Downtown [A][D] trains are running with delays after NYPD conducted an investigation on a train at 59 St-Columbus Circle.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539431</guid>
+            <guid isPermaLink="false">lmm:alert:539443</guid>
+        </item>
+        <item>
+            <title>Broad St-bound [J] and Forest Hills-71 Av-bound [M] trains are delayed while NYPD responds to a report of people being disruptive on a train at Essex St.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:539444</guid>
         </item>
         <item>
             <title>[SIR] runs every 45 minutes between St George and Tottenville</title>

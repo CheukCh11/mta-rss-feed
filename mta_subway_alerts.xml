@@ -7,14 +7,19 @@
     <language>en-us</language>
     
         <item>
-            <title>Downtown [A][D] trains are running with delays after NYPD conducted an investigation on a train at 59 St-Columbus Circle.</title>
+            <title>34 St-Hudson Yards-bound [7] trains are running with delays after we conducted track maintenance near Queensboro Plaza.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539443</guid>
+            <guid isPermaLink="false">lmm:alert:539463</guid>
         </item>
         <item>
-            <title>Broad St-bound [J] and Forest Hills-71 Av-bound [M] trains are delayed while NYPD responds to a report of people being disruptive on a train at Essex St.</title>
+            <title>Downtown [6] trains are running with delays after we removed a train from service at Grand Central-42 St.</title>
+            <description>Downtown [6] trains have resumed making local stops from Grand Central-42 St to 14 St-Union Sq.</description>
+            <guid isPermaLink="false">lmm:alert:539462</guid>
+        </item>
+        <item>
+            <title>Manhattan-bound [A] trains are running with delays after we addressed a mechanical problem on a train on the South Channel Bridge.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539444</guid>
+            <guid isPermaLink="false">lmm:alert:539460</guid>
         </item>
         <item>
             <title>[SIR] runs every 45 minutes between St George and Tottenville</title>

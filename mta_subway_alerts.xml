@@ -7,19 +7,29 @@
     <language>en-us</language>
     
         <item>
-            <title>34 St-Hudson Yards-bound [7] trains are running with delays after we conducted track maintenance near Queensboro Plaza.</title>
+            <title>Uptown [N] trains are running with delays after we addressed a door problem on a train near 86 St.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539463</guid>
+            <guid isPermaLink="false">lmm:alert:539467</guid>
         </item>
         <item>
-            <title>Downtown [6] trains are running with delays after we removed a train from service at Grand Central-42 St.</title>
-            <description>Downtown [6] trains have resumed making local stops from Grand Central-42 St to 14 St-Union Sq.</description>
-            <guid isPermaLink="false">lmm:alert:539462</guid>
+            <title>[6] trains are running with delays in both directions after we addressed a mechanical problem on a train at Grand Central-42 St.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:539469</guid>
         </item>
         <item>
-            <title>Manhattan-bound [A] trains are running with delays after we addressed a mechanical problem on a train on the South Channel Bridge.</title>
+            <title>Uptown [Q] trains are running express from Kings Hwy to Prospect Park while we remove a train car in need of cleaning at Kings Hwy.</title>
+            <description>For service to bypassed stations, take a Coney Island-Stillwell Av-bound [Q] train.</description>
+            <guid isPermaLink="false">lmm:alert:539471</guid>
+        </item>
+        <item>
+            <title>Downtown [4][5] trains are running with delays after we requested NYPD assistance for someone being disruptive on a train at Wall St.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539460</guid>
+            <guid isPermaLink="false">lmm:alert:539472</guid>
+        </item>
+        <item>
+            <title>Downtown [2][3] trains are running with delays after we investigated a report of someone being disruptive on a train at 135 St.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:539473</guid>
         </item>
         <item>
             <title>[SIR] runs every 45 minutes between St George and Tottenville</title>

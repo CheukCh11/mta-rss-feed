@@ -29,6 +29,10 @@ try:
         desc_data = alert.get('description_text', {}).get('translation', [{}])[0]
         description = desc_data.get('text', 'No details provided.')
         
+        # NEW: Turn those annoying compressed dots into clean, new lines for Discord
+        title = title.replace(" • ", "\n🔹 ")
+        description = description.replace(" • ", "\n🔹 ")
+
         # Clean up text to prevent XML breaking errors
         title = title.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         description = description.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")

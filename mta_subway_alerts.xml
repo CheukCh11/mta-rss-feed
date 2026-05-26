@@ -7,29 +7,20 @@
     <language>en-us</language>
     
         <item>
-            <title>Uptown [N] trains are running with delays after we addressed a door problem on a train near 86 St.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539467</guid>
+            <title>Uptown [2][3] trains are running with delays after we addressed a door problem on a train at 96 St.</title>
+            <description>Uptown [2][3] trains have resumed making express stops from 72 St to 96 St.</description>
+            <guid isPermaLink="false">lmm:alert:539493</guid>
         </item>
         <item>
-            <title>[6] trains are running with delays in both directions after we addressed a mechanical problem on a train at Grand Central-42 St.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539469</guid>
+            <title>Downtown [6] trains are running express from 14 St-Union Sq to Brooklyn Bridge while we request medical assistance for someone in need on a train at Astor Place.</title>
+            <description>If your stop is skipped, take an uptown [6] train.</description>
+            <guid isPermaLink="false">lmm:alert:539494</guid>
         </item>
         <item>
-            <title>Uptown [Q] trains are running express from Kings Hwy to Prospect Park while we remove a train car in need of cleaning at Kings Hwy.</title>
-            <description>For service to bypassed stations, take a Coney Island-Stillwell Av-bound [Q] train.</description>
-            <guid isPermaLink="false">lmm:alert:539471</guid>
-        </item>
-        <item>
-            <title>Downtown [4][5] trains are running with delays after we requested NYPD assistance for someone being disruptive on a train at Wall St.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539472</guid>
-        </item>
-        <item>
-            <title>Downtown [2][3] trains are running with delays after we investigated a report of someone being disruptive on a train at 135 St.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539473</guid>
+            <title>Flushing-bound [7X] express trains run local in Queens from 74 St-Broadway to Mets-Willets Point</title>
+            <description>What's happening?
+Mets Home Game</description>
+            <guid isPermaLink="false">lmm:planned_work:32212</guid>
         </item>
         <item>
             <title>[SIR] runs every 45 minutes between St George and Tottenville</title>

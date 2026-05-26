@@ -2,9 +2,8 @@ name: Update MTA RSS Feed
 
 on:
   schedule:
-    # This tells GitHub to run the script every 10 minutes
     - cron: '*/10 * * * *'
-  workflow_dispatch: # This allows you to manually force an update click if you want
+  workflow_dispatch: 
 
 jobs:
   build:
@@ -17,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-python-version: '3.x'
+        python-version: '3.x'
 
     - name: Install dependencies
       run: |
@@ -31,6 +30,7 @@ jobs:
         git config --global user.name "GitHub Action Bot"
         git config --global user.email "actions@github.com"
         git add mta_subway_alerts.xml
-        # Only commit if the file actually changed, preventing error loops
         git diff-index --quiet HEAD || git commit -m "Update subway alerts feed"
-        git push
+        # The FIX: Pull changes first to avoid conflicts
+        git pull --rebase origin main
+        git push origin main

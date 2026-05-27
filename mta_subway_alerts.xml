@@ -7,9 +7,44 @@
     <language>en-us</language>
     
         <item>
-            <title>Downtown [E][F] trains are running with delays after we performed track maintenance near Lexington Av/53 St.</title>
+            <title>[6][6X] trains are running with delays in both directions after emergency teams assisted someone in need at 86 St.
+Expect delays in uptown [4][5] trains.</title>
+            <description>[6][6X] trains in both directions and uptown [5] trains have resumed making scheduled stops.</description>
+            <guid isPermaLink="false">lmm:alert:539664</guid>
+        </item>
+        <item>
+            <title>Coney Island-bound [F] and Church Av-bound [G] trains are running with delays after EMS assisted someone in need on a train at 15 St-Prospect Park.</title>
+            <description>Coney Island-bound [F] and Church Av-bound [G] trains have resumed making scheduled stops from Smith-9 Sts to Church Av.</description>
+            <guid isPermaLink="false">lmm:alert:539667</guid>
+        </item>
+        <item>
+            <title>[F] trains are running with delays in both directions while we address a switch malfunction at Jamaica-179 St.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539594</guid>
+            <guid isPermaLink="false">lmm:alert:539652</guid>
+        </item>
+        <item>
+            <title>[L] trains are running with delays in both directions while we continue to remove a train with a mechanical problem from service at 8 Av.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:539671</guid>
+        </item>
+        <item>
+            <title>Manhattan-bound [A][C] trains are running with delays after we moved a train that had its brakes activated near Franklin Av.</title>
+            <description>Manhattan-bound [C] trains have resumed making local stops from Broadway Junction to Hoyt-Schermerhorn Sts.</description>
+            <guid isPermaLink="false">lmm:alert:539673</guid>
+        </item>
+        <item>
+            <title>Some Woodlawn-bound [4] trains will end at 149 St-Grand Concourse.
+Some Dyre Av-bound [5] trains will run via the [2] from Nevins St to 149 St-Grand Concourse.</title>
+            <description>What's Happening?
+NYPD is responding to an unauthorized person on the tracks near 149 St-Grand Concourse.
+Listen for announcements to hear how your train will run.</description>
+            <guid isPermaLink="false">lmm:alert:539670</guid>
+        </item>
+        <item>
+            <title>Flushing-bound [7X] express trains run local in Queens from 74 St-Broadway to Mets-Willets Point</title>
+            <description>What's happening?
+Mets Home Game</description>
+            <guid isPermaLink="false">lmm:planned_work:32214</guid>
         </item>
         <item>
             <title>[SIR] runs every 45 minutes between St George and Tottenville</title>
@@ -2261,7 +2296,7 @@ Structural maintenance</description>
             <title>In Brooklyn, no [L] between Myrtle-Wyckoff Avs and Broadway Junction</title>
             <description>[L] trains run in two sections:
 1. Between 8 Av and Myrtle-Wyckoff Avs
-2. Between Broadway Junction and Canarsie-Rockaway Pkwy 
+2. Between Broadway Junction and Canarsie-Rockaway Pkwy
 
 [shuttle bus icon] Free shuttle buses make stops between Myrtle-Wyckoff Avs and Broadway Junction.
 Transfer between trains and [shuttle bus icon] buses at Myrtle-Wyckoff Avs [accessibility icon] and/or Broadway Junction.

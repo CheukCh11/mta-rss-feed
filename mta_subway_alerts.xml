@@ -7,17 +7,24 @@
     <language>en-us</language>
     
         <item>
-            <title>Downtown [B][Q] trains are running with delays after we addressed a signal problem near Lexington Av/63 St.</title>
-            <description>Downtown [Q] trains have resumed making scheduled stops.</description>
-            <guid isPermaLink="false">lmm:alert:539713</guid>
+            <title>Downtown [E] [F][M] trains are running with delays after EMS assisted someone on a train at 5 Av/53 St.</title>
+            <description>Downtown [E][F] trains have resumed making scheduled stops from Jackson Heights-Roosevelt Av to W 4 St-Wash Sq.</description>
+            <guid isPermaLink="false">lmm:alert:539746</guid>
         </item>
         <item>
-            <title>[N][R][W] trains are running with delays in both directions.
-We're performing switch maintenance near Lexington Av/59 St.</title>
-            <description>The last stop on some uptown [N][W] trains will be 96 St, via the [Q] line.
-
-Listen for announcements to hear how your train will run.</description>
-            <guid isPermaLink="false">lmm:alert:539702</guid>
+            <title>[A][C] trains are running with delays in both directions after we removed a train with a mechanical problem from service at 168 St.</title>
+            <description>[A] trains have resumed making scheduled stops between 168 St and Inwood-207 St.</description>
+            <guid isPermaLink="false">lmm:alert:539751</guid>
+        </item>
+        <item>
+            <title>Uptown [2][5] trains are running with delays after we removed a train in need of cleaning from service at Flatbush Av-Brooklyn College.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:539752</guid>
+        </item>
+        <item>
+            <title>Uptown [B][D] trains are running with delays after we were unable to move a train at 7 Av.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:539754</guid>
         </item>
         <item>
             <title>Flushing-bound [7X] express trains run local in Queens from 74 St-Broadway to Mets-Willets Point</title>
@@ -1827,16 +1834,6 @@ What's happening?
             <guid isPermaLink="false">lmm:planned_work:31508</guid>
         </item>
         <item>
-            <title>[6] service operates less frequently in the Bronx
-The last stop for some Bronx-bound trains is 3 Av-138 St</title>
-            <description>Transfer at 3 Av-138 St to a Pelham Bay Park-bound [6] to continue your trip.
-What's happening?
-Signal maintenance
-
-[accessibility icon] If you're on a train terminating at 3 Av-138 St, an accessible transfer is available at 125 St [accessibility icon] to the next Pelham Bay Park-bound [6].</description>
-            <guid isPermaLink="false">lmm:planned_work:31507</guid>
-        </item>
-        <item>
             <title>In Manhattan, downtown [2] local skips 66 St-Lincoln Center, 59 St-Columbus Circle and 50 St</title>
             <description>For service to these stations, take the [2] to Times Sq-42 St and transfer to an uptown [1] or [2] local.
 
@@ -2219,19 +2216,6 @@ From 15 St-Prospect Park or Fort Hamilton Pkwy, consider the B68 bus on Prospect
 What's happening?
 Track maintenance</description>
             <guid isPermaLink="false">lmm:planned_work:31423</guid>
-        </item>
-        <item>
-            <title>In Brooklyn, Jamaica Center-bound [J] skips Kosciuszko St, Gates Av, Halsey St and Chauncey St</title>
-            <description>For service to these stations, take the [J] to Broadway Junction and transfer to a Manhattan-bound [J].
-
-For service from these stations, take the [J] to Myrtle Av and transfer to a Jamaica Center-bound [J].
-
-Travel tip:
-Consider taking the Q24 bus along Broadway.
-
-What's happening?
-Track maintenance</description>
-            <guid isPermaLink="false">lmm:planned_work:31419</guid>
         </item>
         <item>
             <title>In Brooklyn, [L] runs every 16 minutes between Canarsie-Rockaway Pkwy and Broadway Junction</title>

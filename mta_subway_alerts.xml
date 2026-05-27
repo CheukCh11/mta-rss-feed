@@ -7,39 +7,9 @@
     <language>en-us</language>
     
         <item>
-            <title>[E][F] trains are running with delays in both directions while we perform track maintenance in Queens.</title>
+            <title>Downtown [E][F] trains are running with delays after we performed track maintenance near Lexington Av/53 St.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539539</guid>
-        </item>
-        <item>
-            <title>Downtown [1][2][3] trains are running with delays after we removed a train from service and removed debris from the track at 86 St.</title>
-            <description>Downtown [1][2] trains have resumed running on the local track from 96 St to Times Sq-42 St.</description>
-            <guid isPermaLink="false">lmm:alert:539547</guid>
-        </item>
-        <item>
-            <title>Downtown [F] trains are running on the [A] line from W 4 St-Wash Sq to Jay St-MetroTech while we perform a rail replacement near Broadway-Lafayette St.</title>
-            <description>Expect a longer wait for a downtown [A] train while they share the track with rerouted trains.</description>
-            <guid isPermaLink="false">lmm:alert:539548</guid>
-        </item>
-        <item>
-            <title>Downtown [F] trains are running on the [A] line from W 4 St-Wash Sq to Jay St-MetroTech while we perform a rail replacement near Broadway-Lafayette St.</title>
-            <description>Expect a longer wait for a downtown [A] train while they share the track with rerouted trains.</description>
-            <guid isPermaLink="false">lmm:alert:539549</guid>
-        </item>
-        <item>
-            <title>Coney Island-Stillwell Av-bound [Q] trains are running with delays after we requested NYPD assistance for people being disruptive on a train at Parkside Av.</title>
-            <description>Coney Island-Stillwell Av-bound [Q] trains have resumed running on the local track from Prospect Park to Kings Hwy.</description>
-            <guid isPermaLink="false">lmm:alert:539551</guid>
-        </item>
-        <item>
-            <title>Downtown [2][3] trains are delayed while we perform track maintenance near 110 St-Malcolm X Plaza.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539552</guid>
-        </item>
-        <item>
-            <title>[A][H] trains are delayed in both directions while the South Channel Bridge opens for marine traffic to pass.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539553</guid>
+            <guid isPermaLink="false">lmm:alert:539594</guid>
         </item>
         <item>
             <title>[SIR] runs every 45 minutes between St George and Tottenville</title>

@@ -7,14 +7,19 @@
     <language>en-us</language>
     
         <item>
-            <title>Uptown [2][3] trains are running with delays after we addressed a door problem on a train at 96 St.</title>
-            <description>Uptown [2][3] trains have resumed making express stops from 72 St to 96 St.</description>
-            <guid isPermaLink="false">lmm:alert:539493</guid>
+            <title>Jamaica-bound [E][F] trains are running with delays while we address a signal problem near Kew Gardens-Union Tpke.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:539510</guid>
         </item>
         <item>
-            <title>Downtown [6] trains are running express from 14 St-Union Sq to Brooklyn Bridge while we request medical assistance for someone in need on a train at Astor Place.</title>
-            <description>If your stop is skipped, take an uptown [6] train.</description>
-            <guid isPermaLink="false">lmm:alert:539494</guid>
+            <title>Uptown [2][5] trains are delayed while we remove debris from the tracks at 3 Av/149 St.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:539520</guid>
+        </item>
+        <item>
+            <title>Downtown [4] trains are delayed while we request medical assistance for someone in need on a train at 161 St-Yankee Stadium.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:539521</guid>
         </item>
         <item>
             <title>Flushing-bound [7X] express trains run local in Queens from 74 St-Broadway to Mets-Willets Point</title>

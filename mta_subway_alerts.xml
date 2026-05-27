@@ -7,24 +7,22 @@
     <language>en-us</language>
     
         <item>
-            <title>Downtown [E] [F][M] trains are running with delays after EMS assisted someone on a train at 5 Av/53 St.</title>
-            <description>Downtown [E][F] trains have resumed making scheduled stops from Jackson Heights-Roosevelt Av to W 4 St-Wash Sq.</description>
-            <guid isPermaLink="false">lmm:alert:539746</guid>
+            <title>Uptown [N][Q][R][W] trains are running with delays.
+Some uptown [N][R][W] trains are running express from 34 St-Herald Sq to 57 St/7 Av.</title>
+            <description>Listen for crew announcements to hear how your train will run.
+
+For service to/from bypassed stations, take a downtown train.
+
+Expect delays in [Q] trains while they share tracks with rerouted trains.
+
+What's Happening?
+We are addressing a signal problem at 34 St-Herald Sq.</description>
+            <guid isPermaLink="false">lmm:alert:539792</guid>
         </item>
         <item>
-            <title>[A][C] trains are running with delays in both directions after we removed a train with a mechanical problem from service at 168 St.</title>
-            <description>[A] trains have resumed making scheduled stops between 168 St and Inwood-207 St.</description>
-            <guid isPermaLink="false">lmm:alert:539751</guid>
-        </item>
-        <item>
-            <title>Uptown [2][5] trains are running with delays after we removed a train in need of cleaning from service at Flatbush Av-Brooklyn College.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539752</guid>
-        </item>
-        <item>
-            <title>Uptown [B][D] trains are running with delays after we were unable to move a train at 7 Av.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539754</guid>
+            <title>[E] trains are running with delays in both directions after we moved a train that had its brakes activated atSutphin Blvd/Archer Av-JFK Airport.</title>
+            <description>[E] trains have resumed making regular stops in Queens.</description>
+            <guid isPermaLink="false">lmm:alert:539790</guid>
         </item>
         <item>
             <title>Flushing-bound [7X] express trains run local in Queens from 74 St-Broadway to Mets-Willets Point</title>
@@ -57,6 +55,34 @@ For Second Av stations, consider nearby [6] stops along Lexington Ave. Transfer 
 What's happening?
 Track maintenance</description>
             <guid isPermaLink="false">lmm:planned_work:32149</guid>
+        </item>
+        <item>
+            <title>In the Bronx, no [D] at Norwood-205 St</title>
+            <description>[D] runs between Coney Island-Stillwell Av and Bedford Park Blvd, the last stop.
+
+[shuttle bus icon] Free shuttle buses run between Bedford Park Blvd and Norwood-205 St.
+Transfer between [D] and [shuttle bus icon] at Bedford Park Blvd.
+What's happening?
+Track maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32142</guid>
+        </item>
+        <item>
+            <title>In Queens, Jamaica Center-bound [E] stops at 75 Av and Briarwood</title>
+            <description>Note: Service runs as scheduled at these stations all other times.
+
+What's happening?
+Signal maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32141</guid>
+        </item>
+        <item>
+            <title>In Queens, Jamaica-bound [F] skips 75 Av, Briarwood and Sutphin Blvd</title>
+            <description>For service to these stations, take the [F] to Kew Gardens-Union Tpke or Parsons Blvd and transfer to a Manhattan-bound [F].
+
+For service from these stations, take the [F] to Kew Gardens-Union Tpke or Forest Hills-71 Av and transfer to a Jamaica-bound [F].
+
+What's happening?
+Signal maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32140</guid>
         </item>
         <item>
             <title>[SIR] runs every 45 minutes between St George and Tottenville</title>

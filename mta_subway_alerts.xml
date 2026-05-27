@@ -7,44 +7,49 @@
     <language>en-us</language>
     
         <item>
-            <title>[6][6X] trains are running with delays in both directions after emergency teams assisted someone in need at 86 St.
-Expect delays in uptown [4][5] trains.</title>
-            <description>[6][6X] trains in both directions and uptown [5] trains have resumed making scheduled stops.</description>
-            <guid isPermaLink="false">lmm:alert:539664</guid>
+            <title>Downtown [B][Q] trains are running with delays after we addressed a signal problem near Lexington Av/63 St.</title>
+            <description>Downtown [Q] trains have resumed making scheduled stops.</description>
+            <guid isPermaLink="false">lmm:alert:539713</guid>
         </item>
         <item>
-            <title>Coney Island-bound [F] and Church Av-bound [G] trains are running with delays after EMS assisted someone in need on a train at 15 St-Prospect Park.</title>
-            <description>Coney Island-bound [F] and Church Av-bound [G] trains have resumed making scheduled stops from Smith-9 Sts to Church Av.</description>
-            <guid isPermaLink="false">lmm:alert:539667</guid>
-        </item>
-        <item>
-            <title>[F] trains are running with delays in both directions while we address a switch malfunction at Jamaica-179 St.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539652</guid>
-        </item>
-        <item>
-            <title>[L] trains are running with delays in both directions while we continue to remove a train with a mechanical problem from service at 8 Av.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539671</guid>
-        </item>
-        <item>
-            <title>Manhattan-bound [A][C] trains are running with delays after we moved a train that had its brakes activated near Franklin Av.</title>
-            <description>Manhattan-bound [C] trains have resumed making local stops from Broadway Junction to Hoyt-Schermerhorn Sts.</description>
-            <guid isPermaLink="false">lmm:alert:539673</guid>
-        </item>
-        <item>
-            <title>Some Woodlawn-bound [4] trains will end at 149 St-Grand Concourse.
-Some Dyre Av-bound [5] trains will run via the [2] from Nevins St to 149 St-Grand Concourse.</title>
-            <description>What's Happening?
-NYPD is responding to an unauthorized person on the tracks near 149 St-Grand Concourse.
+            <title>[N][R][W] trains are running with delays in both directions.
+We're performing switch maintenance near Lexington Av/59 St.</title>
+            <description>The last stop on some uptown [N][W] trains will be 96 St, via the [Q] line.
+
 Listen for announcements to hear how your train will run.</description>
-            <guid isPermaLink="false">lmm:alert:539670</guid>
+            <guid isPermaLink="false">lmm:alert:539702</guid>
         </item>
         <item>
             <title>Flushing-bound [7X] express trains run local in Queens from 74 St-Broadway to Mets-Willets Point</title>
             <description>What's happening?
 Mets Home Game</description>
             <guid isPermaLink="false">lmm:planned_work:32214</guid>
+        </item>
+        <item>
+            <title>[H] Rockaway Park Shuttle service is extended to/from the Rockaway Blvd [A] station during summer weekends</title>
+            <description>[H] Rockaway Park Shuttle runs between Rockaway Blvd [A] station and Rockaway Park-Beach 116 St.
+
+We're running longer [H] trains to make more room for beachgoers.
+
+For Rockaway Park-Beach 116 St service, transfer between [H] and any [A] train at Rockaway Blvd.
+
+Note: Summer service runs through Labor Day weekend; the last day will be Sep 7, Monday.</description>
+            <guid isPermaLink="false">lmm:planned_work:32202</guid>
+        </item>
+        <item>
+            <title>In Manhattan, no [Q] between 57 St/7 Av and 96 St</title>
+            <description>Travel alternatives:
+For Lexington Av/63 St, take the [F] instead.
+For 72 St, 86 St and 96 St, consider taking [shuttle bus icon] buses instead.
+M15 (along 1 Av and 2 Av)
+M102 and M103 (along 3 Av and Lex Av)
+Transfer between [Q] and [F] at 34 St-Herald Sq [accessibility icon].
+Travel tip:
+For Second Av stations, consider nearby [6] stops along Lexington Ave. Transfer at 14 St-Union Sq.
+
+What's happening?
+Track maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32149</guid>
         </item>
         <item>
             <title>[SIR] runs every 45 minutes between St George and Tottenville</title>

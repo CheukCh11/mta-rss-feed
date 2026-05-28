@@ -7,47 +7,24 @@
     <language>en-us</language>
     
         <item>
-            <title>Uptown [N][Q][R][W] trains are running with delays.
-Some uptown [N][R][W] trains are running express from 34 St-Herald Sq to 57 St/7 Av.</title>
-            <description>Listen for crew announcements to hear how your train will run.
-
-For service to/from bypassed stations, take a downtown train.
-
-Expect delays in [Q] trains while they share tracks with rerouted trains.
-
-What's Happening?
-We are addressing a signal problem at 34 St-Herald Sq.</description>
-            <guid isPermaLink="false">lmm:alert:539792</guid>
+            <title>Downtown [4] trains are running with delays after we investigated a report of an unauthorized person on the tracks near 167 St.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:539907</guid>
         </item>
         <item>
-            <title>[A][B][D] trains are disrupted in both directions in Manhattan while emergency teams respond to a person who was struck by a train at 59 St-Columbus Circle.</title>
-            <description>Additional Service Changes
-Downtown [A][D] local from 125 St to 59 St-Columbus Circle.
-Downtown [A] [B][D] bypassing 59 St-Columbus Circle.
-
-[A] trains are making all local stops in Brooklyn, and in Manhattan in both directions between 168 St  and 125 St .
-[C] service is suspended.
-
-Travel Alternatives:
-For service to/from 59 St-Columbus Circle, take an uptown train.
-
-Consider nearby [1][2][3] trains for service in Manhattan.
-
-Consider a nearby M10 bus running on Central Park W and Frederick Douglass Blvd.
-
-Consider a nearby M7 or M11 bus running on Columbus Ave and Amsterdam Ave.</description>
-            <guid isPermaLink="false">lmm:alert:539857</guid>
+            <title>Uptown [D] trains are running with delays after we removed a train with a mechanical problem from service at Broadway-Lafayette St.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:539912</guid>
         </item>
         <item>
-            <title>[C] trains are suspended in both directions. 
-Take [A][B] trains.</title>
-            <description>What's Happening?
-Emergency teams are responding to a person who was struck by a train at 59 St-Columbus Circle.
-
-You may see some [C]  trains running, but no additional trains will depart from their first/last station.
-
-[A] trains are making all local stops in Brooklyn and in Manhattan in both directions between 168 St and 125 St.</description>
-            <guid isPermaLink="false">lmm:alert:539856</guid>
+            <title>Uptown [4][6] trains are running on the express track from Brooklyn Bridge-City Hall to Grand Central-42 St while we address a signal problem near 14 St-Union Sq.</title>
+            <description>For service to/from bypassed stations, take a downtown train.</description>
+            <guid isPermaLink="false">lmm:alert:539910</guid>
+        </item>
+        <item>
+            <title>[A] [H]  trains are delayed in both directions while the South Channel Bridge opens for marine traffic to pass.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:539911</guid>
         </item>
         <item>
             <title>Flushing-bound [7X] express trains run local in Queens from 74 St-Broadway to Mets-Willets Point</title>

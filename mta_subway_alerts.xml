@@ -7,24 +7,19 @@
     <language>en-us</language>
     
         <item>
-            <title>Downtown [4] trains are running with delays after we investigated a report of an unauthorized person on the tracks near 167 St.</title>
+            <title>[E][F] trains are running with delays in both directions while we perform track maintenance in Queens.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539907</guid>
+            <guid isPermaLink="false">lmm:alert:539915</guid>
         </item>
         <item>
-            <title>Uptown [D] trains are running with delays after we removed a train with a mechanical problem from service at Broadway-Lafayette St.</title>
+            <title>Uptown [D] trains are running with delays after we investigated a report of smoke at 145 St.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539912</guid>
+            <guid isPermaLink="false">lmm:alert:539941</guid>
         </item>
         <item>
-            <title>Uptown [4][6] trains are running on the express track from Brooklyn Bridge-City Hall to Grand Central-42 St while we address a signal problem near 14 St-Union Sq.</title>
-            <description>For service to/from bypassed stations, take a downtown train.</description>
-            <guid isPermaLink="false">lmm:alert:539910</guid>
-        </item>
-        <item>
-            <title>[A] [H]  trains are delayed in both directions while the South Channel Bridge opens for marine traffic to pass.</title>
+            <title>Downtown [A] trains are delayed while we investigate why a train's brakes were activated near High St.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539911</guid>
+            <guid isPermaLink="false">lmm:alert:539940</guid>
         </item>
         <item>
             <title>Flushing-bound [7X] express trains run local in Queens from 74 St-Broadway to Mets-Willets Point</title>

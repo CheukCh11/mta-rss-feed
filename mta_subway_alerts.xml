@@ -7,26 +7,39 @@
     <language>en-us</language>
     
         <item>
-            <title>Uptown [2][3] trains are running with delays while we address a signal malfunction near Atlantic Av-Barclays Ctr.</title>
-            <description>Some uptown [2][3] trains are running express from Franklin Av-Medgar Evers College to Atlantic Av-Barclays Ctr.
-Listen for announcements to hear how your train will run.</description>
-            <guid isPermaLink="false">lmm:alert:539988</guid>
+            <title>[A][H] trains are delayed in both directions while the South Channel Bridge opens for marine traffic to pass.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:540048</guid>
         </item>
         <item>
-            <title>Uptown [B][Q] trains are running with delays after we removed a train with a mechanical problem from service at Church Av.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539992</guid>
+            <title>All [SIR] trains from Eltingville to Huguenot board from the St George-bound platform</title>
+            <description>Boarding change includes Eltingville, Annadale, and Huguenot stations.
+What's happening?
+Scheduled maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32251</guid>
         </item>
         <item>
-            <title>[H] trains are running with delays in both directions while we address a switch malfunction at Rockaway Park-Beach 116 St.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539991</guid>
+            <title>All [SIR] trains from Grant City to Great Kills board from the St George-bound platform</title>
+            <description>Boarding change affects Grant City, New Dorp, Oakwood Heights, Bay Terrace and Great Kills stations.
+What's happening?
+Scheduled maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32250</guid>
         </item>
         <item>
             <title>Flushing-bound [7X] express trains run local in Queens from 74 St-Broadway to Mets-Willets Point</title>
             <description>What's happening?
 Mets Home Game</description>
             <guid isPermaLink="false">lmm:planned_work:32214</guid>
+        </item>
+        <item>
+            <title>In Brooklyn, no [4] between Crown Hts-Utica Av and New Lots Av</title>
+            <description>[4] runs between Woodlawn and Crown Hts-Utica Av, the last stop.
+
+[shuttle bus icon] Free B99 shuttle buses make stops between Crown Hts-Utica Av and New Lots Av.
+Transfer between [4] and [shuttle bus icon] at Crown Hts-Utica Av.
+What's happening?
+We're making accessibility improvements</description>
+            <guid isPermaLink="false">lmm:planned_work:32203</guid>
         </item>
         <item>
             <title>[H] Rockaway Park Shuttle service is extended to/from the Rockaway Blvd [A] station during summer weekends</title>
@@ -38,6 +51,173 @@ For Rockaway Park-Beach 116 St service, transfer between [H] and any [A] train a
 
 Note: Summer service runs through Labor Day weekend; the last day will be Sep 7, Monday.</description>
             <guid isPermaLink="false">lmm:planned_work:32202</guid>
+        </item>
+        <item>
+            <title>In the Bronx, [6] runs every 8 minutes between 3 Av/138 St and Pelham Bay Park
+The last stop for some trains from Manhattan is 3 Av/138 St</title>
+            <description>Transfer at 3 Av-138 St to a Pelham Bay Park-bound [6] to continue your trip.
+What's happening?
+Signal maintenance
+
+[accessibility icon] If you're on a train terminating at 3 Av-138 St, an accessible transfer is available at 125 St [accessibility icon] to the next Pelham Bay Park-bound [6].</description>
+            <guid isPermaLink="false">lmm:planned_work:32169</guid>
+        </item>
+        <item>
+            <title>In the Bronx, Manhattan-bound express [6X] runs local from Parkchester to 3 Av-138 St</title>
+            <description>What's happening?
+Track and signal maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32168</guid>
+        </item>
+        <item>
+            <title>In the Bronx, Pelham Bay Park-bound express [6X] runs local from 3 Av-138 St to Parkchester</title>
+            <description>What's happening?
+Track and signal maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32167</guid>
+        </item>
+        <item>
+            <title>In the Bronx, Manhattan-bound [6] skips Buhre Av, Middletown Rd, Westchester Sq-E Tremont Av, Zerega Av and Castle Hill Av</title>
+            <description>For service to these stations, take the [6] to Parkchester and transfer to a Pelham Bay Park-bound [6].
+
+For service from these stations, take the [6] to Pelham Bay Park and transfer to a Manhattan-bound [6].
+
+Notes: [6] runs every 8 minutes in the Bronx. The last stop for some Bronx-bound trains is 3 Av-138 St. Transfer at 3 Av-138 St to a Pelham Bay Park-bound [6] to continue your trip.
+
+[accessibility icon] If you're on a train terminating at 3 Av-138 St, an accessible transfer is available at 125 St [accessibility icon] to the next Pelham Bay Park-bound [6].
+
+What's happening?
+Track maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32166</guid>
+        </item>
+        <item>
+            <title>In the Bronx, Pelham Bay Park-bound [6] runs express Hunts Point Av to Pelham Bay Park</title>
+            <description>Trains stop at Parkchester.
+
+For service to Whitlock Av, Elder Av, Morrison Av-Soundview and St. Lawrence Av, take the [6] Parkchester and transfer to a Manhattan-bound [6].
+
+For service to Castle Hill Av, Zerega Av, Westchester Sq-E Tremont Av, Middletown Rd and Buhre Av, take the [6] to Pelham Bay Park and transfer to a Manhattan-bound [6].
+
+For service from these stations, take the [6] to Parkchester or Hunts Point Av and transfer to a Pelham Bay Park-bound train.
+
+What's happening?
+Track maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32165</guid>
+        </item>
+        <item>
+            <title>In Manhattan, uptown [4] runs local from Grand Central-42 St to 125 St</title>
+            <description>Schedule reminder: Late night local trains also serve these stations.
+
+What's happening?
+Track maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32162</guid>
+        </item>
+        <item>
+            <title>[5] service ends early between Bowling Green, Manhattan and E 180 St, Bronx</title>
+            <description>[5] trains run between Eastchester-Dyre Av and E 180 St.
+
+[2] trains make [5] stops between E 180 St and 149 St-Grand Concourse.
+[4] trains make [5] stops between 149 St-Grand Concourse and Bowling Green.
+Transfer between trains at E 180 St [accessibility icon] | [2][5] and/or 149 St-Grand Concourse [2][4].
+Approximate final departures:
+The last Manhattan-bound [5] departs E 180 St at 8:25 PM and 3 Av-149 St at 8:35 PM.
+The last Bronx-bound [5] departs Bowling Green at 9:20 PM and Grand Central-42 St at 9:35 PM.
+
+What's happening?
+Track maintenance
+
+[accessibility icon] This service change affects one or more ADA accessible stations and these travel alternatives may not be fully accessible. Please contact 511 to plan your trip.</description>
+            <guid isPermaLink="false">lmm:planned_work:32161</guid>
+        </item>
+        <item>
+            <title>[6] runs every 8 minutes in Manhattan</title>
+            <description>[6] runs on a modified schedule while [4][5] and [6] trains share the local track in Manhattan.
+
+What's happening?
+Track maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32160</guid>
+        </item>
+        <item>
+            <title>[5] runs every 12 minutes</title>
+            <description>[5] runs on a modified schedule while [4][5] and [6] trains share the local track in Manhattan.
+
+What's happening?
+Track maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32159</guid>
+        </item>
+        <item>
+            <title>In Manhattan, uptown [5] runs local from Grand Central-42 St to 125 St</title>
+            <description>Schedule reminder: Overnight [5] service runs only in the Bronx between E 180 St and Eastchester-Dyre Av.
+
+What's happening?
+Track maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32158</guid>
+        </item>
+        <item>
+            <title>In Brooklyn, no [3] between Crown Hts-Utica Av and New Lots Av</title>
+            <description>[3] runs every 12 minutes (days/evenings) between Harlem-148 St and Crown Hts-Utica Av, the last stop.
+
+[shuttle bus icon] Free B99 shuttle buses make stops between Crown Hts-Utica Av and New Lots Av.
+Transfer between [3] and [shuttle bus icon] at Crown Hts-Utica Av.
+Schedule reminder: Late night [3]  service runs in Manhattan between Harlem-148 St  and 34 St-Penn Station.
+
+What's happening?
+We're making accessibility improvements</description>
+            <guid isPermaLink="false">lmm:planned_work:32156</guid>
+        </item>
+        <item>
+            <title>In Brooklyn, Manhattan-bound [D] local skips 25 St, Prospect Av, 4 Av-9 St and Union St</title>
+            <description>For service to these stations, take the [D] to Atlantic Av-Barclays Ctr and transfer to a local Coney Island-bound [D] or [N] or Bay Ridge-bound [R].
+
+For service from these stations, take the [D][N] or [R] to 36 St and transfer to a Manhattan-bound [D].
+
+What's happening?
+We're replacing tracks</description>
+            <guid isPermaLink="false">lmm:planned_work:32155</guid>
+        </item>
+        <item>
+            <title>In Brooklyn and Lower Manhattan, 96 St-bound [Q] runs via the [R] from DeKalb Av to Canal St</title>
+            <description>Trains stop at Jay St-MetroTech, Court St, Whitehall St-South Ferry, Rector St, Cortlandt St and City Hall.
+
+Note: At Canal St, uptown [Q] stops at the [R] platform during this time.
+
+What's happening?
+We're making structural improvements</description>
+            <guid isPermaLink="false">lmm:planned_work:32154</guid>
+        </item>
+        <item>
+            <title>In Brooklyn, Manhattan-bound [R] skips 25 St, Prospect Av, 4 Av-9 St and Union St</title>
+            <description>For service to 25 St, Prospect Av, 4 Av-9 St and Union St, take the [R] to Atlantic Av-Barclays Ctr and transfer to a local Coney Island-bound [D] or [N] or Bay Ridge-bound [R]
+
+For service from these stations, take the [D][N] or [R] to 36 St and transfer to a Manhattan-bound [R].
+
+What's happening?
+We're replacing tracks</description>
+            <guid isPermaLink="false">lmm:planned_work:32152</guid>
+        </item>
+        <item>
+            <title>In Brooklyn, Manhattan-bound [N] local skips 25 St, Prospect Av, 4 Av-9 St and Union St</title>
+            <description>For service to 25 St, Prospect Av, 4 Av-9 St and Union St, take the [N] to Atlantic Av-Barclays Ctr and transfer to a local Coney Island-bound [D]  or [N] or Bay Ridge-bound [R].
+
+For service from these stations, take the [D][N] or [R] to 36 St and transfer to a Manhattan-bound [N].
+
+Schedule reminder: Manhattan-bound [N] runs express between these stations days and evenings.
+
+What's happening?
+We're replacing tracks</description>
+            <guid isPermaLink="false">lmm:planned_work:32151</guid>
+        </item>
+        <item>
+            <title>In Brooklyn, Manhattan-bound [D] local runs express from 36 St to Atlantic Av-Barclays Ctr and skips DeKalb Av</title>
+            <description>For service to 25 St, Prospect Av, 4 Av-9 St and Union St, take the [D] to Atlantic Av-Barclays Ctr and transfer to a local Coney Island-bound [D] or [N] or Bay Ridge-bound [R].
+
+For service from these stations, take the [D][N] or [R] to 36 St and transfer to a Manhattan-bound [D].
+
+For DeKalb Av, take the [N][Q] or [R]. Transfer at Atlantic Av-Barclays Ctr [accessibility icon].
+
+Schedule reminder: [D] runs express in Brooklyn days and evenings.
+
+What's happening?
+We're replacing tracks and making structural improvements</description>
+            <guid isPermaLink="false">lmm:planned_work:32150</guid>
         </item>
         <item>
             <title>In Manhattan, no [Q] between 57 St/7 Av and 96 St</title>
@@ -53,6 +233,67 @@ For Second Av stations, consider nearby [6] stops along Lexington Ave. Transfer 
 What's happening?
 Track maintenance</description>
             <guid isPermaLink="false">lmm:planned_work:32149</guid>
+        </item>
+        <item>
+            <title>In Brooklyn, no [J] between Crescent St and Broadway Junction</title>
+            <description>[J] runs in two sections:
+1. Between Jamaica Center-Parsons/Archer and Crescent St, every 12 minutes (days/evenings)
+2. Between Broadway Junction and Broad St, every 12 minutes (days/evenings)
+
+[shuttle bus icon] Free shuttle buses make stops between Crescent St and Broadway Junction.
+Transfer between [J] trains and [shuttle bus icon] buses at Crescent St and/or Broadway Junction.
+Travel tip:
+[airplane icon] For AirTrain JFK, use the Howard Beach-JFK Airport [A] station. Transfer at Broadway Junction .
+
+What's happening?
+We're replacing tracks
+
+[accessibility icon] This service change affects one or more ADA accessible stations and these travel alternatives may not be fully accessible. Please contact 511 to plan your trip.</description>
+            <guid isPermaLink="false">lmm:planned_work:32148</guid>
+        </item>
+        <item>
+            <title>In Manhattan, downtown [N][Q] skip 49 St, 28 St, 23 St, 8 St-NYU and Prince St</title>
+            <description>For service to these stations, take the [N] or [Q] to Times Sq-42 St, 14 St-Union Sq or Canal St and transfer to a local uptown train.
+
+For service from these stations, take the [N] or [Q] to 14 St-Union Sq, 34 St-Herald Sq or 57 St-7 Av and transfer to a downtown train.
+
+What's happening?
+Track maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32147</guid>
+        </item>
+        <item>
+            <title>In Brooklyn, Manhattan-bound [D] skips 20 Av, 18 Av, 79 St and 71 St
+All trains at Bay Pkwy board from the Coney Island-bound platform</title>
+            <description>For service to these stations, take the [D] to 62 St-New Utrecht Av and transfer to a Coney Island-bound [D].
+
+For service from these stations, take the [D] to Bay Pkwy and transfer to a Manhattan-bound [D].
+
+What's happening?
+We're replacing tracks</description>
+            <guid isPermaLink="false">lmm:planned_work:32146</guid>
+        </item>
+        <item>
+            <title>In Queens, Manhattan-bound [F] skips 169 St</title>
+            <description>For service to this station, take the [F] to Parsons Blvd and transfer to a Jamaica-bound [F].
+
+For service from this station, take the [F] to Jamaica-179 St and transfer to a Manhattan-bound [F].
+
+Travel tip:
+For service to 169 St, consider the Q1, Q2, Q3, Q17 or Q36 buses.
+
+What's happening?
+We're making station improvements</description>
+            <guid isPermaLink="false">lmm:planned_work:32144</guid>
+        </item>
+        <item>
+            <title>In Manhattan, downtown [F] skips 23 St and 14 St</title>
+            <description>For service to these stations, take the [F] to W 4 St-Wash Sq and transfer to an uptown [F].
+
+For service from these stations, take the [F] to 34 St-Herald Sq and transfer to a downtown [F].
+
+What's happening?
+Track maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32143</guid>
         </item>
         <item>
             <title>In the Bronx, no [D] at Norwood-205 St</title>
@@ -83,13 +324,71 @@ Signal maintenance</description>
             <guid isPermaLink="false">lmm:planned_work:32140</guid>
         </item>
         <item>
-            <title>[SIR] runs every 45 minutes between St George and Tottenville</title>
-            <description>Tottenville-bound trains depart St George  at 1:21 AM, 2:06 AM, 2:51 AM, 3:36 AM, 4:21 AM, 5:06 AM, 5:51 AM, 6:36 AM, and every 45 minutes thereafter.
-St George-bound trains depart Tottenville at 2:36 AM, 3:21 AM, 4:06 AM, 4:51 AM, 5:36 AM, 6:21 AM, 7:06 AM, 7:51 AM, and every 45 minutes thereafter.
+            <title>In the Bronx, no [4] between Kingsbridge Rd and Woodlawn</title>
+            <description>[4] runs between Crown Hts-Utica Av and Kingsbridge Rd, the last stop.
+
+[shuttle bus icon] Free Bx95 shuttle buses run between Kingsbridge Rd and Woodlawn, stopping at Mosholu Pkwy and Bedford Park Blvd.
+Transfer between [4] and [shuttle bus icon] buses at Kingsbridge Rd.
+What's happening?
+Signal maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32138</guid>
+        </item>
+        <item>
+            <title>In the Bronx, Manhattan-bound [2][5] runs express from E 180 St to 3 Av-149 St
+All trains at E 180 St board from the uptown platform</title>
+            <description>For service to West Farms Sq-E Tremont Av, 174 St, Freeman St, Simpson St, Intervale Av, Prospect Av and Jackson Av, take the [2] or [5] to 149 St-Grand Concourse and transfer to a Wakefield-bound [2] or Dyre Av-bound [5].
+
+For service from these stations, take the [2] or [5] to E 180 St [accessibility icon] and transfer to a Manhattan-bound [2] or [5].
+
+Travel tip:
+From Simpson St, Intervale Av, Prospect Av and Jackson Av, take the Bx4 bus instead. Transfer to the [2] or [5] at 3 Av-149 St [accessibility icon].
 
 What's happening?
-Scheduled maintenance</description>
-            <guid isPermaLink="false">lmm:planned_work:32127</guid>
+Signal maintenance
+
+[accessibility icon] This service change affects one or more ADA accessible stations and these travel alternatives may not be fully accessible. Please contact 511 to plan your trip.</description>
+            <guid isPermaLink="false">lmm:planned_work:32137</guid>
+        </item>
+        <item>
+            <title>In Manhattan, uptown local [4] service begins early from Grand Central-42 St to 125 St</title>
+            <description>Schedule reminder: Late night [4] also runs local between these stations.
+
+What's happening?
+We're replacing tracks</description>
+            <guid isPermaLink="false">lmm:planned_work:32136</guid>
+        </item>
+        <item>
+            <title>In the Bronx, Woodlawn-bound [4] skips 138 St-Grand Concourse
+All trains board from the downtown platform at 149 St-Grand Concourse</title>
+            <description>For service to this station, take the [4] to 149 St-Grand Concourse and transfer to a Manhattan-bound [4].
+
+For service from this station, take the [4] to 125 St, the last stop and stay on the train for Woodlawn-bound service.
+
+What's happening?
+We're replacing tracks</description>
+            <guid isPermaLink="false">lmm:planned_work:32135</guid>
+        </item>
+        <item>
+            <title>[4] service operates in two sections
+1. Between Woodlawn and 125 St
+2. Between 125 St and New Lots Av</title>
+            <description>Transfer at 125 St [accessibility icon] to continue your trip.
+What's happening?
+We're replacing tracks</description>
+            <guid isPermaLink="false">lmm:planned_work:32134</guid>
+        </item>
+        <item>
+            <title>In Upper Manhattan, downtown [1] skips 137 St-City College, 125 St, 116 St-Columbia University, Cathedral Pkwy (110 St) and 103 St</title>
+            <description>For service to these stations, take the [1] to 96 St and transfer to an uptown [1].
+
+For service from these stations, take the [1] to 168 St-Washington Hts and transfer to a downtown [1].
+
+Travel tip:
+Transfer between uptown and downtown trains with fare-capped OMNY at 145 St.
+
+What's happening?
+Track maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32133</guid>
         </item>
         <item>
             <title>[SIR] runs on an adjusted schedule in both directions</title>
@@ -98,13 +397,6 @@ St George-bound trains depart 2 minutes later than regularly scheduled.
 What's happening?
 Scheduled maintenance</description>
             <guid isPermaLink="false">lmm:planned_work:32126</guid>
-        </item>
-        <item>
-            <title>All [SIR] trains from Huguenot to Grant City board from the Tottenville-bound platform</title>
-            <description>Boarding change includes Huguenot, Annadale, Eltingville, Great Kills, Bay Terrace, Oakwood Heights, New Dorp and Grant City stations.
-What's happening?
-Scheduled maintenance</description>
-            <guid isPermaLink="false">lmm:planned_work:32125</guid>
         </item>
         <item>
             <title>All [SIR] trains from Grasmere to Tompkinsville board from the Tottenville-bound platform</title>

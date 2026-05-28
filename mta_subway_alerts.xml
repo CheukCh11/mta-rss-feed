@@ -7,9 +7,105 @@
     <language>en-us</language>
     
         <item>
-            <title>[A][H] trains are delayed in both directions while the South Channel Bridge opens for marine traffic to pass.</title>
+            <title>Uptown [N] trains are running with delays while we address a signal problem near Coney Island-Stillwell Av.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:540106</guid>
+            <guid isPermaLink="false">lmm:alert:540126</guid>
+        </item>
+        <item>
+            <title>No [J] service between Broadway Junction and Jamaica Center-Parsons/Archer.
+No [Z] service to Queens.
+Consider [A][C][E][M][L] trains, Q24 and Q56 buses, and the LIRR.</title>
+            <description>Service Changes:
+Jamaica-bound [J] trains will end at Broadway Junction, where they will turn back for Broad St-bound service.
+
+What's Happening?
+We addressing a signal problem between Cypress Hills and Crescent St.
+
+Travel Alternatives:
+
+[J] service between Manhattan and Brooklyn/Queens:
+Take [A][C][L] trains to/from Broadway Junction.
+
+Take an [E] train to/from Jamaica Center-Parsons/Archer.
+
+Take an [M] train for [J] service between Marcy Av and Myrtle Av.
+
+LIRR is cross-honoring NYCT customers at no additional cost between Atlantic Terminal and Jamaica.
+
+[J] service between Broadway Junction and Jamaica:
+Take a nearby Q24 bus running on Atlantic Ave.
+
+Take a nearby a Q56 bus running on Jamaica Ave.
+
+For service to [airplane icon] JFK-AirTrain to JFK Airport:
+Take a Far Rockway-bound [A] train to Howard Beach-JFK Airport.
+
+Take a Jamaica-bound [E] train to Sutphin Blvd/Archer Av-JFK Airport.</description>
+            <guid isPermaLink="false">lmm:alert:540157</guid>
+        </item>
+        <item>
+            <title>No [J] service between Broadway Junction and Jamaica Center-Parsons/Archer.
+No [Z] service to Queens.
+Consider [A][C][E][M][L] trains, Q24 and Q56 buses, and the LIRR.</title>
+            <description>Service Changes:
+Jamaica-bound [J] trains will end at Broadway Junction, where they will turn back for Broad St-bound service.
+
+What's Happening?
+We addressing a signal problem between Cypress Hills and Crescent St.
+
+Travel Alternatives:
+
+[J] service between Manhattan and Brooklyn/Queens:
+Take [A][C][L] trains to/from Broadway Junction.
+
+Take an [E] train to/from Jamaica Center-Parsons/Archer.
+
+Take an [M] train for [J] service between Marcy Av and Myrtle Av.
+
+LIRR is cross-honoring NYCT customers at no additional cost between Atlantic Terminal and Jamaica.
+
+[J] service between Broadway Junction and Jamaica:
+Take a nearby Q24 bus running on Atlantic Ave.
+
+Take a nearby a Q56 bus running on Jamaica Ave.
+
+For service to [airplane icon] JFK-AirTrain to JFK Airport:
+Take a Far Rockway-bound [A] train to Howard Beach-JFK Airport.
+
+Take a Jamaica-bound [E] train to Sutphin Blvd/Archer Av-JFK Airport.</description>
+            <guid isPermaLink="false">lmm:alert:540156</guid>
+        </item>
+        <item>
+            <title>[4][5] trains are running with delays in both directions after FDNY conducted an investigation and we removed a train from service at Brooklyn Bridge-City Hall.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:540152</guid>
+        </item>
+        <item>
+            <title>[A][H] trains are running with delays in both directions after the South Channel Bridge opened for marine traffic to pass.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:540160</guid>
+        </item>
+        <item>
+            <title>Forest Hills-bound [M] trains are running with delays after we moved a train that had its brakes activated at Myrtle-Wyckoff Avs.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:540154</guid>
+        </item>
+        <item>
+            <title>Parkchester-bound [6] trains are running express from Hunts Point Av to Parkchester while we address a signal problem near Parkchester.</title>
+            <description>Expect delays on Pelham Bay Park-bound [6X] trains while they share the tracks with rerouted trains. 
+If your stop is skipped, take a downtown [6] train.</description>
+            <guid isPermaLink="false">lmm:alert:540158</guid>
+        </item>
+        <item>
+            <title>Parkchester-bound [6] trains are running express from Hunts Point Av to Parkchester while we address a signal problem near Parkchester.</title>
+            <description>Expect delays on Pelham Bay Park-bound [6X] trains while they share the tracks with rerouted trains. 
+If your stop is skipped, take a downtown [6] train.</description>
+            <guid isPermaLink="false">lmm:alert:540159</guid>
+        </item>
+        <item>
+            <title>Downtown [6] trains are running with delays after we were unable to move a train at 125 St.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:540161</guid>
         </item>
         <item>
             <title>All [SIR] trains from Eltingville to Huguenot board from the St George-bound platform</title>

@@ -9,7 +9,7 @@
         <item>
             <title>[A][H] trains are delayed in both directions while the South Channel Bridge opens for marine traffic to pass.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:540048</guid>
+            <guid isPermaLink="false">lmm:alert:540106</guid>
         </item>
         <item>
             <title>All [SIR] trains from Eltingville to Huguenot board from the St George-bound platform</title>
@@ -1690,16 +1690,6 @@ Track maintenance
 
 [accessibility icon] This service change affects one or more ADA accessible stations and these travel alternatives may not be fully accessible. Please contact 511 to plan your trip.</description>
             <guid isPermaLink="false">lmm:planned_work:31640</guid>
-        </item>
-        <item>
-            <title>In Queens, Manhattan-bound [N] skips 30 Av, Broadway, 36 Av and 39 Av-Dutch Kills</title>
-            <description>For service to these stations, take the [N] to Queensboro Plaza and transfer to an Astoria-bound [N].
-
-For service from these stations, take the [N] to Astoria Blvd and transfer to a Manhattan-bound [N].
-
-What's happening?
-We're making station improvements</description>
-            <guid isPermaLink="false">lmm:planned_work:31639</guid>
         </item>
         <item>
             <title>In Brooklyn, no [N] at Coney Island-Stillwell Av</title>

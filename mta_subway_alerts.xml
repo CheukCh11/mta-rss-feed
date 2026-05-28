@@ -7,19 +7,20 @@
     <language>en-us</language>
     
         <item>
-            <title>[E][F] trains are running with delays in both directions while we perform track maintenance in Queens.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539915</guid>
+            <title>Uptown [2][3] trains are running with delays while we address a signal malfunction near Atlantic Av-Barclays Ctr.</title>
+            <description>Some uptown [2][3] trains are running express from Franklin Av-Medgar Evers College to Atlantic Av-Barclays Ctr.
+Listen for announcements to hear how your train will run.</description>
+            <guid isPermaLink="false">lmm:alert:539988</guid>
         </item>
         <item>
-            <title>Uptown [D] trains are running with delays after we investigated a report of smoke at 145 St.</title>
+            <title>Uptown [B][Q] trains are running with delays after we removed a train with a mechanical problem from service at Church Av.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539941</guid>
+            <guid isPermaLink="false">lmm:alert:539992</guid>
         </item>
         <item>
-            <title>Downtown [A] trains are delayed while we investigate why a train's brakes were activated near High St.</title>
+            <title>[H] trains are running with delays in both directions while we address a switch malfunction at Rockaway Park-Beach 116 St.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:539940</guid>
+            <guid isPermaLink="false">lmm:alert:539991</guid>
         </item>
         <item>
             <title>Flushing-bound [7X] express trains run local in Queens from 74 St-Broadway to Mets-Willets Point</title>
@@ -1822,18 +1823,6 @@ We're making structural improvements</description>
             <guid isPermaLink="false">lmm:planned_work:31600</guid>
         </item>
         <item>
-            <title>No [G] between Bedford-Nostrand Avs and Court Sq</title>
-            <description>[G] runs between Church Av and Bedford-Nostrand Avs, the last stop.
-
-[shuttle bus icon] Free T403 shuttle buses make stops between Bedford-Nostrand Avs and Court Sq. 
-Transfer between [G] and [shuttle bus icon] at Bedford-Nostrand Avs.
-What's happening?
-Track maintenance
-
-[accessibility icon] This service change affects one or more ADA accessible stations and these travel alternatives may not be fully accessible. Please contact 511 to plan your trip.</description>
-            <guid isPermaLink="false">lmm:planned_work:31569</guid>
-        </item>
-        <item>
             <title>In Brooklyn, no [G] between Bedford-Nostrand Avs and Church Av</title>
             <description>[G] runs between Court Sq and Bedford-Nostrand Avs, the last stop.
 
@@ -2216,16 +2205,6 @@ We're replacing tracks</description>
             <guid isPermaLink="false">lmm:planned_work:31426</guid>
         </item>
         <item>
-            <title>In the Bronx, no [D] at Norwood-205 St</title>
-            <description>[D] runs between Coney Island-Stillwell Av and Bedford Park Blvd, the last stop.
-
-[shuttle bus icon] Free shuttle buses run between Bedford Park Blvd and Norwood-205 St.
-Transfer between [D] and [shuttle bus icon] at Bedford Park Blvd.
-What's happening?
-Track maintenance</description>
-            <guid isPermaLink="false">lmm:planned_work:31425</guid>
-        </item>
-        <item>
             <title>In Brooklyn, Manhattan-bound [F] skips Fort Hamilton Pkwy, 15 St-Prospect Park and 4 Av-9 St</title>
             <description>For service to these stations, take the [F] to 7 Av or Smith-9 Sts and transfer to a Coney Island-bound [F].
 
@@ -2249,25 +2228,6 @@ Transfer at Broadway Junction to continue your trip.
 What's happening?
 We're replacing tracks</description>
             <guid isPermaLink="false">lmm:planned_work:31418</guid>
-        </item>
-        <item>
-            <title>No [N] between Queensboro Plaza, Queens and Times Sq-42 St, Manhattan</title>
-            <description>[N] service runs in two sections:
-1. Between Astoria-Ditmars Blvd and Queensboro Plaza
-2. Between Coney Island-Stillwell Av and Times Sq-42 St
-
-Travel alternatives:
-For service between Manhattan and Queens, take the [7] via transfer at Queensboro Plaza [accessibility icon] and/or Times Sq-42 St [accessibility icon].
-
-For 57 St-7 Av and 49 St, take the [Q] via transfer at Times Sq-42 St [accessibility icon] | [7][N].
-
-For Lexington Av/59 St and 5 Av/59 St, use the nearby 59 St [4][6] station via the [7] at Grand Central-42 St or the [N] at 14 St-Union Sq.
-
-Note: At Queensboro Plaza - board/exit all [N] trains from the Manhattan-bound platform.
-
-What's happening?
-Track maintenance</description>
-            <guid isPermaLink="false">lmm:planned_work:31417</guid>
         </item>
         <item>
             <title>No late night [R] between Whitehall St-South Ferry and 59 St, Brooklyn</title>

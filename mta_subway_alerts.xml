@@ -7,10 +7,9 @@
     <language>en-us</language>
     
         <item>
-            <title>[6] trains are running with severe delays in both directions.
-
+            <title>[6] trains are running with delays in both directions.
 [6X] express service is suspended.
-All [6][6X] trains are making local stops in the Bronx.</title>
+All [6X] trains are making local stops in the Bronx.</title>
             <description>What's Happening?
 We are addressing a technical problem with our signaling system in the Bronx.
 
@@ -29,13 +28,12 @@ Take [Q] trains for service on the Upper East Side. Transfer at 96 St (3rd Ave/E
 Take M101, M102 and M103 buses for nearby service on Lexington Ave and 3rd Ave.
 Take M15 and M15-SBS buses for nearby service on 2nd Ave.
 Take an M60-SBS bus for connecting service along 125 St between [4][5][6] and [2] trains.</description>
-            <guid isPermaLink="false">lmm:alert:540472</guid>
+            <guid isPermaLink="false">lmm:alert:540531</guid>
         </item>
         <item>
-            <title>[6] trains are running with severe delays in both directions.
-
+            <title>[6] trains are running with delays in both directions.
 [6X] express service is suspended.
-All [6][6X] trains are making local stops in the Bronx.</title>
+All [6X] trains are making local stops in the Bronx.</title>
             <description>What's Happening?
 We are addressing a technical problem with our signaling system in the Bronx.
 
@@ -54,14 +52,22 @@ Take [Q] trains for service on the Upper East Side. Transfer at 96 St (3rd Ave/E
 Take M101, M102 and M103 buses for nearby service on Lexington Ave and 3rd Ave.
 Take M15 and M15-SBS buses for nearby service on 2nd Ave.
 Take an M60-SBS bus for connecting service along 125 St between [4][5][6] and [2] trains.</description>
-            <guid isPermaLink="false">lmm:alert:540473</guid>
+            <guid isPermaLink="false">lmm:alert:540532</guid>
         </item>
         <item>
-            <title>[B][Q] trains are running with delays in both directions after we requested EMS for someone on a train at DeKalb Av
-.
-Uptown [D] trains are running with delays.</title>
-            <description>Brighton Beach-bound [B] and Coney Island-Stillwell Av-bound [Q] trains have resumed making scheduled stops.</description>
-            <guid isPermaLink="false">lmm:alert:540467</guid>
+            <title>Downtown [M][R] trains are running with delays after we requested EMS for someone in need of medical assistance on a train at 63 Dr-Rego Park.</title>
+            <description>Downtown [M][R] trains have resumed making scheduled stops.</description>
+            <guid isPermaLink="false">lmm:alert:540533</guid>
+        </item>
+        <item>
+            <title>[6] service operates less frequently in the Bronx
+The last stop for some Bronx-bound trains is 3 Av-138 St</title>
+            <description>Transfer at 3 Av-138 St to a Pelham Bay Park-bound [6] to continue your trip.
+What's happening?
+Signal maintenance
+
+[accessibility icon] If you're on a train terminating at 3 Av-138 St, an accessible transfer is available at 125 St [accessibility icon] to the next Pelham Bay Park-bound [6].</description>
+            <guid isPermaLink="false">lmm:planned_work:32271</guid>
         </item>
         <item>
             <title>All [SIR] trains from Eltingville to Huguenot board from the St George-bound platform</title>
@@ -1536,17 +1542,6 @@ Track maintenance</description>
             <guid isPermaLink="false">lmm:planned_work:31661</guid>
         </item>
         <item>
-            <title>In Brooklyn, Coney Island-bound [D] skips 71 St, 79 St, 18 Av, 20 Av, 25 Av and Bay 50 St
-All trains board from the Manhattan-bound platform at Bay Pkwy</title>
-            <description>For service to these stations, take the [D] to Bay Pkwy or Coney Island-Stillwell Av and transfer to a Manhattan-bound [D].
-
-For service from these stations, take the [D] to Bay Pkwy or 62 St and transfer to a Coney Island-bound [D].
-
-What's happening?
-Track maintenance</description>
-            <guid isPermaLink="false">lmm:planned_work:31656</guid>
-        </item>
-        <item>
             <title>No late night [R] between Whitehall St-South Ferry and 59 St, Brooklyn</title>
             <description>[R] trains run in Brooklyn between Bay Ridge-95 St and 59 St, the last stop.
 
@@ -2387,21 +2382,6 @@ We're replacing tracks nights and weekends in May and June
             <guid isPermaLink="false">lmm:planned_work:31439</guid>
         </item>
         <item>
-            <title>In the Bronx, Manhattan-bound [6] skips St Lawrence Av, Morrison Av-Soundview, Elder Av and Whitlock Av
-The last stop for some Bronx-bound trains is 3 Av-138 St</title>
-            <description>For service to these stations, take the [6] to Hunts Point Av and transfer to a Pelham Bay Park-bound [6].
-
-For service from these stations take the [6] to Parkchester and transfer to a Manhattan-bound [6].
-
-Notes: [6] runs every 8 minutes in the Bronx. The last stop for some Bronx-bound trains is 3 Av-138 St. Transfer at 3 Av-138 St to a Pelham Bay Park-bound [6] to continue your trip.
-
-[accessibility icon] If you're on a train terminating at 3 Av-138 St, an accessible transfer is available at 125 St [accessibility icon] to the next Pelham Bay Park-bound [6].
-
-What's happening?
-We're replacing tracks</description>
-            <guid isPermaLink="false">lmm:planned_work:31436</guid>
-        </item>
-        <item>
             <title>In the Bronx, Manhattan-bound [6] runs express from Parkchester to 3 Av-138 St
 The last stop for some Bronx-bound trains is 3 Av-138 St (days/evenings)</title>
             <description>Trains stop at Hunts Point Av.
@@ -2582,18 +2562,6 @@ Use nearby Lexington Av/53 St [E][F]</title>
 What's happening?
 We're replacing escalators.</description>
             <guid isPermaLink="false">lmm:planned_work:31181</guid>
-        </item>
-        <item>
-            <title>In the Bronx, Pelham Bay Park-bound express [6X] runs local from 3 Av-138 St to Parkchester</title>
-            <description>What's happening?
-We're replacing tracks</description>
-            <guid isPermaLink="false">lmm:planned_work:31134</guid>
-        </item>
-        <item>
-            <title>In the Bronx, Manhattan-bound express [6X] runs local from Hunts Point Av to 3 Av-138 St</title>
-            <description>What's happening?
-We're replacing tracks and signal maintenance</description>
-            <guid isPermaLink="false">lmm:planned_work:31133</guid>
         </item>
         <item>
             <title>In the Bronx, Woodlawn-bound [4] skips Burnside Av</title>

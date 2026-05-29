@@ -24,14 +24,16 @@ Take an M60-SBS bus for connecting service along 125 St between [4][5][6] and [2
             <guid isPermaLink="false">lmm:alert:540623</guid>
         </item>
         <item>
-            <title>Downtown [B][C] trains are running with delays after we removed debris from the tracks at 96 St.</title>
-            <description>Downtown [B][C] trains have resumed local service from 125 St to 59 St-Columbus Circle.</description>
-            <guid isPermaLink="false">lmm:alert:540611</guid>
+            <title>Downtown [B][D] trains are running with delays after we removed a train with a mechanical problem from service at 47-50 Sts-Rockefeller Ctr</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:540646</guid>
         </item>
         <item>
-            <title>Uptown [2][3] trains are running with delays after we removed a train with a door problem from service at Eastern Pkwy-Brooklyn Museum.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:540620</guid>
+            <title>Jamaica-bound [J] trains are boarding on the Broad St-bound platform at Broad St.
+[J] trains are running with delays in both directions.</title>
+            <description>What's Happening?
+We're requesting EMS for a person in need on a train at Broad St.</description>
+            <guid isPermaLink="false">lmm:alert:540652</guid>
         </item>
         <item>
             <title>[SIR] runs every 45 minutes between St George and Tottenville</title>
@@ -2153,6 +2155,8 @@ We're making structural improvements</description>
 For service between Bergen St and Church Av, take the [F].
 Transfer between [G] and [shuttle bus icon] buses at Bedford-Nostrand Avs
 Transfer between [shuttle bus icon] buses and [F] at Jay St-MetroTech [accessibility icon]
+See a map of this service change.
+
 What's happening?
 We're making accessibility improvements
 
@@ -2413,6 +2417,8 @@ Transfer at:
 168 St-Washington Hts [accessibility icon] (A,C only) | [1][A][C] [shuttle bus icon]
 Inwood-207 St [accessibility icon] | [A] [shuttle bus icon]
 
+See a map of this service change.
+
 What's happening?
 We're making station improvements
 
@@ -2513,6 +2519,8 @@ Structural maintenance
 1. Local [shuttle bus icon] buses make all [L] station stops between Broadway Junction and Canarsie-Rockaway Pkwy.
 2. Nonstop [shuttle bus icon] buses run between Broadway Junction and Canarsie-Rockaway Pkwy.
 Transfer between trains and [shuttle bus icon] buses at Broadway Junction.
+See a map of this service change.
+
 What's happening?
 We're replacing tracks
 

@@ -7,7 +7,7 @@
     <language>en-us</language>
     
         <item>
-            <title>[6][6X] trains are running with delays in both directions while we continue to address a technical problem with our signaling system in the Bronx.</title>
+            <title>[6][6X] trains are running with delays in both directions while we address a technical problem with our signaling system in the Bronx.</title>
             <description>Travel Alternatives
 Use local bus service to transfer between the [6] and [2][5] lines for alternative service:
 Between Parkchester and nearby stations to West Farms Sq-E Tremont Av, take Bx12 or Bx12-SBS buses.
@@ -21,7 +21,17 @@ Take [Q] trains for service on the Upper East Side. Transfer at 96 St (3rd Ave/E
 Take M101, M102 and M103 buses for nearby service on Lexington Ave and 3rd Ave.
 Take M15 and M15-SBS buses for nearby service on 2nd Ave.
 Take an M60-SBS bus for connecting service along 125 St between [4][5][6] and [2] trains.</description>
-            <guid isPermaLink="false">lmm:alert:540571</guid>
+            <guid isPermaLink="false">lmm:alert:540623</guid>
+        </item>
+        <item>
+            <title>Downtown [B][C] trains are running with delays after we removed debris from the tracks at 96 St.</title>
+            <description>Downtown [B][C] trains have resumed local service from 125 St to 59 St-Columbus Circle.</description>
+            <guid isPermaLink="false">lmm:alert:540611</guid>
+        </item>
+        <item>
+            <title>Uptown [2][3] trains are running with delays after we removed a train with a door problem from service at Eastern Pkwy-Brooklyn Museum.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:540620</guid>
         </item>
         <item>
             <title>[SIR] runs every 45 minutes between St George and Tottenville</title>
@@ -66,16 +76,6 @@ Scheduled maintenance</description>
 What's happening?
 Scheduled maintenance</description>
             <guid isPermaLink="false">lmm:planned_work:32309</guid>
-        </item>
-        <item>
-            <title>[6] service operates less frequently in the Bronx
-The last stop for some Bronx-bound trains is 3 Av-138 St</title>
-            <description>Transfer at 3 Av-138 St to a Pelham Bay Park-bound [6] to continue your trip.
-What's happening?
-Signal maintenance
-
-[accessibility icon] If you're on a train terminating at 3 Av-138 St, an accessible transfer is available at 125 St [accessibility icon] to the next Pelham Bay Park-bound [6].</description>
-            <guid isPermaLink="false">lmm:planned_work:32271</guid>
         </item>
         <item>
             <title>All [SIR] trains from Eltingville to Huguenot board from the St George-bound platform</title>
@@ -455,21 +455,6 @@ Transfer between uptown and downtown trains with fare-capped OMNY at 145 St.
 What's happening?
 Track maintenance</description>
             <guid isPermaLink="false">lmm:planned_work:32133</guid>
-        </item>
-        <item>
-            <title>[SIR] runs on an adjusted schedule in both directions</title>
-            <description>Tottenville-bound trains depart 5 minutes earlier than regularly scheduled.
-St George-bound trains depart 2 minutes later than regularly scheduled.
-What's happening?
-Scheduled maintenance</description>
-            <guid isPermaLink="false">lmm:planned_work:32126</guid>
-        </item>
-        <item>
-            <title>All [SIR] trains from Grasmere to Tompkinsville board from the Tottenville-bound platform</title>
-            <description>Boarding change affects Grasmere, Clifton, Stapleton and Tompkinsville stations.
-What's happening?
-Scheduled maintenance</description>
-            <guid isPermaLink="false">lmm:planned_work:32124</guid>
         </item>
         <item>
             <title>In Brooklyn, Manhattan-bound [R] skips 25 St, Prospect Av, 4 Av-9 St and Union St</title>
@@ -2461,16 +2446,6 @@ Track maintenance</description>
             <guid isPermaLink="false">lmm:planned_work:31423</guid>
         </item>
         <item>
-            <title>In Brooklyn, [L] runs every 16 minutes between Canarsie-Rockaway Pkwy and Broadway Junction</title>
-            <description>[L] service runs in two sections:
-1. Between Canarsie-Rockaway Pkwy and Broadway Junction
-2. Between Broadway Junction and 8 Av, every 8 minutes
-Transfer at Broadway Junction to continue your trip.
-What's happening?
-We're replacing tracks</description>
-            <guid isPermaLink="false">lmm:planned_work:31418</guid>
-        </item>
-        <item>
             <title>In Manhattan and Queens, Forest Hills-bound [R] runs via Roosevelt Island [F] from 57 St-7 Av to 36 St</title>
             <description>Trains stop at Lexington Av/63 St, Roosevelt Island and 21 St-Queensbridge.
 
@@ -2543,24 +2518,6 @@ We're replacing tracks
 
 [accessibility icon] This service change affects one or more ADA accessible stations and these travel alternatives may not be fully accessible. Please contact 511 to plan your trip.</description>
             <guid isPermaLink="false">lmm:planned_work:31408</guid>
-        </item>
-        <item>
-            <title>In Brooklyn, Coney Island-bound [N] runs via the [D] from 36 St to Coney Island-Stillwell Av</title>
-            <description>Trains stop at 62 St/New Utrecht Av.
-
-For 59 St, take the [R] instead. Transfer between trains at 36 St.
-
-For service to 8 Av and Fort Hamilton Pkwy, take the [N] to 62 St/New Utrecht Av [accessibility icon] and transfer to a Manhattan-bound [N].
-
-For service to 18 Av, 20 Av, Bay Pkwy, Kings Hwy, Avenue U and 86 St, take the [N] to Coney Island-Stillwell Av [accessibility icon] and transfer to a Manhattan-bound [N].
-
-For service from these stations, take the [N] to New Utrecht Av/62 St [accessibility icon] or 36 St and transfer to a Coney Island-bound [N].
-
-What's happening?
-Track maintenance
-
-[accessibility icon] This service change affects one or more ADA accessible stations and these travel alternatives may not be fully accessible. Please contact 511 to plan your trip.</description>
-            <guid isPermaLink="false">lmm:planned_work:31245</guid>
         </item>
         <item>
             <title>5 Av/53 St [E][F] Station is exit only during weekday AM rush hours

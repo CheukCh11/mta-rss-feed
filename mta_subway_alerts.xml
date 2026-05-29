@@ -7,50 +7,32 @@
     <language>en-us</language>
     
         <item>
-            <title>Uptown [N] trains are running with delays while we address a signal problem near Coney Island-Stillwell Av.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:540126</guid>
-        </item>
-        <item>
             <title>[J] trains are running with delays in both directions after we addressed a signal problem between Cypress Hills and Crescent St.</title>
-            <description>Jamaica-bound [J] trains have resumed regular service in Brooklyn and Queens.</description>
-            <guid isPermaLink="false">lmm:alert:540185</guid>
-        </item>
-        <item>
-            <title>Parkchester-bound [6] trains are running express from Hunts Point Av to Parkchester while we address a signal problem near Parkchester.</title>
-            <description>Expect delays on Pelham Bay Park-bound [6X] trains while they share the tracks with rerouted trains. 
-If your stop is skipped, take a downtown [6] train.
-
-The last stop on some Parkchester-bound [6] and Pelham Bay Park-bound [6X] trains will be 149 St-Grand Concourse on the [4] line. 
-Listen for announcements to hear how your train will run.</description>
-            <guid isPermaLink="false">lmm:alert:540191</guid>
-        </item>
-        <item>
-            <title>Parkchester-bound [6] trains are running express from Hunts Point Av to Parkchester while we address a signal problem near Parkchester.</title>
-            <description>Expect delays on Pelham Bay Park-bound [6X] trains while they share the tracks with rerouted trains. 
-If your stop is skipped, take a downtown [6] train.
-
-The last stop on some Parkchester-bound [6] and Pelham Bay Park-bound [6X] trains will be 149 St-Grand Concourse on the [4] line. 
-Listen for announcements to hear how your train will run.</description>
-            <guid isPermaLink="false">lmm:alert:540192</guid>
-        </item>
-        <item>
-            <title>There is no [3] service between Pennsylvania Av and New Lots Av while we address a switch problem at New Lots Av.</title>
-            <description>The last stop on New Lots Av-bound [3] trains will be Crown Heights-Utica Av or Pennsylvania Av
-.
-The last stop on some downtown [3] trains will be 34 St-Penn Station
-.
-Listen for announcements to hear how your train will run.
-Travel Alternatives:
- 
-For service between Crown Heights-Utica Av and New Lots Av, consider taking a B14 or B15 bus.
-For service between Pennsylvania Av and New Lots Av, consider a B15 or B83 bus.</description>
-            <guid isPermaLink="false">lmm:alert:540193</guid>
-        </item>
-        <item>
-            <title>Uptown [2] trains are running with delays while we address a switch problem near Nereid Av.</title>
             <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:540189</guid>
+            <guid isPermaLink="false">lmm:alert:540195</guid>
+        </item>
+        <item>
+            <title>[6][6X] trains are running with delays in both directions while we continue to address a signal problem near Parkchester.</title>
+            <description>Parkchester-bound [6] trains will run express from 3 Av/138 St to Parkchester
+.
+Pelham Bay Park-bound [6X] will run local from 3 Av/138 St to Pelham Bay Park. 
+If your stop is skipped, take a downtown [6] train. 
+Listen for announcements to hear how your train will run.</description>
+            <guid isPermaLink="false">lmm:alert:540204</guid>
+        </item>
+        <item>
+            <title>[6][6X] trains are running with delays in both directions while we continue to address a signal problem near Parkchester.</title>
+            <description>Parkchester-bound [6] trains will run express from 3 Av/138 St to Parkchester
+.
+Pelham Bay Park-bound [6X] will run local from 3 Av/138 St to Pelham Bay Park. 
+If your stop is skipped, take a downtown [6] train. 
+Listen for announcements to hear how your train will run.</description>
+            <guid isPermaLink="false">lmm:alert:540205</guid>
+        </item>
+        <item>
+            <title>[3] trains are running with delays in both directions after we addressed a switch problem at New Lots Av.</title>
+            <description>[3] service has resumed between Pennsylvania Av and New Lots Av.</description>
+            <guid isPermaLink="false">lmm:alert:540210</guid>
         </item>
         <item>
             <title>All [SIR] trains from Eltingville to Huguenot board from the St George-bound platform</title>

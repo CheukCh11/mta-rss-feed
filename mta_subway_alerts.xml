@@ -7,34 +7,6 @@
     <language>en-us</language>
     
         <item>
-            <title>[J] trains are running with delays in both directions after we addressed a signal problem between Cypress Hills and Crescent St.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:540195</guid>
-        </item>
-        <item>
-            <title>[6][6X] trains are running with delays in both directions while we continue to address a signal problem near Parkchester.</title>
-            <description>Parkchester-bound [6] trains will run express from 3 Av/138 St to Parkchester
-.
-Pelham Bay Park-bound [6X] will run local from 3 Av/138 St to Pelham Bay Park. 
-If your stop is skipped, take a downtown [6] train. 
-Listen for announcements to hear how your train will run.</description>
-            <guid isPermaLink="false">lmm:alert:540204</guid>
-        </item>
-        <item>
-            <title>[6][6X] trains are running with delays in both directions while we continue to address a signal problem near Parkchester.</title>
-            <description>Parkchester-bound [6] trains will run express from 3 Av/138 St to Parkchester
-.
-Pelham Bay Park-bound [6X] will run local from 3 Av/138 St to Pelham Bay Park. 
-If your stop is skipped, take a downtown [6] train. 
-Listen for announcements to hear how your train will run.</description>
-            <guid isPermaLink="false">lmm:alert:540205</guid>
-        </item>
-        <item>
-            <title>[3] trains are running with delays in both directions after we addressed a switch problem at New Lots Av.</title>
-            <description>[3] service has resumed between Pennsylvania Av and New Lots Av.</description>
-            <guid isPermaLink="false">lmm:alert:540210</guid>
-        </item>
-        <item>
             <title>All [SIR] trains from Eltingville to Huguenot board from the St George-bound platform</title>
             <description>Boarding change includes Eltingville, Annadale, and Huguenot stations.
 What's happening?

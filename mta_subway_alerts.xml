@@ -7,15 +7,8 @@
     <language>en-us</language>
     
         <item>
-            <title>[6] trains are running with delays in both directions.
-[6X] express service is suspended.
-All [6X] trains are making local stops in the Bronx.</title>
-            <description>What's Happening?
-We are addressing a technical problem with our signaling system in the Bronx.
-
-Allow additional travel time.
-
-Travel Alternatives
+            <title>[6][6X] trains are running with delays in both directions while we continue to address a technical problem with our signaling system in the Bronx.</title>
+            <description>Travel Alternatives
 Use local bus service to transfer between the [6] and [2][5] lines for alternative service:
 Between Parkchester and nearby stations to West Farms Sq-E Tremont Av, take Bx12 or Bx12-SBS buses.
 Between Pelham Bay Park and nearby stations to Wakefield-241 St, take Q44-SBS or Bx36 buses.
@@ -28,36 +21,51 @@ Take [Q] trains for service on the Upper East Side. Transfer at 96 St (3rd Ave/E
 Take M101, M102 and M103 buses for nearby service on Lexington Ave and 3rd Ave.
 Take M15 and M15-SBS buses for nearby service on 2nd Ave.
 Take an M60-SBS bus for connecting service along 125 St between [4][5][6] and [2] trains.</description>
-            <guid isPermaLink="false">lmm:alert:540531</guid>
+            <guid isPermaLink="false">lmm:alert:540571</guid>
         </item>
         <item>
-            <title>[6] trains are running with delays in both directions.
-[6X] express service is suspended.
-All [6X] trains are making local stops in the Bronx.</title>
-            <description>What's Happening?
-We are addressing a technical problem with our signaling system in the Bronx.
+            <title>[SIR] runs every 45 minutes between St George and Tottenville</title>
+            <description>Tottenville-bound trains depart St George  at 1:21 AM, 2:06 AM, 2:51 AM, 3:36 AM, 4:21 AM, 5:06 AM, 5:51 AM, 6:36 AM, and every 45 minutes thereafter.
+St George-bound trains depart Tottenville at 2:36 AM, 3:21 AM, 4:06 AM, 4:51 AM, 5:36 AM, 6:21 AM, 7:06 AM, 7:51 AM, and every 45 minutes thereafter.
 
-Allow additional travel time.
-
-Travel Alternatives
-Use local bus service to transfer between the [6] and [2][5] lines for alternative service:
-Between Parkchester and nearby stations to West Farms Sq-E Tremont Av, take Bx12 or Bx12-SBS buses.
-Between Pelham Bay Park and nearby stations to Wakefield-241 St, take Q44-SBS or Bx36 buses.
-Between Cypress Av and 138 St-Grand Concourse, take a nearby Bx33 bus.
-For service between the [6] in The Bronx and Manhattan, consider using express bus service.
-
-In Manhattan:
-Take [R][W] trains for local service in Lower Manhattan
-Take [Q] trains for service on the Upper East Side. Transfer at 96 St (3rd Ave/E 97th St) to an M98 bus for service to 125 St.
-Take M101, M102 and M103 buses for nearby service on Lexington Ave and 3rd Ave.
-Take M15 and M15-SBS buses for nearby service on 2nd Ave.
-Take an M60-SBS bus for connecting service along 125 St between [4][5][6] and [2] trains.</description>
-            <guid isPermaLink="false">lmm:alert:540532</guid>
+What's happening?
+Scheduled maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32315</guid>
         </item>
         <item>
-            <title>Downtown [M][R] trains are running with delays after we requested EMS for someone in need of medical assistance on a train at 63 Dr-Rego Park.</title>
-            <description>Downtown [M][R] trains have resumed making scheduled stops.</description>
-            <guid isPermaLink="false">lmm:alert:540533</guid>
+            <title>[SIR] runs on an adjusted schedule</title>
+            <description>Tottenville-bound trains depart 1 minute later than regularly scheduled.
+What's happening?
+Scheduled maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32314</guid>
+        </item>
+        <item>
+            <title>All [SIR] trains from Grant City to Huguenot board from the St George-bound platform</title>
+            <description>Boarding change includes Grant City, New Dorp, Oakwood Heights, Bay Terrace, Great Kills, Eltingville, Annadale and Huguenot stations.
+What's happening?
+Scheduled maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32313</guid>
+        </item>
+        <item>
+            <title>All [SIR] trains from Stapleton to Grasmere board from the St George-bound platform</title>
+            <description>Boarding change includes Stapleton, Clifton and Grasmere stations.
+What's happening?
+Scheduled maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32312</guid>
+        </item>
+        <item>
+            <title>All [SIR] trains from Grant City to Great Kills board from the St George-bound platform</title>
+            <description>Boarding change affects Grant City, New Dorp, Oakwood Heights, Bay Terrace and Great Kills stations.
+What's happening?
+Scheduled maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32311</guid>
+        </item>
+        <item>
+            <title>All [SIR] trains from Eltingville to Huguenot board from the St George-bound platform</title>
+            <description>Boarding change includes Eltingville, Annadale, and Huguenot stations.
+What's happening?
+Scheduled maintenance</description>
+            <guid isPermaLink="false">lmm:planned_work:32309</guid>
         </item>
         <item>
             <title>[6] service operates less frequently in the Bronx

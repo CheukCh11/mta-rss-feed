@@ -40,22 +40,37 @@ try:
             desc_data = alert.get('description_text', {}).get('translation', [{}])[0]
             description = desc_data.get('text', 'No details provided.')
             
+            # --- NEW: Extract the official MTA Category ---
+            # GTFS parsers sometimes format extension keys differently, so we check both common paths
+            mercury_alert = alert.get('transit_realtime.mercury_alert', alert.get('mercury_alert', {}))
+            alert_type = mercury_alert.get('alert_type', 'Service Update')
+            
             # Perfect layout separation using clean lines
             title = title.replace(" • ", "\n🔹 ")
             description = description.replace(" • ", "\n🔹 ")
             
+            # --- NEW: Dynamically change the card color based on the category ---
+            alert_type_lower = alert_type.lower()
+            if "suspended" in alert_type_lower or "delay" in alert_type_lower:
+                card_color = 16711680 # Red for bad news/delays
+            elif "planned" in alert_type_lower or "change" in alert_type_lower:
+                card_color = 16750848 # Orange for scheduled changes
+            else:
+                card_color = 3447003 # Blue for general info/good service
+            
             # Construct the Discord layout card payload
             payload = {
                 "embeds": [{
-                    "title": "🚨 MTA Subway Alert",
+                    # The bot title will now literally say "🚨 MTA: Part Suspended"
+                    "title": f"🚨 MTA: {alert_type}",
                     "description": f"**{title}**\n\n{description}",
-                    "color": 16750848 # Subway Orange
+                    "color": card_color
                 }]
             }
             
             # Fire it directly to your Discord channel instantly
             requests.post(webhook_url, json=payload)
-            print(f"Sent alert {alert_id} to Discord.")
+            print(f"Sent {alert_type} alert {alert_id} to Discord.")
             
     # Save the current list of active IDs so we remember them next time
     active_ids = [e.get('id') for e in current_entities if e.get('id')]

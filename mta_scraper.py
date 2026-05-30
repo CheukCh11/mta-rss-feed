@@ -49,6 +49,16 @@ try:
             title = title.replace(" • ", "\n🔹 ")
             description = description.replace(" • ", "\n🔹 ")
             
+            # --- NEW: Swap text icons for real emojis ---
+            title = title.replace("[shuttle bus icon]", "🚌")
+            description = description.replace("[shuttle bus icon]", "🚌")
+            
+            title = title.replace("[accessibility icon]", "♿")
+            description = description.replace("[accessibility icon]", "♿")
+            
+            # (Optional) Clean up empty brackets if the MTA leaves any behind
+            description = description.replace("[]", "")
+            
             # --- NEW: Dynamically change the card color based on the category ---
             alert_type_lower = alert_type.lower()
             if "suspended" in alert_type_lower or "delay" in alert_type_lower:

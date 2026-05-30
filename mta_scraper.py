@@ -59,20 +59,41 @@ try:
             # (Optional) Clean up empty brackets if the MTA leaves any behind
             description = description.replace("[]", "")
             
-            # --- NEW: Dynamically change the card color based on the category ---
+            # --- Dynamically change the card color and icon based on precise categories ---
             alert_type_lower = alert_type.lower()
-            if "suspended" in alert_type_lower or "delay" in alert_type_lower:
-                card_color = 16711680 # Red for bad news/delays
-            elif "planned" in alert_type_lower or "change" in alert_type_lower:
-                card_color = 16750848 # Orange for scheduled changes
+            
+            # 1. Catch ALL planned/scheduled work first so sub-text doesn't trigger emergency colors
+            if "planned" in alert_type_lower or "reduced service" in alert_type_lower:
+                card_color = 16750848 # Orange for scheduled changes/construction
+                icon = "🚧"
+                
+            # 2. Catch unexpected emergency disruptions next
+            elif "suspended" in alert_type_lower:
+                card_color = 16711680 # Red for sudden line shutdowns
+                icon = "🛑"
+            elif "delay" in alert_type_lower:
+                card_color = 16711680 # Red for active delays
+                icon = "⚠️"
+                
+            # 3. Catch positive service adjustments (Good news!)
+            elif "extra service" in alert_type_lower:
+                card_color = 3066993 # Green for bonus trains
+                icon = "✨"
+                
+            # 4. Catch general station announcements and informational notices
+            elif "station notice" in alert_type_lower:
+                card_color = 3447003 # Blue for general station info
+                icon = "📢"
+                
+            # 5. Fallback default if the MTA invents a new category later
             else:
-                card_color = 3447003 # Blue for general info/good service
+                card_color = 3447003 # Blue
+                icon = "ℹ️"
             
             # Construct the Discord layout card payload
             payload = {
                 "embeds": [{
-                    # The bot title will now literally say "🚨 MTA: Part Suspended"
-                    "title": f"🚨 MTA: {alert_type}",
+                    "title": f"{icon} | {alert_type}",
                     "description": f"**{title}**\n\n{description}",
                     "color": card_color
                 }]

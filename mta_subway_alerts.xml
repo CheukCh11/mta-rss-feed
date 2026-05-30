@@ -8,12 +8,7 @@
     
         <item>
             <title>[6][6X] trains are running with delays in both directions while we address a technical problem with our signaling system in the Bronx.</title>
-            <description>Travel Alternatives
-Use local bus service to transfer between the [6] and [2][5] lines for alternative service:
-Between Parkchester and nearby stations to West Farms Sq-E Tremont Av, take Bx12 or Bx12-SBS buses.
-Between Pelham Bay Park and nearby stations to Wakefield-241 St, take Q44-SBS or Bx36 buses.
-Between Cypress Av and 138 St-Grand Concourse, take a nearby Bx33 bus.
-For service between the [6] in The Bronx and Manhattan, consider using express bus service.
+            <description>For service between the [6] in The Bronx and Manhattan, consider using express bus service.
 
 In Manhattan:
 Take [R][W] trains for local service in Lower Manhattan
@@ -21,66 +16,25 @@ Take [Q] trains for service on the Upper East Side. Transfer at 96 St (3rd Ave/E
 Take M101, M102 and M103 buses for nearby service on Lexington Ave and 3rd Ave.
 Take M15 and M15-SBS buses for nearby service on 2nd Ave.
 Take an M60-SBS bus for connecting service along 125 St between [4][5][6] and [2] trains.</description>
-            <guid isPermaLink="false">lmm:alert:540623</guid>
+            <guid isPermaLink="false">lmm:alert:540704</guid>
         </item>
         <item>
-            <title>Downtown [B][D][F] trains are disrupted from Manhattan to Brooklyn.
-[M] service is suspended.</title>
-            <description>Service Changes:
-
-[B][D] Service:
-Downtown [B][D] trains are running via the [C] from 59 St-Columbus Circle to Jay St-MetroTech, then via [F] to Coney Island-Stillwell Av.
-
-[F] Service:
-Some downtown [F] trains are running via [D] from W 4 St-Wash Sq to Coney Island-Stillwell Av.
-
-Some downtown [F] trains are running via the [E] from 5 Av/53 St to W 4 St-Wash Sq, then via the [C] to Jay St-MetroTech, then resume regular service.
-
-Some downtown [F] trains are running via the [G] from Court Sq to Bergen St, bypassing Manhattan.
-
-[M] Service:
-[M] service is suspended.
-
-You may still see some trains, but no more [M] trains will depart from the terminal.
-
-Boarding Change:
-Board downtown [B][D][F] trains on upper level ([A][C][E] platform) at W 4 St-Wash Sq.
-
-What's Happening?
-We're requesting NYPD for an unauthorized person on the tracks at W 4 St-Wash Sq.
-
-Travel Alternatives:
-Take nearby [2][3][4][5][A][C][N][Q][R][W] trains for service from Manhattan to Brooklyn.</description>
-            <guid isPermaLink="false">lmm:alert:540673</guid>
+            <title>[D][F] trains are running with delays in both directions after NYPD investigated a report of an unauthorized person on the tracks at W 4 St-Wash Sq.</title>
+            <description>[D][F] trains have resumed making their regular stops.</description>
+            <guid isPermaLink="false">lmm:alert:540699</guid>
         </item>
         <item>
-            <title>[M] service not running between Forest Hills-71 Av and Delancey St-Essex St.
-[M] trains are running between Essex St and Middle Village-Metropolitan Av.</title>
-            <description>You may still see some [M] trains running, but there will be no more departures from the terminals.
-
-What's Happening?
-We're requesting NYPD for an unauthorized person on the tracks near W 4 St-Wash Sq.</description>
-            <guid isPermaLink="false">lmm:alert:540681</guid>
+            <title>[M] trains are running with delays between Delancey St-Essex St and Middle Village-Metropolitan Av
+.</title>
+            <description>NYPD investigated a report of someone who was struck by a train at W 4 St-Wash Sq.</description>
+            <guid isPermaLink="false">lmm:alert:540698</guid>
         </item>
         <item>
-            <title>[A][C][E] trains are running with delays in both directions.</title>
-            <description>What's Happening?
-[B][D][F] trains are being rerouted while we request NYPD for a person on the tracks near W 4 St-Wash Sq.</description>
-            <guid isPermaLink="false">lmm:alert:540676</guid>
-        </item>
-        <item>
-            <title>Church Av-bound [G] trains are running with delays.</title>
-            <description>What's Happening?
-Downtown [F] trains are being rerouted while NYPD responds to a person on the tracks near W 4 St-Wash Sq.</description>
-            <guid isPermaLink="false">lmm:alert:540678</guid>
-        </item>
-        <item>
-            <title>[B] service is suspended.
-There are no [B] trains in Brooklyn.</title>
+            <title>[B] service is suspended.</title>
             <description>You may still see some [B] trains running, but there will be no more departures from the terminals.
 What's Happening?
-We're requesting NYPD for an unauthorized person on the tracks near W 4 St-Wash Sq.</description>
-            <guid isPermaLink="false">lmm:alert:540683</guid>
+NYPD investigated a report of an unauthorized on the tracks near W 4 St-Wash Sq.</description>
+            <guid isPermaLink="false">lmm:alert:540697</guid>
         </item>
         <item>
             <title>[SIR] runs every 45 minutes between St George and Tottenville</title>

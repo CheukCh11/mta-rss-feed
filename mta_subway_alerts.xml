@@ -7,24 +7,9 @@
     <language>en-us</language>
     
         <item>
-            <title>[E][F] trains are running with delays in both directions while we perform track maintenance in Queens.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:540735</guid>
-        </item>
-        <item>
-            <title>Uptown [D] trains are running on the local track from 125 St to 145 St.</title>
-            <description>We are performing track maintenance near 125 St.</description>
-            <guid isPermaLink="false">lmm:alert:540743</guid>
-        </item>
-        <item>
-            <title>Downtown [D] trains are running with delays after we performed track maintenance near 7 Av.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:540754</guid>
-        </item>
-        <item>
-            <title>Uptown [F] trains are running with delays after we moved a train that had its brakes activated at W 4 St-Wash Sq.</title>
-            <description>No details provided.</description>
-            <guid isPermaLink="false">lmm:alert:540753</guid>
+            <title>Downtown [2] trains are running with delays after we addressed a switch problem near 219 St.</title>
+            <description>Downtown [2] trains have resumed making scheduled stops in the Bronx.</description>
+            <guid isPermaLink="false">lmm:alert:540773</guid>
         </item>
         <item>
             <title>[SIR] runs every 45 minutes between St George and Tottenville</title>

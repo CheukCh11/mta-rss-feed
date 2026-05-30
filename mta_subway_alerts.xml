@@ -7,34 +7,14 @@
     <language>en-us</language>
     
         <item>
-            <title>[6][6X] trains are running with delays in both directions while we address a technical problem with our signaling system in the Bronx.</title>
-            <description>For service between the [6] in The Bronx and Manhattan, consider using express bus service.
-
-In Manhattan:
-Take [R][W] trains for local service in Lower Manhattan
-Take [Q] trains for service on the Upper East Side. Transfer at 96 St (3rd Ave/E 97th St) to an M98 bus for service to 125 St.
-Take M101, M102 and M103 buses for nearby service on Lexington Ave and 3rd Ave.
-Take M15 and M15-SBS buses for nearby service on 2nd Ave.
-Take an M60-SBS bus for connecting service along 125 St between [4][5][6] and [2] trains.</description>
-            <guid isPermaLink="false">lmm:alert:540704</guid>
+            <title>[6]  trains are running with delays in both directions while we address a technical problem with our signaling system in the Bronx.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:540724</guid>
         </item>
         <item>
-            <title>[D][F] trains are running with delays in both directions after NYPD investigated a report of an unauthorized person on the tracks at W 4 St-Wash Sq.</title>
-            <description>[D][F] trains have resumed making their regular stops.</description>
-            <guid isPermaLink="false">lmm:alert:540699</guid>
-        </item>
-        <item>
-            <title>[M] trains are running with delays between Delancey St-Essex St and Middle Village-Metropolitan Av
-.</title>
-            <description>NYPD investigated a report of someone who was struck by a train at W 4 St-Wash Sq.</description>
-            <guid isPermaLink="false">lmm:alert:540698</guid>
-        </item>
-        <item>
-            <title>[B] service is suspended.</title>
-            <description>You may still see some [B] trains running, but there will be no more departures from the terminals.
-What's Happening?
-NYPD investigated a report of an unauthorized on the tracks near W 4 St-Wash Sq.</description>
-            <guid isPermaLink="false">lmm:alert:540697</guid>
+            <title>[E][F] trains are running with delays in both directions while we perform track maintenance in Queens.</title>
+            <description>No details provided.</description>
+            <guid isPermaLink="false">lmm:alert:540735</guid>
         </item>
         <item>
             <title>[SIR] runs every 45 minutes between St George and Tottenville</title>
@@ -93,12 +73,6 @@ Scheduled maintenance</description>
 What's happening?
 Scheduled maintenance</description>
             <guid isPermaLink="false">lmm:planned_work:32250</guid>
-        </item>
-        <item>
-            <title>Flushing-bound [7X] express trains run local in Queens from 74 St-Broadway to Mets-Willets Point</title>
-            <description>What's happening?
-Mets Home Game</description>
-            <guid isPermaLink="false">lmm:planned_work:32214</guid>
         </item>
         <item>
             <title>In Brooklyn, no [4] between Crown Hts-Utica Av and New Lots Av</title>

@@ -7,11 +7,6 @@
     <language>en-us</language>
     
         <item>
-            <title>Downtown [2] trains are running with delays after we addressed a switch problem near 219 St.</title>
-            <description>Downtown [2] trains have resumed making scheduled stops in the Bronx.</description>
-            <guid isPermaLink="false">lmm:alert:540773</guid>
-        </item>
-        <item>
             <title>[SIR] runs every 45 minutes between St George and Tottenville</title>
             <description>Tottenville-bound trains depart St George  at 1:21 AM, 2:06 AM, 2:51 AM, 3:36 AM, 4:21 AM, 5:06 AM, 5:51 AM, 6:36 AM, and every 45 minutes thereafter.
 St George-bound trains depart Tottenville at 2:36 AM, 3:21 AM, 4:06 AM, 4:51 AM, 5:36 AM, 6:21 AM, 7:06 AM, 7:51 AM, and every 45 minutes thereafter.

@@ -2,9 +2,12 @@ name: Update MTA RSS Feed
 
 on:
   schedule:
-    # Cranks the schedule speed up to every 5 minutes
     - cron: '*/5 * * * *'
   workflow_dispatch: 
+
+# This tells GitHub to use the new engine and silences the deprecation warning
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
@@ -25,7 +28,6 @@ jobs:
 
     - name: Run MTA Scraper Script
       env:
-        # This securely passes your hidden secret to the script
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
       run: python mta_scraper.py
 

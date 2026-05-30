@@ -21,29 +21,27 @@ try:
         if not alert:
             continue
             
-        # Extract the main headline (Header Text)
+        # Extract the main headline
         header_data = alert.get('header_text', {}).get('translation', [{}])[0]
         title = header_data.get('text', 'Subway Alert')
         
-        # Extract the detailed explanation (Description Text)
+        # Extract the detailed explanation
         desc_data = alert.get('description_text', {}).get('translation', [{}])[0]
         description = desc_data.get('text', 'No details provided.')
         
-        # CHANGE THIS SECTION IN YOUR SCRIPT:
-        title = title.replace(" • ", "<br/>🔹 ")
-        description = description.replace(" • ", "<br/>🔹 ")
+        # Turn MTA's dots into actual line breaks
+        title = title.replace(" • ", "\n🔹 ")
+        description = description.replace(" • ", "\n🔹 ")
 
-        # Clean up text to prevent XML breaking errors
-        title = title.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-        description = description.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        # Note: We completely deleted the old lines that were breaking the XML!
         
         guid = entity.get('id', str(time.time()))
         
-        # Build the RSS item block
+        # Build the RSS item block using CDATA tags to perfectly preserve the formatting
         rss_items += f"""
         <item>
-            <title>{title}</title>
-            <description>{description}</description>
+            <title><![CDATA[{title}]]></title>
+            <description><![CDATA[{description}]]></description>
             <guid isPermaLink="false">{guid}</guid>
         </item>"""
         

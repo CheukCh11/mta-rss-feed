@@ -3,7 +3,6 @@ lmm:planned_work:32455
 lmm:planned_work:32453
 lmm:planned_work:32452
 lmm:planned_work:32451
-lmm:planned_work:32449
 lmm:planned_work:32361
 lmm:planned_work:32301
 lmm:planned_work:32300
@@ -12,8 +11,6 @@ lmm:planned_work:32298
 lmm:planned_work:32296
 lmm:planned_work:32295
 lmm:planned_work:32294
-lmm:planned_work:32293
-lmm:planned_work:32292
 lmm:planned_work:32291
 lmm:planned_work:32289
 lmm:planned_work:32288

@@ -1,6 +1,3 @@
-lmm:alert:543316
-lmm:alert:543317
-lmm:alert:543321
 lmm:planned_work:32456
 lmm:planned_work:32455
 lmm:planned_work:32453

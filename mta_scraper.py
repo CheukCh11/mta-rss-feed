@@ -90,10 +90,28 @@ try:
                 card_color = 3447003 # Blue
                 icon = "ℹ️"
             
+           # --- NEW: Extract the affected train lines ---
+            informed_entities = alert.get('informed_entity', [])
+            affected_routes = []
+            
+            for ie in informed_entities:
+                route_id = ie.get('route_id')
+                # Grab valid route IDs and avoid duplicates (MTA data can be repetitive)
+                if route_id and route_id not in affected_routes:
+                    affected_routes.append(route_id)
+            
+            # Format the extracted lines into a [N][R] string
+            route_tags = "".join([f"[{r}]" for r in affected_routes])
+            
+            # Build the final title string. If there are routes, append them.
+            final_title = f"{icon} | {alert_type}"
+            if route_tags:
+                final_title += f" {route_tags}"
+            
             # Construct the Discord layout card payload
             payload = {
                 "embeds": [{
-                    "title": f"{icon} | {alert_type}",
+                    "title": final_title,
                     "description": f"**{title}**\n\n{description}",
                     "color": card_color
                 }]
@@ -101,7 +119,7 @@ try:
             
             # Fire it directly to your Discord channel instantly
             requests.post(webhook_url, json=payload)
-            print(f"Sent {alert_type} alert {alert_id} to Discord.")
+            print(f"Sent alert {alert_id} to Discord.")
             
     # Save the current list of active IDs so we remember them next time
     active_ids = [e.get('id') for e in current_entities if e.get('id')]

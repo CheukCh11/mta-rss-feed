@@ -40,8 +40,7 @@ try:
             desc_data = alert.get('description_text', {}).get('translation', [{}])[0]
             description = desc_data.get('text', 'No details provided.')
             
-            # --- NEW: Extract the official MTA Category ---
-            # GTFS parsers sometimes format extension keys differently, so we check both common paths
+            # --- Extract the official MTA Category ---
             mercury_alert = alert.get('transit_realtime.mercury_alert', alert.get('mercury_alert', {}))
             alert_type = mercury_alert.get('alert_type', 'Service Update')
             
@@ -49,14 +48,14 @@ try:
             title = title.replace(" • ", "\n🔹 ")
             description = description.replace(" • ", "\n🔹 ")
             
-            # --- NEW: Swap text icons for real emojis ---
+            # --- Swap text icons for real emojis ---
             title = title.replace("[shuttle bus icon]", "🚌")
             description = description.replace("[shuttle bus icon]", "🚌")
             
             title = title.replace("[accessibility icon]", "♿")
             description = description.replace("[accessibility icon]", "♿")
             
-            # (Optional) Clean up empty brackets if the MTA leaves any behind
+            # Clean up empty brackets if the MTA leaves any behind
             description = description.replace("[]", "")
             
             # --- Dynamically change the card color and icon based on precise categories ---
@@ -90,7 +89,7 @@ try:
                 card_color = 3447003 # Blue
                 icon = "ℹ️"
             
-          # --- Extract the affected train lines ---
+            # --- Extract the affected train lines ---
             informed_entities = alert.get('informed_entity', [])
             affected_routes = []
             
@@ -99,8 +98,7 @@ try:
                 if route_id and route_id not in affected_routes:
                     affected_routes.append(route_id)
             
-            # --- NEW: Custom Discord Emoji Mapping ---
-            # Paste your raw Discord emoji codes here!
+            # --- Custom Discord Emoji Mapping ---
             emoji_map = {
                 "1": "<:1_:1513370572329848923>",
                 "2": "<:2_:1513370588133982279>",
@@ -133,11 +131,16 @@ try:
                 "W": "<:R40_W:1513368397994266715>",
                 "Z": "<:R40_Z:1513368415354617997>",
                 "SIR": "<:SIR:1513371050941874389>"
-                
-                # Just keep adding comma-separated lines for every emoji you uploaded
             }
             
-            # Swap the route for an emoji. If you forgot to upload one, it safely falls back to [Letter]
+            # --- NEW: Automatically swap raw brackets inside the alert text blocks with your emojis ---
+            for route in sorted(emoji_map.keys(), key=len, reverse=True):
+                emoji_code = emoji_map[route]
+                bracket_target = f"[{route}]"
+                title = title.replace(bracket_target, emoji_code)
+                description = description.replace(bracket_target, emoji_code)
+
+            # Swap the route for an emoji in the header tag bar
             route_tags = "".join([emoji_map.get(r, f"[{r}]") for r in affected_routes])
             
             # Build the final title string

@@ -84,7 +84,7 @@ def format_html_to_discord(text):
     text = text.replace("<b>", "**").replace("</b>", "**")
     text = text.replace("<strong>", "**").replace("</strong>", "**")
     
-    # Convert italics (just in case)
+    # Convert italics
     text = text.replace("<i>", "*").replace("</i>", "*")
     text = text.replace("<em>", "*").replace("</em>", "*")
     
@@ -93,13 +93,12 @@ def format_html_to_discord(text):
     text = text.replace("</p>", "\n\n")
     text = text.replace("</div>", "\n")
     
-    # --- NEW: Strip out ANY remaining raw HTML tags (like <p>, <span>) ---
+    # Strip out ANY remaining raw HTML tags (like <p>, <span>)
     text = re.sub(r'<[^>]+>', '', text)
     
     # Clean up weird zero-width non-joiner bugs
     text = text.replace("\u200c", "").replace("\u200b", "").replace("â€Œ", "")
     
-    # Clean up excess whitespace
     return text.strip()
 
 try:
@@ -185,11 +184,11 @@ try:
             if route_tags:
                 final_title += f" {route_tags}"
             
-            # Construct and fire the Discord payload
+            # --- FIX: Removed the outer asterisks around {title} to stop Markdown clashing ---
             payload = {
                 "embeds": [{
                     "title": final_title,
-                    "description": f"**{title}**\n\n{description}",
+                    "description": f"{title}\n\n{description}",
                     "color": card_color
                 }]
             }

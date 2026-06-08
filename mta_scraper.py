@@ -90,20 +90,57 @@ try:
                 card_color = 3447003 # Blue
                 icon = "ℹ️"
             
-           # --- NEW: Extract the affected train lines ---
+          # --- Extract the affected train lines ---
             informed_entities = alert.get('informed_entity', [])
             affected_routes = []
             
             for ie in informed_entities:
                 route_id = ie.get('route_id')
-                # Grab valid route IDs and avoid duplicates (MTA data can be repetitive)
                 if route_id and route_id not in affected_routes:
                     affected_routes.append(route_id)
             
-            # Format the extracted lines into a [N][R] string
-            route_tags = "".join([f"[{r}]" for r in affected_routes])
+            # --- NEW: Custom Discord Emoji Mapping ---
+            # Paste your raw Discord emoji codes here!
+            emoji_map = {
+                "1": "<:1_:1513370572329848923>",
+                "2": "<:2_:1513370588133982279>",
+                "3": "<:3_:1513370608992391258>",
+                "4": "<:4_:1513370622611292171>",
+                "4X": "<:4X:1513370636498636922>",
+                "5": "<:5_:1513370649400447057>",
+                "5X": "<:5X:1513370700839129250>",
+                "6": "<:6_:1513370713858510988>",
+                "6X": "<:6X:1513370727078695053>",
+                "7": "<:7_:1513370757110169801>",
+                "7X": "<:7X:1513370771836371014>",
+                "A": "<:R40_A:1513367966597513349>",
+                "B": "<:R40_B:1513367992405331979>",
+                "C": "<:R40_C:1513368006279958759>",
+                "D": "<:R40_D:1513368028065300590>",
+                "E": "<:R40_E:1513368054438957056>",
+                "F": "<:R40_F:1513368073174781972>",
+                "FS": "<:SF:1513375190078193754>",
+                "G": "<:R40_G:1513368105672249495>",
+                "H": "<:R40_H:1513368122160054422>",
+                "J": "<:R40_J:1513368138316775525>",
+                "L": "<:R40_L:1513368154204799066>",
+                "M": "<:R40_M:1513368176463843379>",
+                "N": "<:R40_N:1513368198001590292>",
+                "Q": "<:R40_Q:1513368214023700490>",
+                "QX": "<:R40_QDiamond:1513368236224151685>",
+                "R": "<:R40_R:1513368269409620148>",
+                "S": "<:R40_S:1513368289663778836>",
+                "W": "<:R40_W:1513368397994266715>",
+                "Z": "<:R40_Z:1513368415354617997>",
+                "SIR": "<:SIR:1513371050941874389>"
+                
+                # Just keep adding comma-separated lines for every emoji you uploaded
+            }
             
-            # Build the final title string. If there are routes, append them.
+            # Swap the route for an emoji. If you forgot to upload one, it safely falls back to [Letter]
+            route_tags = "".join([emoji_map.get(r, f"[{r}]") for r in affected_routes])
+            
+            # Build the final title string
             final_title = f"{icon} | {alert_type}"
             if route_tags:
                 final_title += f" {route_tags}"

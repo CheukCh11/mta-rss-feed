@@ -1,6 +1,7 @@
 import os
 import time
 import requests
+import re
 
 # MTA Endpoint
 url = "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/camsys%2Fsubway-alerts.json"
@@ -61,42 +62,45 @@ def extract_best_text(translation_list, default_text="No details provided."):
         return default_text
         
     best_text = None
-    # 1. Try to grab the HTML version for bolding
     for t in translation_list:
         if t.get('language') == 'en-html':
             best_text = t.get('text')
             break
             
-    # 2. Fall back to standard english if HTML is missing
     if not best_text:
         for t in translation_list:
             if t.get('language') == 'en':
                 best_text = t.get('text')
                 break
                 
-    # 3. Final fallback
     if not best_text:
         best_text = translation_list[0].get('text', default_text)
         
     return best_text
 
 def format_html_to_discord(text):
-    """Converts MTA HTML tags into Discord Markdown and cleans up garbage characters."""
+    """Converts MTA HTML tags into Discord Markdown and scrubs all garbage HTML tags."""
     # Convert bolding
     text = text.replace("<b>", "**").replace("</b>", "**")
     text = text.replace("<strong>", "**").replace("</strong>", "**")
     
-    # Convert italics (just in case they use it)
+    # Convert italics (just in case)
     text = text.replace("<i>", "*").replace("</i>", "*")
     text = text.replace("<em>", "*").replace("</em>", "*")
     
-    # Convert HTML line breaks
+    # Convert HTML line breaks & paragraph ends into actual formatting
     text = text.replace("<br>", "\n").replace("<br/>", "\n").replace("<br />", "\n")
+    text = text.replace("</p>", "\n\n")
+    text = text.replace("</div>", "\n")
     
-    # Clean up weird zero-width non-joiner bugs (like â€Œ)
+    # --- NEW: Strip out ANY remaining raw HTML tags (like <p>, <span>) ---
+    text = re.sub(r'<[^>]+>', '', text)
+    
+    # Clean up weird zero-width non-joiner bugs
     text = text.replace("\u200c", "").replace("\u200b", "").replace("â€Œ", "")
     
-    return text
+    # Clean up excess whitespace
+    return text.strip()
 
 try:
     response = requests.get(url)
@@ -113,7 +117,6 @@ try:
         # If this is a brand-new alert, process and send it
         if alert_id not in seen_ids:
             
-            # Use our new functions to safely extract and format the text!
             header_translations = alert.get('header_text', {}).get('translation', [])
             title = extract_best_text(header_translations, "Subway Alert")
             title = format_html_to_discord(title)
@@ -130,14 +133,14 @@ try:
             title = title.replace(" • ", "\n🔹 ")
             description = description.replace(" • ", "\n🔹 ")
             
-            # --- Swap text icons for real emojis ---
+            # Swap text icons for real emojis
             title = title.replace("[shuttle bus icon]", "🚌")
             description = description.replace("[shuttle bus icon]", "🚌")
             
             title = title.replace("[accessibility icon]", "♿")
             description = description.replace("[accessibility icon]", "♿")
             
-            # --- Swap bracketed train lines for real emojis in the text ---
+            # Swap bracketed train lines for real emojis in the text
             for route, emoji_code in emoji_map.items():
                 bracket_tag = f"[{route}]"
                 title = title.replace(bracket_tag, emoji_code)
@@ -145,7 +148,7 @@ try:
             
             description = description.replace("[]", "")
             
-            # --- Dynamically change the card color and icon ---
+            # Dynamically change the card color and icon
             alert_type_lower = alert_type.lower()
             
             if "planned" in alert_type_lower or "reduced service" in alert_type_lower:
@@ -167,7 +170,7 @@ try:
                 card_color = 3447003 # Blue
                 icon = "ℹ️"
             
-            # --- Extract affected train lines for the title header ---
+            # Extract affected train lines for the title header
             informed_entities = alert.get('informed_entity', [])
             affected_routes = []
             

@@ -80,6 +80,9 @@ def extract_best_text(translation_list, default_text="No details provided."):
 
 def format_html_to_discord(text):
     """Converts MTA HTML tags into Discord Markdown and scrubs all garbage HTML tags."""
+    # Normalize existing windows line endings
+    text = text.replace("\r\n", "\n")
+    
     # Convert bolding
     text = text.replace("<b>", "**").replace("</b>", "**")
     text = text.replace("<strong>", "**").replace("</strong>", "**")
@@ -98,6 +101,9 @@ def format_html_to_discord(text):
     
     # Clean up weird zero-width non-joiner bugs
     text = text.replace("\u200c", "").replace("\u200b", "").replace("â€Œ", "")
+    
+    # --- FIX: Compress massive gaps into standard double-spaced paragraph breaks ---
+    text = re.sub(r'\n{3,}', '\n\n', text)
     
     return text.strip()
 
@@ -184,7 +190,6 @@ try:
             if route_tags:
                 final_title += f" {route_tags}"
             
-            # --- FIX: Removed the outer asterisks around {title} to stop Markdown clashing ---
             payload = {
                 "embeds": [{
                     "title": final_title,

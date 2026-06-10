@@ -87,10 +87,10 @@ def format_html_to_discord(text):
     text = text.replace("<b>", "**").replace("</b>", "**")
     text = text.replace("<strong>", "**").replace("</strong>", "**")
     
-    # --- NEW: Convert Date/Time blocks into Discord Subtext (-#) ---
+    # --- NEW: Convert Date/Time blocks into Discord Subtext (-#) AND Italics (*) ---
     # Hunts for bolded text that starts with a Month name/abbreviation
     date_pattern = r'\*\*((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s\d{1,2}[^\*]*)\*\*'
-    text = re.sub(date_pattern, r'\n\n-# \1', text)
+    text = re.sub(date_pattern, r'\n\n-# *\1*', text)
     
     # Fix any remaining markdown collision (forces a space if ** gets stuck to a word)
     text = re.sub(r'([a-zA-Z])\*\*(?=[a-zA-Z0-9])', r'\1 **', text)

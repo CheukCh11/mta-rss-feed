@@ -2,6 +2,7 @@ import os
 import time
 import requests
 import re
+from datetime import datetime, timezone
 
 # MTA Endpoint
 url = "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/camsys%2Fsubway-alerts.json"
@@ -87,7 +88,7 @@ def format_html_to_discord(text):
     text = text.replace("<b>", "**").replace("</b>", "**")
     text = text.replace("<strong>", "**").replace("</strong>", "**")
     
-    # --- NEW: Convert Date/Time blocks into Discord Subtext (-#) AND Italics (*) ---
+    # --- Convert Date/Time blocks into Discord Subtext (-#) AND Italics (*) ---
     # Hunts for bolded text that starts with a Month name/abbreviation
     date_pattern = r'\*\*((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s\d{1,2}[^\*]*)\*\*'
     text = re.sub(date_pattern, r'\n\n-# *\1*', text)
@@ -198,12 +199,28 @@ try:
             if route_tags:
                 final_title += f" {route_tags}"
             
+            # Build base embed structure
+            embed_data = {
+                "title": final_title,
+                "description": f"{title}\n\n{description}",
+                "color": card_color
+            }
+            
+            # --- NEW: Extract and apply official MTA Post / Update Time ---
+            posted_timestamp = mercury_alert.get('updated_at', mercury_alert.get('created_at'))
+            if posted_timestamp:
+                try:
+                    # Parse Unix timestamp safely and convert it to ISO 8601 string for Discord
+                    iso_time = datetime.fromtimestamp(int(posted_timestamp), tz=timezone.utc).isoformat().replace("+00:00", "Z")
+                    embed_data["timestamp"] = iso_time
+                    embed_data["footer"] = {
+                        "text": "MTA Official Post Time"
+                    }
+                except Exception:
+                    pass
+            
             payload = {
-                "embeds": [{
-                    "title": final_title,
-                    "description": f"{title}\n\n{description}",
-                    "color": card_color
-                }]
+                "embeds": [embed_data]
             }
             
             requests.post(webhook_url, json=payload)

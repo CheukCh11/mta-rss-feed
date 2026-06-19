@@ -157,9 +157,7 @@ lmm:planned_work:31955
 lmm:planned_work:31954
 lmm:planned_work:31953
 lmm:planned_work:31948
-lmm:planned_work:31947
 lmm:planned_work:31946
-lmm:planned_work:31943
 lmm:planned_work:31871
 lmm:planned_work:31819
 lmm:planned_work:31810

@@ -55,7 +55,6 @@ emoji_map = {
 }
 
 # --- Custom Image File Mapping ---
-# Put the exact file names of the images in your 'bullets' folder here!
 bullet_image_map = {
     "1": "1.png",  # IRT
     "2": "2.png",
@@ -88,7 +87,6 @@ bullet_image_map = {
     "S": "R40_S.png",
     "W": "R40_W.png",
     "Z": "R40_Z.png",
-    # Add the rest of your files here...
 }
 
 def generate_mta_banner(affected_routes):
@@ -100,45 +98,44 @@ def generate_mta_banner(affected_routes):
     # 1. Draw the Black Top Header Bar
     draw.rectangle([0, 0, width, 130], fill="#000000")
     
-    # Load NYCTA Standard font
+    # Load NYCTA Standard font / Helvetica
     custom_font_path = "bullets/Helvetica-Bold.ttf" 
     try:
         if os.path.exists(custom_font_path):
-            font_header = ImageFont.truetype(custom_font_path, 54)
+            # --- BUMPED font size up to 75 ---
+            font_header = ImageFont.truetype(custom_font_path, 75)
         else:
-            font_header = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 54)
+            font_header = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 75)
     except IOError:
         font_header = ImageFont.load_default()
 
-    # Draw Header Text
-    draw.text((40, 35), "Service Alert", font=font_header, fill="#FFFFFF")
+    # Draw Header Text 
+    # --- MOVED the Y-coordinate up to 25 so it stays vertically centered ---
+    draw.text((40, 25), "Service Alert", font=font_header, fill="#FFFFFF")
     
-    # --- NEW: Draw the right-aligned MTA Logo ---
+    # --- Draw the right-aligned MTA Logo ---
     try:
-        # Assuming you name the file 'mta_logo.png' and place it in the 'bullets' folder
         mta_logo = Image.open("bullets/mta_logo.png").convert("RGBA")
         
-        # Scale the logo to fit nicely in the 130px tall header
-        target_height = 80
+        target_height = 85
         aspect_ratio = mta_logo.width / mta_logo.height
         target_width = int(target_height * aspect_ratio)
         
         mta_logo = mta_logo.resize((target_width, target_height), Image.Resampling.LANCZOS)
         
-        # Position it on the right side (40px padding from the right edge, vertically centered)
         logo_x = width - target_width - 40
         logo_y = (130 - target_height) // 2
         
         img.paste(mta_logo, (logo_x, logo_y), mta_logo)
     except IOError:
-        # Safe fallback to text if the image is missing
-        draw.text((width - 160, 35), "MTA", font=font_header, fill="#FFFFFF")
+        # Adjusted the fallback text height here as well just in case!
+        draw.text((width - 160, 25), "MTA", font=font_header, fill="#FFFFFF")
     
     # 2. Draw the Route Bullets
     if not affected_routes:
-        affected_routes = ["S"] # Fallback structural shape
+        affected_routes = ["S"] 
         
-    bullet_size = 170
+    bullet_size = 200
     spacing = 40
     
     total_bullets_width = (len(affected_routes) * bullet_size) + ((len(affected_routes) - 1) * spacing)
@@ -164,9 +161,10 @@ def generate_mta_banner(affected_routes):
             
             try:
                 if os.path.exists(custom_font_path):
-                    font_bullet = ImageFont.truetype(custom_font_path, 95)
+                    # --- BUMPED THIS UP to 115 so it fits the new 200px bullets perfectly ---
+                    font_bullet = ImageFont.truetype(custom_font_path, 115)
                 else:
-                    font_bullet = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 95)
+                    font_bullet = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 115)
             except IOError:
                 font_bullet = ImageFont.load_default()
                 
@@ -271,11 +269,9 @@ try:
                 }
             }
             
-            # Active Period Timeframes Extraction
             active_periods = alert.get('active_period', [])
             schedule_lines = []
             if active_periods and any(k in alert_type_lower for k in ["planned", "reduced", "suspended"]):
-                # Raised the cap to 15 to show virtually all dates without breaking Discord
                 for p in active_periods[:15]:
                     p_start, p_end = p.get('start'), p.get('end')
                     if p_start and p_end:
@@ -284,17 +280,14 @@ try:
                         schedule_lines.append(f"• Starts <t:{p_start}:f>")
                 
                 if schedule_lines:
-                    # Pluralized the header text for accuracy
                     embed_data["fields"] = [{"name": "📅 Scheduled Timeframes", "value": "\n".join(schedule_lines), "inline": False}]
             
             posted_timestamp = mercury_alert.get('updated_at', mercury_alert.get('created_at'))
             if posted_timestamp:
                 try:
-                    # Native Discord embed timestamp (Automatically localizes to the user's timezone)
                     embed_data["timestamp"] = datetime.fromtimestamp(int(posted_timestamp), tz=timezone.utc).isoformat().replace("+00:00", "Z")
                     embed_data["footer"] = {"text": "MTA Official Post Time"}
                     
-                    # --- NEW: Adds a dynamic "Posted X minutes ago" line to the description ---
                     embed_data["description"] += f"\n\n-# 🕒 Posted <t:{posted_timestamp}:R>"
                     
                 except: pass

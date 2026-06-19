@@ -271,19 +271,21 @@ try:
                 }
             }
             
+            # Active Period Timeframes Extraction
             active_periods = alert.get('active_period', [])
             schedule_lines = []
             if active_periods and any(k in alert_type_lower for k in ["planned", "reduced", "suspended"]):
-                for p in active_periods[:3]:
+                # Raised the cap to 15 to show virtually all dates without breaking Discord
+                for p in active_periods[:15]:
                     p_start, p_end = p.get('start'), p.get('end')
                     if p_start and p_end:
                         schedule_lines.append(f"• <t:{p_start}:f> to <t:{p_end}:f>")
                     elif p_start:
                         schedule_lines.append(f"• Starts <t:{p_start}:f>")
-                if len(active_periods) > 3:
-                    schedule_lines.append(f"*(+ {len(active_periods) - 3} more update windows)*")
+                
                 if schedule_lines:
-                    embed_data["fields"] = [{"name": "📅 Scheduled Timeframe", "value": "\n".join(schedule_lines), "inline": False}]
+                    # Pluralized the header text for accuracy
+                    embed_data["fields"] = [{"name": "📅 Scheduled Timeframes", "value": "\n".join(schedule_lines), "inline": False}]
             
             posted_timestamp = mercury_alert.get('updated_at', mercury_alert.get('created_at'))
             if posted_timestamp:

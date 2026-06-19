@@ -100,9 +100,8 @@ def generate_mta_banner(affected_routes):
     # 1. Draw the Black Top Header Bar
     draw.rectangle([0, 0, width, 130], fill="#000000")
     
-    # --- UPGRADED: Look inside the bullets folder for the NYCTA Standard font ---
+    # Load NYCTA Standard font
     custom_font_path = "bullets/NYCTA.otf" 
-    
     try:
         if os.path.exists(custom_font_path):
             font_header = ImageFont.truetype(custom_font_path, 54)
@@ -113,7 +112,27 @@ def generate_mta_banner(affected_routes):
 
     # Draw Header Text
     draw.text((40, 35), "Service Alert", font=font_header, fill="#FFFFFF")
-    draw.text((width - 160, 35), "MTA", font=font_header, fill="#FFFFFF")
+    
+    # --- NEW: Draw the right-aligned MTA Logo ---
+    try:
+        # Assuming you name the file 'mta_logo.png' and place it in the 'bullets' folder
+        mta_logo = Image.open("bullets/mta_logo.png").convert("RGBA")
+        
+        # Scale the logo to fit nicely in the 130px tall header
+        target_height = 80
+        aspect_ratio = mta_logo.width / mta_logo.height
+        target_width = int(target_height * aspect_ratio)
+        
+        mta_logo = mta_logo.resize((target_width, target_height), Image.Resampling.LANCZOS)
+        
+        # Position it on the right side (40px padding from the right edge, vertically centered)
+        logo_x = width - target_width - 40
+        logo_y = (130 - target_height) // 2
+        
+        img.paste(mta_logo, (logo_x, logo_y), mta_logo)
+    except IOError:
+        # Safe fallback to text if the image is missing
+        draw.text((width - 160, 35), "MTA", font=font_header, fill="#FFFFFF")
     
     # 2. Draw the Route Bullets
     if not affected_routes:
@@ -128,20 +147,15 @@ def generate_mta_banner(affected_routes):
     start_y = center_y - (bullet_size // 2)
     
     for route in affected_routes:
-        # --- UPGRADED: Use the custom file mapping dictionary ---
         filename = bullet_image_map.get(route, f"{route}.png")
         bullet_path = f"bullets/{filename}"
         
-        # Check if the custom graphic exists
         if os.path.exists(bullet_path):
             custom_bullet = Image.open(bullet_path).convert("RGBA")
             custom_bullet = custom_bullet.resize((bullet_size, bullet_size), Image.Resampling.LANCZOS)
-            
-            # Paste it onto the white canvas
             img.paste(custom_bullet, (start_x, start_y), custom_bullet)
             
         else:
-            # Safety Fallback Programmatic Drawing
             color_hex = ROUTE_COLORS.get(route, "#808183")
             text_color = "#000000" if route in ["N", "Q", "R", "W"] else "#FFFFFF"
             
@@ -163,7 +177,6 @@ def generate_mta_banner(affected_routes):
 
         start_x += bullet_size + spacing
 
-    # Export out raw stream object
     img_byte_arr = io.BytesIO()
     img.save(img_byte_arr, format='PNG')
     img_byte_arr.seek(0)
@@ -249,18 +262,15 @@ try:
             route_tags = "".join([emoji_map.get(r, f"[{r}]") for r in affected_routes])
             final_title = f"{icon} | {alert_type}" + (f" {route_tags}" if route_tags else "")
             
-            # Base embed parameters
             embed_data = {
                 "title": final_title,
                 "description": f"{title}\n\n{description}",
                 "color": card_color,
-                # --- Map out reference to our dynamic multipart file stream attachment ---
                 "image": {
                     "url": "attachment://mta_banner.png"
                 }
             }
             
-            # Active Period Timeframes Extraction
             active_periods = alert.get('active_period', [])
             schedule_lines = []
             if active_periods and any(k in alert_type_lower for k in ["planned", "reduced", "suspended"]):
@@ -282,10 +292,8 @@ try:
                     embed_data["footer"] = {"text": "MTA Official Post Time"}
                 except: pass
             
-            # --- Dynamic Image Engine Processing ---
             image_stream = generate_mta_banner(affected_routes)
             
-            # Prepare Multipart-form data delivery structure
             import json
             payload = {"embeds": [embed_data]}
             

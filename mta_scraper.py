@@ -2,6 +2,7 @@ import os
 import time
 import requests
 import re
+import html
 from datetime import datetime, timezone
 
 # MTA Endpoint
@@ -35,25 +36,25 @@ emoji_map = {
     "6X": "<:6X:1513370727078695053>",
     "7": "<:7_:1513370757110169801>",
     "7X": "<:7X:1513370771836371014>",
-    "A": "<:R40_A:1513421304362176643>",
-    "B": "<:R40_B:1513421375493374062>",
-    "C": "<:R40_C:1513422247405162638>",
-    "D": "<:R40_D:1513423588873474128>",
-    "E": "<:R40_E:1513423627595288587>",
-    "F": "<:R40_F:1513423672088727592>",
+    "A": "<:R40_A:1513367966597513349>",
+    "B": "<:R40_B:1513367992405331979>",
+    "C": "<:R40_C:1513368006279958759>",
+    "D": "<:R40_D:1513368028065300590>",
+    "E": "<:R40_E:1513368054438957056>",
+    "F": "<:R40_F:1513368073174781972>",
     "FS": "<:SF:1513375190078193754>",
-    "G": "<:R40_G:1513424851703169064>",
-    "H": "<:R40_H:1513424895940362412>",
-    "J": "<:R40_J:1513424927959683172>",
-    "L": "<:R40_L:1513424969831546980>",
-    "M": "<:R40_M:1513425036306813129>",
-    "N": "<:R40_N:1513425062903156807>",
-    "Q": "<:R40_Q:1513425187863924878>",
-    "QX": "<:R40_QDiamond:1513425219409285212>",
-    "R": "<:R40_R:1513425255069253763>",
-    "GS": "<:R40_S:1513425287499612322>",
-    "W": "<:R40_W:1513425396664893562>",
-    "Z": "<:R40_Z:1513431433606205540>",
+    "G": "<:R40_G:1513368105672249495>",
+    "H": "<:R40_H:1513368122160054422>",
+    "J": "<:R40_J:1513368138316775525>",
+    "L": "<:R40_L:1513368154204799066>",
+    "M": "<:R40_M:1513368176463843379>",
+    "N": "<:R40_N:1513368198001590292>",
+    "Q": "<:R40_Q:1513368214023700490>",
+    "QX": "<:R40_QDiamond:1513368236224151685>",
+    "R": "<:R40_R:1513368269409620148>",
+    "S": "<:R40_S:1513368289663778836>",
+    "W": "<:R40_W:1513368397994266715>",
+    "Z": "<:R40_Z:1513368415354617997>",
     "SIR": "<:SIR:1513371050941874389>"
 }
 
@@ -81,35 +82,36 @@ def extract_best_text(translation_list, default_text="No details provided."):
 
 def format_html_to_discord(text):
     """Converts MTA HTML tags into Discord Markdown and scrubs all garbage HTML tags."""
-    # Normalize existing windows line endings
+    # Unescape weird HTML entities (like &nbsp;) before parsing
+    text = html.unescape(text)
     text = text.replace("\r\n", "\n")
+    
+    # Convert HTML line breaks & paragraph ends into actual formatting FIRST
+    text = text.replace("<br>", "\n").replace("<br/>", "\n").replace("<br />", "\n")
+    text = text.replace("</p>", "\n\n")
+    text = text.replace("</div>", "\n")
     
     # Convert bolding
     text = text.replace("<b>", "**").replace("</b>", "**")
     text = text.replace("<strong>", "**").replace("</strong>", "**")
     
-    # --- Convert Date/Time blocks into Discord Subtext (-#) AND Italics (*) ---
-    # Hunts for bolded text that starts with a Month name/abbreviation
-    date_pattern = r'\*\*((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s\d{1,2}[^\*]*)\*\*'
+    # --- UPGRADED: Smarter Date Pattern ---
+    # Looks for any bolded block starting with a Month, Day, or scheduling word
+    date_pattern = r'\*\*\s*((?:(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|Mon|Tue|Wed|Thu|Fri|Sat|Sun)[a-zA-Z]*|Beginning|Starts|From|Until|Through|Every|All)[^*]+)\*\*'
     text = re.sub(date_pattern, r'\n\n-# *\1*', text)
     
     # Fix any remaining markdown collision (forces a space if ** gets stuck to a word)
-    text = re.sub(r'([a-zA-Z])\*\*(?=[a-zA-Z0-9])', r'\1 **', text)
+    text = re.sub(r'([a-zA-Z0-9])\*\*(?=[a-zA-Z0-9])', r'\1 **', text)
     
     # Convert italics
     text = text.replace("<i>", "*").replace("</i>", "*")
     text = text.replace("<em>", "*").replace("</em>", "*")
     
-    # Convert HTML line breaks & paragraph ends into actual formatting
-    text = text.replace("<br>", "\n").replace("<br/>", "\n").replace("<br />", "\n")
-    text = text.replace("</p>", "\n\n")
-    text = text.replace("</div>", "\n")
-    
-    # Strip out ANY remaining raw HTML tags (like <p>, <span>)
+    # Strip out ANY remaining raw HTML tags (like <span>)
     text = re.sub(r'<[^>]+>', '', text)
     
-    # Clean up weird zero-width non-joiner bugs
-    text = text.replace("\u200c", "").replace("\u200b", "").replace("â€Œ", "")
+    # Clean up weird zero-width non-joiner bugs & text encoding errors
+    text = text.replace("\u200c", "").replace("\u200b", "").replace("â€Œ", "").replace("Â", "")
     
     # Compress massive gaps into standard double-spaced paragraph breaks
     text = re.sub(r'\n{3,}', '\n\n', text)
@@ -153,6 +155,9 @@ try:
             
             title = title.replace("[accessibility icon]", "♿")
             description = description.replace("[accessibility icon]", "♿")
+            
+            title = title.replace("[airplane icon]", "✈️")
+            description = description.replace("[airplane icon]", "✈️")
             
             # Swap bracketed train lines for real emojis in the text
             for route, emoji_code in emoji_map.items():
@@ -206,7 +211,35 @@ try:
                 "color": card_color
             }
             
-            # --- NEW: Extract and apply official MTA Post / Update Time ---
+            # --- NEW: Extract Native GTFS-RT Active Periods ---
+            # If the MTA forgets to write the schedule in the text, this will catch it!
+            active_periods = alert.get('active_period', [])
+            schedule_lines = []
+            
+            # Only trigger this for planned/reduced alerts so we don't spam sudden delay alerts
+            if active_periods and ("planned" in alert_type_lower or "reduced" in alert_type_lower or "suspended" in alert_type_lower):
+                for p in active_periods[:3]:
+                    p_start = p.get('start')
+                    p_end = p.get('end')
+                    
+                    if p_start and p_end:
+                        schedule_lines.append(f"• <t:{p_start}:f> to <t:{p_end}:f>")
+                    elif p_start:
+                        schedule_lines.append(f"• Starts <t:{p_start}:f>")
+                
+                if len(active_periods) > 3:
+                    schedule_lines.append(f"*(+ {len(active_periods) - 3} more update windows)*")
+                    
+                if schedule_lines:
+                    embed_data["fields"] = [
+                        {
+                            "name": "📅 Scheduled Timeframe",
+                            "value": "\n".join(schedule_lines),
+                            "inline": False
+                        }
+                    ]
+            
+            # --- Extract and apply official MTA Post / Update Time ---
             posted_timestamp = mercury_alert.get('updated_at', mercury_alert.get('created_at'))
             if posted_timestamp:
                 try:

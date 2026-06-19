@@ -290,8 +290,13 @@ try:
             posted_timestamp = mercury_alert.get('updated_at', mercury_alert.get('created_at'))
             if posted_timestamp:
                 try:
+                    # Native Discord embed timestamp (Automatically localizes to the user's timezone)
                     embed_data["timestamp"] = datetime.fromtimestamp(int(posted_timestamp), tz=timezone.utc).isoformat().replace("+00:00", "Z")
                     embed_data["footer"] = {"text": "MTA Official Post Time"}
+                    
+                    # --- NEW: Adds a dynamic "Posted X minutes ago" line to the description ---
+                    embed_data["description"] += f"\n\n-# 🕒 Posted <t:{posted_timestamp}:R>"
+                    
                 except: pass
             
             image_stream = generate_mta_banner(affected_routes)

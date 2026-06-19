@@ -54,8 +54,44 @@ emoji_map = {
     "Z": "<:R40_Z:1513431433606205540>", "SIR": "<:SIR:1513371050941874389>"
 }
 
+# --- Custom Image File Mapping ---
+# Put the exact file names of the images in your 'bullets' folder here!
+bullet_image_map = {
+    "1": "1.png",  # IRT
+    "2": "2.png",
+    "3": "3.png",
+    "4": "4.png",
+    "4X": "4X.png",
+    "5": "5.png",
+    "5X": "5X.png",
+    "6": "6.png",
+    "6X": "6X.png",
+    "7": "7.png",
+    "7X": "7X.png",
+    "A": "R40_A.png", # IND
+    "B": "R40_B.png",
+    "C": "R40_C.png",
+    "D": "R40_D.png",
+    "E": "R40_E.png",
+    "F": "R40_F.png",
+    "FS": "SF.png",
+    "G": "R40_G.png",
+    "H": "R40_H.png",
+    "J": "R40_J.png",
+    "L": "R40_L.png",
+    "M": "R40_M.png",
+    "N": "R40_N.png",
+    "Q": "R40_Q.png",
+    "QX": "R40_Q(Diamond).png",
+    "R": "R40_R.png",
+    "S": "R40_S.png",
+    "W": "R40_W.png",
+    "Z": "R40_Z.png",
+    # Add the rest of your files here...
+}
+
 def generate_mta_banner(affected_routes):
-    """Generates an image mimicking the classic official MTA Service Alert graphics."""
+    """Generates an image mimicking the classic MTA graphics using custom assets and NYCTA font."""
     width, height = 1200, 450
     img = Image.new("RGB", (width, height), color="#FFFFFF")
     draw = ImageDraw.Draw(img)
@@ -63,54 +99,68 @@ def generate_mta_banner(affected_routes):
     # 1. Draw the Black Top Header Bar
     draw.rectangle([0, 0, width, 130], fill="#000000")
     
-    # Attempt to load fonts (Standard paths on GitHub Linux runners)
+    # --- UPGRADED: Look inside the bullets folder for the NYCTA Standard font ---
+    custom_font_path = "bullets/NYCTA.otf" 
+    
     try:
-        font_header = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 54)
-        font_bullet = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 95)
+        if os.path.exists(custom_font_path):
+            font_header = ImageFont.truetype(custom_font_path, 54)
+        else:
+            font_header = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 54)
     except IOError:
-        font_header = font_bullet = ImageFont.load_default()
+        font_header = ImageFont.load_default()
 
     # Draw Header Text
     draw.text((40, 35), "Service Alert", font=font_header, fill="#FFFFFF")
-    
-    # Draw right-aligned fallback "MTA" indicator text
     draw.text((width - 160, 35), "MTA", font=font_header, fill="#FFFFFF")
     
-    # 2. Draw the Route Bullets centered in the white canvas area
+    # 2. Draw the Route Bullets
     if not affected_routes:
         affected_routes = ["S"] # Fallback structural shape
         
-    bullet_radius = 85
-    bullet_diameter = bullet_radius * 2
+    bullet_size = 170
     spacing = 40
     
-    total_bullets_width = (len(affected_routes) * bullet_diameter) + ((len(affected_routes) - 1) * spacing)
+    total_bullets_width = (len(affected_routes) * bullet_size) + ((len(affected_routes) - 1) * spacing)
     start_x = (width - total_bullets_width) // 2
     center_y = 290 
+    start_y = center_y - (bullet_size // 2)
     
     for route in affected_routes:
-        color_hex = ROUTE_COLORS.get(route, "#808183") # Fallback to grey if unknown
-        text_color = "#000000" if route in ["N", "Q", "R", "W"] else "#FFFFFF"
+        # --- UPGRADED: Use the custom file mapping dictionary ---
+        filename = bullet_image_map.get(route, f"{route}.png")
+        bullet_path = f"bullets/{filename}"
         
-        # Draw Circle boundary
-        x0 = start_x
-        y0 = center_y - bullet_radius
-        x1 = start_x + bullet_diameter
-        y1 = center_y + bullet_radius
-        
-        draw.ellipse([x0, y0, x1, y1], fill=color_hex)
-        
-        # Draw Route Character Center Text
-        # Convert sub-variants like 6X or 7X to standard names for clean display inside bullets
-        clean_route_text = route.replace("X", "")
-        
-        # Handle string bounding box setups safely across Pillow versions
-        tw = draw.textlength(clean_route_text, font=font_bullet) if hasattr(draw, "textlength") else font_bullet.getsize(clean_route_text)[0]
-        text_x = start_x + (bullet_diameter - tw) // 2
-        text_y = center_y - (bullet_radius // 1.25)
-        
-        draw.text((text_x, text_y), clean_route_text, font=font_bullet, fill=text_color)
-        start_x += bullet_diameter + spacing
+        # Check if the custom graphic exists
+        if os.path.exists(bullet_path):
+            custom_bullet = Image.open(bullet_path).convert("RGBA")
+            custom_bullet = custom_bullet.resize((bullet_size, bullet_size), Image.Resampling.LANCZOS)
+            
+            # Paste it onto the white canvas
+            img.paste(custom_bullet, (start_x, start_y), custom_bullet)
+            
+        else:
+            # Safety Fallback Programmatic Drawing
+            color_hex = ROUTE_COLORS.get(route, "#808183")
+            text_color = "#000000" if route in ["N", "Q", "R", "W"] else "#FFFFFF"
+            
+            draw.ellipse([start_x, start_y, start_x + bullet_size, start_y + bullet_size], fill=color_hex)
+            clean_route_text = route.replace("X", "")
+            
+            try:
+                if os.path.exists(custom_font_path):
+                    font_bullet = ImageFont.truetype(custom_font_path, 95)
+                else:
+                    font_bullet = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 95)
+            except IOError:
+                font_bullet = ImageFont.load_default()
+                
+            tw = draw.textlength(clean_route_text, font=font_bullet) if hasattr(draw, "textlength") else font_bullet.getsize(clean_route_text)[0]
+            text_x = start_x + (bullet_size - tw) // 2
+            text_y = center_y - (bullet_size // 2.5)
+            draw.text((text_x, int(text_y)), clean_route_text, font=font_bullet, fill=text_color)
+
+        start_x += bullet_size + spacing
 
     # Export out raw stream object
     img_byte_arr = io.BytesIO()

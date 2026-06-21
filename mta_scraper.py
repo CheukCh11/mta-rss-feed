@@ -54,39 +54,45 @@ emoji_map = {
     "Z": "<:R40_Z:1513431433606205540>", "SIR": "<:SIR:1513371050941874389>"
 }
 
-# --- Custom Image File Mapping ---
+# --- Custom Image File Mapping (Updated for new folder structure) ---
 bullet_image_map = {
-    "1": "1.png",  # IRT
-    "2": "2.png",
-    "3": "3.png",
-    "4": "4.png",
-    "4X": "4X.png",
-    "5": "5.png",
-    "5X": "5X.png",
-    "6": "6.png",
-    "6X": "6X.png",
-    "7": "7.png",
-    "7X": "7X.png",
-    "A": "R40_A.png", # IND
-    "B": "R40_B.png",
-    "C": "R40_C.png",
-    "D": "R40_D.png",
-    "E": "R40_E.png",
-    "F": "R40_F.png",
-    "FS": "SF.png",
-    "G": "R40_G.png",
-    "GS": "R40_S.png",    
-    "H": "R40_H.png",
-    "J": "R40_J.png",
-    "L": "R40_L.png",
-    "M": "R40_M.png",
-    "N": "R40_N.png",
-    "Q": "R40_Q.png",
-    "QX": "R40_Q(Diamond).png",
-    "R": "R40_R.png",
-    "S": "R40_S.png",
-    "W": "R40_W.png",
-    "Z": "R40_Z.png",
+    # IRT (Numbered Lines)
+    "1": "IRT/1.png",  
+    "2": "IRT/2.png",
+    "3": "IRT/3.png",
+    "4": "IRT/4.png",
+    "4X": "IRT/4X.png",
+    "5": "IRT/5.png",
+    "5X": "IRT/5X.png",
+    "6": "IRT/6.png",
+    "6X": "IRT/6X.png",
+    "7": "IRT/7.png",
+    "7X": "IRT/7X.png",
+    
+    # IND / BMT (Lettered Lines)
+    "A": "IND/R40_A.png", 
+    "B": "IND/R40_B.png",
+    "C": "IND/R40_C.png",
+    "D": "IND/R40_D.png",
+    "E": "IND/R40_E.png",
+    "F": "IND/R40_F.png",
+    "FS": "IND/SF.png",
+    "G": "IND/R40_G.png",
+    "GS": "IND/R40_S.png",    
+    "H": "IND/R40_H.png",
+    "J": "IND/R40_J.png",
+    "L": "IND/R40_L.png",
+    "M": "IND/R40_M.png",
+    "N": "IND/R40_N.png",
+    "Q": "IND/R40_Q.png",
+    "QX": "IND/R40_Q(Diamond).png",
+    "R": "IND/R40_R.png",
+    "S": "IND/R40_S.png",
+    "W": "IND/R40_W.png",
+    "Z": "IND/R40_Z.png",
+    
+    # Others
+    "SIR": "Others/SIR.png"
 }
 
 def generate_mta_banner(affected_routes):
@@ -98,8 +104,8 @@ def generate_mta_banner(affected_routes):
     # 1. Draw the Black Top Header Bar
     draw.rectangle([0, 0, width, 130], fill="#000000")
     
-    # Load NYCTA Standard font / Helvetica
-    custom_font_path = "bullets/Helvetica-Bold.ttf" 
+    # Load NYCTA Standard font / Helvetica from the Others folder
+    custom_font_path = "Rollsigns/Others/Helvetica-Bold.ttf" 
     try:
         if os.path.exists(custom_font_path):
             font_header = ImageFont.truetype(custom_font_path, 75)
@@ -113,7 +119,7 @@ def generate_mta_banner(affected_routes):
     
     # --- Draw the right-aligned MTA Logo ---
     try:
-        mta_logo = Image.open("bullets/mta_logo.png").convert("RGBA")
+        mta_logo = Image.open("Rollsigns/Others/mta_logo.png").convert("RGBA")
         
         target_height = 85
         aspect_ratio = mta_logo.width / mta_logo.height
@@ -141,8 +147,9 @@ def generate_mta_banner(affected_routes):
     start_y = center_y - (bullet_size // 2)
     
     for route in affected_routes:
-        filename = bullet_image_map.get(route, f"{route}.png")
-        bullet_path = f"bullets/{filename}"
+        # Pulls the subfolder map, defaults to Others if it's missing from the map
+        filename = bullet_image_map.get(route, f"Others/{route}.png")
+        bullet_path = f"Rollsigns/{filename}"
         
         if os.path.exists(bullet_path):
             custom_bullet = Image.open(bullet_path).convert("RGBA")
@@ -196,8 +203,6 @@ def format_html_to_discord(text):
     text = text.replace("</p>", "\n\n").replace("</div>", "\n")
     text = text.replace("<b>", "**").replace("</b>", "**").replace("<strong>", "**").replace("</strong>", "**")
     
-    # --- UPGRADED: Bulletproof Date/Time Regex with Word Boundaries (\b) ---
-    # This prevents false positives like "Allerton" or "Junction" from being shrunk!
     date_pattern = r'\*\*\s*((?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?|Sun(?:day)?|Beginning|Starts|From|Until|Through|Every|All)\b[^*]*)\*\*'
     
     text = re.sub(date_pattern, r'\n\n-# *\1*', text)

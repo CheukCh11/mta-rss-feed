@@ -102,15 +102,13 @@ def generate_mta_banner(affected_routes):
     custom_font_path = "bullets/Helvetica-Bold.ttf" 
     try:
         if os.path.exists(custom_font_path):
-            # --- BUMPED font size up to 75 ---
             font_header = ImageFont.truetype(custom_font_path, 75)
         else:
             font_header = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 75)
     except IOError:
         font_header = ImageFont.load_default()
 
-    # Draw Header Text 
-    # --- MOVED the Y-coordinate up to 25 so it stays vertically centered ---
+    # Draw Header Text
     draw.text((40, 25), "Service Alert", font=font_header, fill="#FFFFFF")
     
     # --- Draw the right-aligned MTA Logo ---
@@ -128,7 +126,6 @@ def generate_mta_banner(affected_routes):
         
         img.paste(mta_logo, (logo_x, logo_y), mta_logo)
     except IOError:
-        # Adjusted the fallback text height here as well just in case!
         draw.text((width - 160, 25), "MTA", font=font_header, fill="#FFFFFF")
     
     # 2. Draw the Route Bullets
@@ -161,7 +158,6 @@ def generate_mta_banner(affected_routes):
             
             try:
                 if os.path.exists(custom_font_path):
-                    # --- BUMPED THIS UP to 115 so it fits the new 200px bullets perfectly ---
                     font_bullet = ImageFont.truetype(custom_font_path, 115)
                 else:
                     font_bullet = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 115)
@@ -200,7 +196,10 @@ def format_html_to_discord(text):
     text = text.replace("</p>", "\n\n").replace("</div>", "\n")
     text = text.replace("<b>", "**").replace("</b>", "**").replace("<strong>", "**").replace("</strong>", "**")
     
-    date_pattern = r'\*\*\s*((?:(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|Mon|Tue|Wed|Thu|Fri|Sat|Sun)[a-zA-Z]*|Beginning|Starts|From|Until|Through|Every|All)[^*]+)\*\*'
+    # --- UPGRADED: Bulletproof Date/Time Regex with Word Boundaries (\b) ---
+    # This prevents false positives like "Allerton" or "Junction" from being shrunk!
+    date_pattern = r'\*\*\s*((?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?|Sun(?:day)?|Beginning|Starts|From|Until|Through|Every|All)\b[^*]*)\*\*'
+    
     text = re.sub(date_pattern, r'\n\n-# *\1*', text)
     text = re.sub(r'([a-zA-Z0-9])\*\*(?=\w)', r'\1 **', text)
     

@@ -148,7 +148,6 @@ def generate_mta_banner(affected_routes):
     start_y = center_y - (bullet_size // 2)
     
     for route in affected_routes:
-        # Pulls the subfolder map, defaults to Others if it's missing from the map
         filename = bullet_image_map.get(route, f"Others/{route}.png")
         bullet_path = f"Rollsigns/{filename}"
         
@@ -230,7 +229,8 @@ try:
             title = format_html_to_discord(extract_best_text(header_translations, "Subway Alert"))
             
             desc_translations = alert.get('description_text', {}).get('translation', [])
-            description = format_html_to_discord(extract_best_text(desc_translations, "No details provided."))
+            raw_desc_text = extract_best_text(desc_translations, "No details provided.")
+            description = format_html_to_discord(raw_desc_text)
             
             mercury_alert = alert.get('transit_realtime.mercury_alert', alert.get('mercury_alert', {}))
             alert_type = mercury_alert.get('alert_type', 'Service Update')
@@ -274,18 +274,37 @@ try:
                 }
             }
             
+            # --- UPGRADED: Two-Step Timeframe Engine ---
             active_periods = alert.get('active_period', [])
             schedule_lines = []
-            if active_periods and any(k in alert_type_lower for k in ["planned", "reduced", "suspended"]):
-                for p in active_periods[:15]:
-                    p_start, p_end = p.get('start'), p.get('end')
-                    if p_start and p_end:
-                        schedule_lines.append(f"• <t:{p_start}:f> to <t:{p_end}:f>")
-                    elif p_start:
-                        schedule_lines.append(f"• Starts <t:{p_start}:f>")
+            is_planned_work = any(k in alert_type_lower for k in ["planned", "reduced", "suspended"])
+            
+            if is_planned_work:
+                # Step 1: Does the MTA metadata actually have start AND end times?
+                has_valid_metadata = active_periods and any(p.get('start') and p.get('end') for p in active_periods)
+                
+                if has_valid_metadata:
+                    # Metadata is good, use it.
+                    for p in active_periods[:15]:
+                        p_start, p_end = p.get('start'), p.get('end')
+                        if p_start and p_end:
+                            schedule_lines.append(f"• <t:{p_start}:f> to <t:{p_end}:f>")
+                        elif p_start:
+                            schedule_lines.append(f"• Starts <t:{p_start}:f>")
+                else:
+                    # Step 2: Metadata is junk. Extract the human-typed dates straight from the text!
+                    clean_search_text = html.unescape(raw_desc_text).replace("<b>", "**").replace("<strong>", "**")
+                    date_pattern = r'\*\*\s*((?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?|Sun(?:day)?|Beginning|Starts|From|Until|Through|Every|All)\b[^*]*)\*\*'
+                    
+                    extracted_dates = re.findall(date_pattern, clean_search_text)
+                    for d in extracted_dates:
+                        clean_date = d.strip()
+                        # Avoid duplicates and ignore generic "All times" strings if they stand alone
+                        if clean_date not in schedule_lines and len(clean_date) > 10:
+                            schedule_lines.append(f"• {clean_date}")
                 
                 if schedule_lines:
-                    embed_data["fields"] = [{"name": "📅 Scheduled Timeframes", "value": "\n".join(schedule_lines), "inline": False}]
+                    embed_data["fields"] = [{"name": "📅 Scheduled Timeframes", "value": "\n".join(schedule_lines[:15]), "inline": False}]
             
             posted_timestamp = mercury_alert.get('updated_at', mercury_alert.get('created_at'))
             if posted_timestamp:

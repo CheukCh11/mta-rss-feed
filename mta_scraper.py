@@ -106,7 +106,7 @@ def generate_mta_banner(affected_routes):
     draw.rectangle([0, 0, width, 130], fill="#000000")
     
     # Load NYCTA Standard font / Helvetica from the Others folder
-    custom_font_path = "Rollsigns/Others/Helvetica-Bold.ttf" 
+    custom_font_path = "Rollsigns/Others/Helvetica-Bold.otf" 
     try:
         if os.path.exists(custom_font_path):
             font_header = ImageFont.truetype(custom_font_path, 75)

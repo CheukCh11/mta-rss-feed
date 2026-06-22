@@ -139,10 +139,7 @@ lmm:planned_work:31988
 lmm:planned_work:31987
 lmm:planned_work:31986
 lmm:planned_work:31973
-lmm:planned_work:31971
 lmm:planned_work:31970
-lmm:planned_work:31969
-lmm:planned_work:31968
 lmm:planned_work:31967
 lmm:planned_work:31966
 lmm:planned_work:31965

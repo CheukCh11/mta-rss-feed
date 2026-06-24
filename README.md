@@ -28,3 +28,23 @@ Instead of plain text alerts, this bot dynamically generates a pixel-perfect rep
 ├── mta_scraper.py            # Main processing & image rendering script
 ├── seen_alerts.txt           # Automatically generated log to track sent alerts
 └── README.md
+```
+---
+
+## 🛠️ Setup & Deployment
+# 1. Prerequisites
+* The script runs automatically via **GitHub Actions**, utilizing the following **Python** dependencies:
+  * **requests** — For fetching API data and hitting Discord webhooks.
+  * **pillow** — The image processing engine handling banner composition.
+
+# 2. GitHub Secrets Configuration
+To protect your Discord channel from unauthorized access, the webhook URL is hidden as a repository secret.
+* Go to your GitHub Repository Settings -> Secrets and variables -> Actions.
+* Click New repository secret.
+* Name it exactly: DISCORD_WEBHOOK_URL
+* Paste your Discord Webhook URL into the value box and save.
+
+---
+
+## 📝 Disclaimer
+*This is an unofficial, fan-made open-source transit utility. It is purely for hobby, historical preservation, and educational community tracking. It is not affiliated with, managed by, or endorsed by the **Metropolitan Transportation Authority (MTA)**.*

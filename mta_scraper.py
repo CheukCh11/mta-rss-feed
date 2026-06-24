@@ -121,7 +121,7 @@ def generate_mta_banner(affected_routes):
     
     # --- Draw the right-aligned MTA Logo ---
     try:
-        mta_logo = Image.open("Rollsigns/Others/mta_logo.png").convert("RGBA")
+        mta_logo = Image.open("Rollsigns/Others/mta_logo (1).png").convert("RGBA")
         
         target_height = 85
         aspect_ratio = mta_logo.width / mta_logo.height

@@ -32,12 +32,12 @@ Instead of plain text alerts, this bot dynamically generates a pixel-perfect rep
 ---
 
 ## 🛠️ Setup & Deployment
-# 1. Prerequisites
+**1. Prerequisites**
 * The script runs automatically via **GitHub Actions**, utilizing the following **Python** dependencies:
   * **requests** — For fetching API data and hitting Discord webhooks.
   * **pillow** — The image processing engine handling banner composition.
 
-# 2. GitHub Secrets Configuration
+**2. GitHub Secrets Configuration**
 To protect your Discord channel from unauthorized access, the webhook URL is hidden as a repository secret.
 * Go to your GitHub Repository Settings -> Secrets and variables -> Actions.
 * Click New repository secret.

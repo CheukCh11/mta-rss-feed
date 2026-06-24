@@ -38,11 +38,11 @@ Instead of plain text alerts, this bot dynamically generates a pixel-perfect rep
   * **pillow** — The image processing engine handling banner composition.
 
 **2. GitHub Secrets Configuration**
-To protect your Discord channel from unauthorized access, the webhook URL is hidden as a repository secret.
-* Go to your GitHub Repository Settings -> Secrets and variables -> Actions.
-* Click New repository secret.
-* Name it exactly: DISCORD_WEBHOOK_URL
-* Paste your Discord Webhook URL into the value box and save.
+* To protect your Discord channel from unauthorized access, the webhook URL is hidden as a repository secret.
+  * Go to your GitHub Repository Settings -> Secrets and variables -> Actions.
+  * Click New repository secret.
+  * Name it exactly: DISCORD_WEBHOOK_URL
+  * Paste your Discord Webhook URL into the value box and save.
 
 ---
 

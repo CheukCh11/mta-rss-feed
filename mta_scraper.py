@@ -97,8 +97,9 @@ bullet_image_map = {
     "SI": "Others/SIR.png",
 }
 
-def generate_mta_banner(affected_routes):
-    """Generates an image mimicking the classic MTA graphics using custom assets and NYCTA font."""
+# --- UPGRADED: Added banner_text argument ---
+def generate_mta_banner(affected_routes, banner_text="Service Alert"):
+    """Generates an image mimicking the classic MTA graphics using custom assets and dynamic text."""
     width, height = 1200, 450
     img = Image.new("RGB", (width, height), color="#FFFFFF")
     draw = ImageDraw.Draw(img)
@@ -116,12 +117,12 @@ def generate_mta_banner(affected_routes):
     except IOError:
         font_header = ImageFont.load_default()
 
-    # Draw Header Text
-    draw.text((40, 25), "Service Alert", font=font_header, fill="#FFFFFF")
+    # --- UPGRADED: Draw Dynamic Header Text ---
+    draw.text((40, 25), banner_text, font=font_header, fill="#FFFFFF")
     
     # --- Draw the right-aligned MTA Logo ---
     try:
-        mta_logo = Image.open("Rollsigns/Others/mta_logo (1).png").convert("RGBA")
+        mta_logo = Image.open("Rollsigns/Others/mta_logo.png").convert("RGBA")
         
         target_height = 85
         aspect_ratio = mta_logo.width / mta_logo.height
@@ -245,16 +246,23 @@ try:
             description = description.replace("[]", "")
             
             alert_type_lower = alert_type.lower()
+            
+            # --- UPGRADED: Dynamic Banner Text Logic ---
             if "planned" in alert_type_lower or "reduced service" in alert_type_lower:
                 card_color, icon = 16750848, "🚧"
+                banner_text = "Planned Work"
             elif "suspended" in alert_type_lower:
                 card_color, icon = 16711680, "🛑"
+                banner_text = "Service Suspended"
             elif "delay" in alert_type_lower:
                 card_color, icon = 16711680, "⚠️"
+                banner_text = "Delays"
             elif "extra service" in alert_type_lower:
                 card_color, icon = 3066993, "✨"
+                banner_text = "Special Service"
             else:
                 card_color, icon = 3447003, "📢"
+                banner_text = "Service Alert"
             
             informed_entities = alert.get('informed_entity', [])
             affected_routes = []
@@ -275,17 +283,14 @@ try:
                 }
             }
             
-            # --- UPGRADED: Two-Step Timeframe Engine ---
             active_periods = alert.get('active_period', [])
             schedule_lines = []
             is_planned_work = any(k in alert_type_lower for k in ["planned", "reduced", "suspended"])
             
             if is_planned_work:
-                # Step 1: Does the MTA metadata actually have start AND end times?
                 has_valid_metadata = active_periods and any(p.get('start') and p.get('end') for p in active_periods)
                 
                 if has_valid_metadata:
-                    # Metadata is good, use it.
                     for p in active_periods[:15]:
                         p_start, p_end = p.get('start'), p.get('end')
                         if p_start and p_end:
@@ -293,14 +298,12 @@ try:
                         elif p_start:
                             schedule_lines.append(f"• Starts <t:{p_start}:f>")
                 else:
-                    # Step 2: Metadata is junk. Extract the human-typed dates straight from the text!
                     clean_search_text = html.unescape(raw_desc_text).replace("<b>", "**").replace("<strong>", "**")
                     date_pattern = r'\*\*\s*((?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?|Sun(?:day)?|Beginning|Starts|From|Until|Through|Every|All)\b[^*]*)\*\*'
                     
                     extracted_dates = re.findall(date_pattern, clean_search_text)
                     for d in extracted_dates:
                         clean_date = d.strip()
-                        # Avoid duplicates and ignore generic "All times" strings if they stand alone
                         if clean_date not in schedule_lines and len(clean_date) > 10:
                             schedule_lines.append(f"• {clean_date}")
                 
@@ -317,7 +320,8 @@ try:
                     
                 except: pass
             
-            image_stream = generate_mta_banner(affected_routes)
+            # --- UPGRADED: Pass the new banner_text into the graphics generator ---
+            image_stream = generate_mta_banner(affected_routes, banner_text)
             
             import json
             payload = {"embeds": [embed_data]}

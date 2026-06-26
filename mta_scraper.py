@@ -97,7 +97,6 @@ bullet_image_map = {
     "SI": "Others/SIR.png",
 }
 
-# --- UPGRADED: Added banner_text argument ---
 def generate_mta_banner(affected_routes, banner_text="Service Alert"):
     """Generates an image mimicking the classic MTA graphics using custom assets and dynamic text."""
     width, height = 1200, 450
@@ -117,12 +116,12 @@ def generate_mta_banner(affected_routes, banner_text="Service Alert"):
     except IOError:
         font_header = ImageFont.load_default()
 
-    # --- UPGRADED: Draw Dynamic Header Text ---
+    # --- Draw Dynamic Header Text ---
     draw.text((40, 25), banner_text, font=font_header, fill="#FFFFFF")
     
     # --- Draw the right-aligned MTA Logo ---
     try:
-        mta_logo = Image.open("Rollsigns/Others/mta_logo.png").convert("RGBA")
+        mta_logo = Image.open("Rollsigns/Others/mta_logo (1).png").convert("RGBA")
         
         target_height = 85
         aspect_ratio = mta_logo.width / mta_logo.height
@@ -256,13 +255,16 @@ try:
                 banner_text = "Service Suspended"
             elif "delay" in alert_type_lower:
                 card_color, icon = 16711680, "⚠️"
-                banner_text = "Delays"
+                banner_text = "Service Alert"
             elif "extra service" in alert_type_lower:
                 card_color, icon = 3066993, "✨"
                 banner_text = "Special Service"
             else:
                 card_color, icon = 3447003, "📢"
                 banner_text = "Service Alert"
+                
+            # --- NEW: Overwrite the raw MTA API type so the Discord title matches the graphic! ---
+            alert_type = banner_text
             
             informed_entities = alert.get('informed_entity', [])
             affected_routes = []
@@ -320,7 +322,7 @@ try:
                     
                 except: pass
             
-            # --- UPGRADED: Pass the new banner_text into the graphics generator ---
+            # --- Pass the banner_text into the graphics generator ---
             image_stream = generate_mta_banner(affected_routes, banner_text)
             
             import json

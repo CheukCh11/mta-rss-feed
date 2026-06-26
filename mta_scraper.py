@@ -184,7 +184,7 @@ def generate_mta_banner(affected_routes, banner_text="Service Alert"):
     img_byte_arr.seek(0)
     return img_byte_arr
 
-def extract_best_text(translation_list, default_text="No details provided."):
+def extract_best_text(translation_list, default_text="No additional details provided."):
     if not translation_list: return default_text
     best_text = None
     for t in translation_list:

@@ -263,9 +263,6 @@ try:
                 card_color, icon = 3447003, "📢"
                 banner_text = "Service Alert"
                 
-            # --- NEW: Overwrite the raw MTA API type so the Discord title matches the graphic! ---
-            alert_type = banner_text
-            
             informed_entities = alert.get('informed_entity', [])
             affected_routes = []
             for ie in informed_entities:
@@ -274,6 +271,8 @@ try:
                     affected_routes.append(route_id)
             
             route_tags = "".join([emoji_map.get(r, f"[{r}]") for r in affected_routes])
+            
+            # final_title will now use the raw API alert_type (e.g. "Delays" or "Part Suspended")
             final_title = f"{icon} | {alert_type}" + (f" {route_tags}" if route_tags else "")
             
             embed_data = {

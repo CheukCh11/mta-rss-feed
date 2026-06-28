@@ -45,56 +45,24 @@ emoji_map = {
     "4": "<:4_:1513370622611292171>", "4X": "<:4X:1513370636498636922>", "5": "<:5_:1513370649400447057>",
     "5X": "<:5X:1513370700839129250>", "6": "<:6_:1513370713858510988>", "6X": "<:6X:1513370727078695053>",
     "7": "<:7_:1513370757110169801>", "7X": "<:7X:1513370771836371014>",
-    "A": "<:A_:1519910953469083718>", "B": "<:B_:1519910970082852987>", "C": "<:C_:1519910988927733810>",
-    "D": "<:D_:1519911006229364839>", "E": "<:E_:1519911024516661278>", "F": "<:F_:1519911041193218099>", "FX": "<:FX:1519911066480545952>",
-    "FS": "<:SF:1513375190078193754>", "G": "<:G_:1519911086223130654>", "GS": "<:S_:1519911303584546927>", "H": "<:H_:1519911108872507544>",
-    "J": "<:J_:1519911154980487178>", "L": "<:L_:1519911184973824180>", "M": "<:M_:1519911204892704828>",
-    "N": "<:N_:1519911225205456996>", "Q": "<:Q_:1519911242871865454>", "QX": "<:QX:1519911260085424258>",
-    "R": "<:R_:1519911278573781092>", "S": "<:S_:1519911303584546927>", "W": "<:W_:1519911331736588368>",
-    "Z": "<:Z_:1519911351340765315>", "SIR": "<:SIR:1513371050941874389>", "SI": "<:SIR:1513371050941874389>",
+    "A": "<:R40_A:1513421304362176643>", "B": "<:R40_B:1513421375493374062>", "C": "<:R40_C:1513422247405162638>",
+    "D": "<:R40_D:1513423588873474128>", "E": "<:R40_E:1513423627595288587>", "F": "<:R40_F:1513423672088727592>", "FX": "<:R40_FDiamond:1519216954462703716>",
+    "FS": "<:SF:1513375190078193754>", "G": "<:R40_G:1513424851703169064>", "GS": "<:R40_S:1513425287499612322>", "H": "<:R40_H:1513424895940362412>",
+    "J": "<:R40_J:1513424927959683172>", "L": "<:R40_L:1513424969831546980>", "M": "<:R40_M:1513425036306813129>",
+    "N": "<:R40_N:1513425062903156807>", "Q": "<:R40_Q:1513425187863924878>", "QX": "<:R40_QDiamond:1513425219409285212>",
+    "R": "<:R40_R:1513425255069253763>", "S": "<:R40_S:1513425287499612322>", "W": "<:R40_W:1513425396664893562>",
+    "Z": "<:R40_Z:1513431433606205540>", "SIR": "<:SIR:1513371050941874389>", "SI": "<:SIR:1513371050941874389>",
 }
 
-# --- Custom Image File Mapping (Updated for new folder structure) ---
+# --- Custom Image File Mapping ---
 bullet_image_map = {
-    # IRT (Numbered Lines)
-    "1": "IRT/1.png",  
-    "2": "IRT/2.png",
-    "3": "IRT/3.png",
-    "4": "IRT/4.png",
-    "4X": "IRT/4X.png",
-    "5": "IRT/5.png",
-    "5X": "IRT/5X.png",
-    "6": "IRT/6.png",
-    "6X": "IRT/6X.png",
-    "7": "IRT/7.png",
-    "7X": "IRT/7X.png",
-    
-    # IND / BMT (Lettered Lines)
-    "A": "IND/A.png", 
-    "B": "IND/B.png",
-    "C": "IND/C.png",
-    "D": "IND/D.png",
-    "E": "IND/E.png",
-    "F": "IND/F.png",
-    "FX": "IND/FX.png",
-    "FS": "IND/SF.png",
-    "G": "IND/G.png",
-    "GS": "IND/S.png",    
-    "H": "IND/H.png",
-    "J": "IND/J.png",
-    "L": "IND/L.png",
-    "M": "IND/M.png",
-    "N": "IND/N.png",
-    "Q": "IND/Q.png",
-    "QX": "IND/QX.png",
-    "R": "IND/R.png",
-    "S": "IND/S.png",
-    "W": "IND/W.png",
-    "Z": "IND/Z.png",
-    
-    # Others
-    "SIR": "Others/SIR.png",
-    "SI": "Others/SIR.png",
+    "1": "IRT/1.png", "2": "IRT/2.png", "3": "IRT/3.png", "4": "IRT/4.png", "4X": "IRT/4X.png",
+    "5": "IRT/5.png", "5X": "IRT/5X.png", "6": "IRT/6.png", "6X": "IRT/6X.png", "7": "IRT/7.png", "7X": "IRT/7X.png",
+    "A": "IND/A.png", "B": "IND/B.png", "C": "IND/C.png", "D": "IND/D.png", "E": "IND/E.png",
+    "F": "IND/F.png", "FX": "IND/FX.png", "FS": "IND/SF.png", "G": "IND/G.png", "GS": "IND/S.png",    
+    "H": "IND/H.png", "J": "IND/J.png", "L": "IND/L.png", "M": "IND/M.png", "N": "IND/N.png",
+    "Q": "IND/Q.png", "QX": "IND/QX.png", "R": "IND/R.png", "S": "IND/S.png", "W": "IND/W.png", "Z": "IND/Z.png",
+    "SIR": "Others/SIR.png", "SI": "Others/SIR.png",
 }
 
 def generate_mta_banner(affected_routes, banner_text="Service Alert"):
@@ -116,22 +84,17 @@ def generate_mta_banner(affected_routes, banner_text="Service Alert"):
     except IOError:
         font_header = ImageFont.load_default()
 
-    # --- Draw Dynamic Header Text ---
     draw.text((40, 25), banner_text, font=font_header, fill="#FFFFFF")
     
     # --- Draw the right-aligned MTA Logo ---
     try:
         mta_logo = Image.open("Rollsigns/Others/mta_logo (1).png").convert("RGBA")
-        
         target_height = 85
         aspect_ratio = mta_logo.width / mta_logo.height
         target_width = int(target_height * aspect_ratio)
-        
         mta_logo = mta_logo.resize((target_width, target_height), Image.Resampling.LANCZOS)
-        
         logo_x = width - target_width - 40
         logo_y = (130 - target_height) // 2
-        
         img.paste(mta_logo, (logo_x, logo_y), mta_logo)
     except IOError:
         draw.text((width - 160, 25), "MTA", font=font_header, fill="#FFFFFF")
@@ -184,7 +147,7 @@ def generate_mta_banner(affected_routes, banner_text="Service Alert"):
     img_byte_arr.seek(0)
     return img_byte_arr
 
-def extract_best_text(translation_list, default_text="No additional details provided."):
+def extract_best_text(translation_list, default_text="No details provided."):
     if not translation_list: return default_text
     best_text = None
     for t in translation_list:
@@ -203,12 +166,6 @@ def format_html_to_discord(text):
     text = text.replace("<br>", "\n").replace("<br/>", "\n").replace("<br />", "\n")
     text = text.replace("</p>", "\n\n").replace("</div>", "\n")
     text = text.replace("<b>", "**").replace("</b>", "**").replace("<strong>", "**").replace("</strong>", "**")
-    
-    date_pattern = r'\*\*\s*((?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?|Sun(?:day)?|Beginning|Starts|From|Until|Through|Every|All)\b[^*]*)\*\*'
-    
-    text = re.sub(date_pattern, r'\n\n-# *\1*', text)
-    text = re.sub(r'([a-zA-Z0-9])\*\*(?=\w)', r'\1 **', text)
-    
     text = text.replace("<i>", "*").replace("</i>", "*").replace("<em>", "*").replace("</em>", "*")
     text = re.sub(r'<[^>]+>', '', text)
     text = text.replace("\u200c", "").replace("\u200b", "").replace("â€Œ", "").replace("Â", "")
@@ -236,27 +193,56 @@ try:
             mercury_alert = alert.get('transit_realtime.mercury_alert', alert.get('mercury_alert', {}))
             alert_type = mercury_alert.get('alert_type', 'Service Update')
             
+            # Remove old junk formatting
+            description = description.replace(" • ", "\n🔹 ")
+            description = description.replace("[shuttle bus icon]", "🚌").replace("[accessibility icon]", "♿").replace("[airplane icon]", "✈️")
             title = title.replace(" • ", "\n🔹 ").replace("[shuttle bus icon]", "🚌").replace("[accessibility icon]", "♿").replace("[airplane icon]", "✈️")
-            description = description.replace(" • ", "\n🔹 ").replace("[shuttle bus icon]", "🚌").replace("[accessibility icon]", "♿").replace("[airplane icon]", "✈️")
             
+            # --- UPGRADED: Aggressive Date Scrubber ---
+            # This completely DELETES the duplicate schedule dates from the description 
+            # and perfectly organizes them for the clean box below.
+            raw_lines = description.split('\n')
+            filtered_desc_lines = []
+            extracted_text_dates = []
+            
+            date_keywords = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", 
+                             "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "AM", "PM", "Beginning", "Starts", "Until"]
+            
+            for line in raw_lines:
+                # Must contain bolding, a number (like a time/day), and a keyword to count as a schedule!
+                has_number = any(char.isdigit() for char in line)
+                is_schedule_line = '**' in line and has_number and any(k in line for k in date_keywords)
+                
+                if is_schedule_line:
+                    # Scrub the line clean and stash it for the box
+                    clean_date = line.replace('🔹', '').replace('**', '').replace('-#', '').replace('*', '').strip()
+                    if clean_date and clean_date not in extracted_text_dates and len(clean_date) > 8:
+                        extracted_text_dates.append(f"• {clean_date}")
+                else:
+                    # Keep normal text in the description
+                    filtered_desc_lines.append(line)
+                    
+            description = '\n'.join(filtered_desc_lines).strip()
+            # ------------------------------------------
+
             for route, emoji_code in emoji_map.items():
                 title = title.replace(f"[{route}]", emoji_code)
                 description = description.replace(f"[{route}]", emoji_code)
             description = description.replace("[]", "")
             
+            # --- UPGRADED: Bulletproof Alert Type Logic ---
             alert_type_lower = alert_type.lower()
             
-            # --- UPGRADED: Dynamic Banner Text Logic ---
-            if "planned" in alert_type_lower or "reduced service" in alert_type_lower:
+            if "planned" in alert_type_lower or "reduced" in alert_type_lower or "change" in alert_type_lower:
                 card_color, icon = 16750848, "🚧"
-                banner_text = "Planned Work"
+                banner_text = "Service Change" 
             elif "suspended" in alert_type_lower:
                 card_color, icon = 16711680, "🛑"
                 banner_text = "Service Suspended"
             elif "delay" in alert_type_lower:
                 card_color, icon = 16711680, "⚠️"
                 banner_text = "Service Alert"
-            elif "extra service" in alert_type_lower:
+            elif "extra" in alert_type_lower or "special" in alert_type_lower:
                 card_color, icon = 3066993, "✨"
                 banner_text = "Special Service"
             else:
@@ -272,7 +258,7 @@ try:
             
             route_tags = "".join([emoji_map.get(r, f"[{r}]") for r in affected_routes])
             
-            # final_title will now use the raw API alert_type (e.g. "Delays" or "Part Suspended")
+            # The title uses the exact API status (e.g. "Delays")
             final_title = f"{icon} | {alert_type}" + (f" {route_tags}" if route_tags else "")
             
             embed_data = {
@@ -286,7 +272,7 @@ try:
             
             active_periods = alert.get('active_period', [])
             schedule_lines = []
-            is_planned_work = any(k in alert_type_lower for k in ["planned", "reduced", "suspended"])
+            is_planned_work = any(k in alert_type_lower for k in ["planned", "reduced", "suspended", "change"])
             
             if is_planned_work:
                 has_valid_metadata = active_periods and any(p.get('start') and p.get('end') for p in active_periods)
@@ -299,14 +285,8 @@ try:
                         elif p_start:
                             schedule_lines.append(f"• Starts <t:{p_start}:f>")
                 else:
-                    clean_search_text = html.unescape(raw_desc_text).replace("<b>", "**").replace("<strong>", "**")
-                    date_pattern = r'\*\*\s*((?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?|Sun(?:day)?|Beginning|Starts|From|Until|Through|Every|All)\b[^*]*)\*\*'
-                    
-                    extracted_dates = re.findall(date_pattern, clean_search_text)
-                    for d in extracted_dates:
-                        clean_date = d.strip()
-                        if clean_date not in schedule_lines and len(clean_date) > 10:
-                            schedule_lines.append(f"• {clean_date}")
+                    # Fallback to our perfectly scrubbed text dates!
+                    schedule_lines = extracted_text_dates
                 
                 if schedule_lines:
                     embed_data["fields"] = [{"name": "📅 Scheduled Timeframes", "value": "\n".join(schedule_lines[:15]), "inline": False}]
@@ -321,7 +301,7 @@ try:
                     
                 except: pass
             
-            # --- Pass the banner_text into the graphics generator ---
+            # Generate the graphic
             image_stream = generate_mta_banner(affected_routes, banner_text)
             
             import json

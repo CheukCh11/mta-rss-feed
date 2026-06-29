@@ -4,7 +4,7 @@ import requests
 import re
 import html
 import io
-import json  # Added missing import to fix the silent crash
+import json
 from datetime import datetime, timezone
 from PIL import Image, ImageDraw, ImageFont
 
@@ -20,14 +20,17 @@ if not webhook_url:
 
 # File to track alerts we have already posted so we don't spam the server
 seen_file = "seen_alerts.txt"
+seen_ids = set()
+status_msg_id = None
+
+# --- UPGRADED: Read both seen alerts and the Heartbeat ID from a single file ---
 if os.path.exists(seen_file):
     with open(seen_file, "r") as f:
-        seen_ids = set(f.read().splitlines())
-else:
-    seen_ids = set()
-
-# File to store the message ID of our status message so we can edit it
-status_msg_file = "status_message_id.txt"
+        for line in f.read().splitlines():
+            if line.startswith("HEARTBEAT_MSG_ID:"):
+                status_msg_id = line.split(":")[1].strip()
+            elif line.strip():
+                seen_ids.add(line.strip())
 
 # --- Official MTA Route Color Configuration ---
 ROUTE_COLORS = {
@@ -75,7 +78,7 @@ def generate_mta_banner(affected_routes, banner_text="Service Alert"):
     img = Image.new("RGB", (width, height), color="#FFFFFF")
     draw = ImageDraw.Draw(img)
     
-    # Draw the Black Top Header Bar
+    # 1. Draw the Black Top Header Bar
     draw.rectangle([0, 0, width, 130], fill="#000000")
     
     # Load NYCTA Standard font / Helvetica from the Others folder
@@ -90,7 +93,7 @@ def generate_mta_banner(affected_routes, banner_text="Service Alert"):
 
     draw.text((40, 25), banner_text, font=font_header, fill="#FFFFFF")
     
-    # Draw the right-aligned MTA Logo
+    # --- Draw the right-aligned MTA Logo ---
     try:
         mta_logo = Image.open("Rollsigns/Others/mta_logo (1).png").convert("RGBA")
         target_height = 85
@@ -103,7 +106,7 @@ def generate_mta_banner(affected_routes, banner_text="Service Alert"):
     except IOError:
         draw.text((width - 160, 25), "MTA", font=font_header, fill="#FFFFFF")
     
-    # Draw the Route Bullets
+    # 2. Draw the Route Bullets
     if not affected_routes:
         affected_routes = ["S"] 
         
@@ -169,7 +172,7 @@ def format_html_to_discord(text):
     text = html.unescape(text).replace("\r\n", "\n")
     text = text.replace("<br>", "\n").replace("<br/>", "\n").replace("<br />", "\n")
     text = text.replace("</p>", "\n\n").replace("</div>", "\n")
-    text = text.replace("<b>", "**").replace("</b>", "**").replace("strong>", "**").replace("</strong>", "**")
+    text = text.replace("<b>", "**").replace("</b>", "**").replace("<strong>", "**").replace("</strong>", "**")
     text = text.replace("<i>", "*").replace("</i>", "*").replace("<em>", "*").replace("</em>", "*")
     text = re.sub(r'<[^>]+>', '', text)
     text = text.replace("\u200c", "").replace("\u200b", "").replace("â€Œ", "").replace("Â", "")
@@ -307,6 +310,10 @@ try:
             print(f"Sent detailed graphical alert {alert_id} to Discord.")
             
     # --- UPGRADED: Smart Live-Editing Heartbeat Logic ---
+    if new_alerts_processed > 0:
+        # If new alerts were posted, abandon the old heartbeat so the next one drops cleanly at the bottom!
+        status_msg_id = None
+        
     if new_alerts_processed == 0:
         current_unix = int(time.time())
         status_embed = {
@@ -315,40 +322,35 @@ try:
             "color": 3066993
         }
         
-        status_msg_id = None
-        if os.path.exists(status_msg_file):
-            with open(status_msg_file, "r") as f:
-                status_msg_id = f.read().strip()
-                
-        # Try to clean-edit the existing message so we don't spam the channel history
         edited_successfully = False
         if status_msg_id:
-            edit_url = f"{webhook_url}/messages/{status_msg_id}"
+            # Safely parse the base webhook URL just in case GitHub Actions injects query parameters
+            base_url = webhook_url.split('?')[0].rstrip('/')
+            edit_url = f"{base_url}/messages/{status_msg_id}"
             try:
                 edit_resp = requests.patch(edit_url, json={"embeds": [status_embed]})
                 if edit_resp.status_code == 200:
                     edited_successfully = True
-                    print("Updated the live status card timestamp.")
+                    print("Successfully updated the existing live status card.")
             except:
                 pass
                 
-        # If it's the first run, or the previous message was deleted, drop a fresh one
+        # If it's the first run, or the previous message was manually deleted, drop a fresh one
         if not edited_successfully:
-            post_url = f"{webhook_url}?wait=true"
             try:
-                post_resp = requests.post(post_url, json={"embeds": [status_embed]})
+                # Use params dict so it doesn't break your secret URL formatting
+                post_resp = requests.post(webhook_url, params={"wait": "true"}, json={"embeds": [status_embed]})
                 if post_resp.status_code == 200:
-                    new_msg_id = post_resp.json().get("id")
-                    if new_msg_id:
-                        with open(status_msg_file, "w") as f:
-                            f.write(str(new_msg_id))
-                        print("Generated fresh status card placeholder.")
+                    status_msg_id = post_resp.json().get("id")
+                    print("Generated a brand new status card placeholder.")
             except Exception as post_err:
                 print(f"Failed transmitting fallback heartbeat payload: {post_err}")
 
-    # Track all active IDs so we don't duplicate logs next round
+    # Track all active IDs and our heartbeat ID in ONE single file so GitHub Actions saves it properly
     active_ids = [e.get('id') for e in current_entities if e.get('id')]
     with open(seen_file, "w") as f:
+        if status_msg_id:
+            f.write(f"HEARTBEAT_MSG_ID:{status_msg_id}\n")
         f.write("\n".join(active_ids))
     print("Tracking logs successfully updated.")
 

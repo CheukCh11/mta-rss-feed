@@ -176,6 +176,8 @@ try:
     data = response.json()
     current_entities = data.get('entity', [])
     
+    new_alerts_processed = 0
+    
     for entity in current_entities:
         alert_id = entity.get('id')
         alert = entity.get('alert')
@@ -183,6 +185,7 @@ try:
             continue
             
         if alert_id not in seen_ids:
+            new_alerts_processed += 1
             header_translations = alert.get('header_text', {}).get('translation', [])
             title = format_html_to_discord(extract_best_text(header_translations, "Subway Alert"))
             
@@ -193,14 +196,11 @@ try:
             mercury_alert = alert.get('transit_realtime.mercury_alert', alert.get('mercury_alert', {}))
             alert_type = mercury_alert.get('alert_type', 'Service Update')
             
-            # Remove old junk formatting
             description = description.replace(" • ", "\n🔹 ")
             description = description.replace("[shuttle bus icon]", "🚌").replace("[accessibility icon]", "♿").replace("[airplane icon]", "✈️")
             title = title.replace(" • ", "\n🔹 ").replace("[shuttle bus icon]", "🚌").replace("[accessibility icon]", "♿").replace("[airplane icon]", "✈️")
             
-            # --- UPGRADED: Aggressive Date Scrubber ---
-            # This completely DELETES the duplicate schedule dates from the description 
-            # and perfectly organizes them for the clean box below.
+            # --- Date Scrubber ---
             raw_lines = description.split('\n')
             filtered_desc_lines = []
             extracted_text_dates = []
@@ -209,28 +209,23 @@ try:
                              "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "AM", "PM", "Beginning", "Starts", "Until"]
             
             for line in raw_lines:
-                # Must contain bolding, a number (like a time/day), and a keyword to count as a schedule!
                 has_number = any(char.isdigit() for char in line)
                 is_schedule_line = '**' in line and has_number and any(k in line for k in date_keywords)
                 
                 if is_schedule_line:
-                    # Scrub the line clean and stash it for the box
                     clean_date = line.replace('🔹', '').replace('**', '').replace('-#', '').replace('*', '').strip()
                     if clean_date and clean_date not in extracted_text_dates and len(clean_date) > 8:
                         extracted_text_dates.append(f"• {clean_date}")
                 else:
-                    # Keep normal text in the description
                     filtered_desc_lines.append(line)
                     
             description = '\n'.join(filtered_desc_lines).strip()
-            # ------------------------------------------
 
             for route, emoji_code in emoji_map.items():
                 title = title.replace(f"[{route}]", emoji_code)
                 description = description.replace(f"[{route}]", emoji_code)
             description = description.replace("[]", "")
             
-            # --- UPGRADED: Bulletproof Alert Type Logic ---
             alert_type_lower = alert_type.lower()
             
             if "planned" in alert_type_lower or "reduced" in alert_type_lower or "change" in alert_type_lower:
@@ -257,8 +252,6 @@ try:
                     affected_routes.append(route_id)
             
             route_tags = "".join([emoji_map.get(r, f"[{r}]") for r in affected_routes])
-            
-            # The title uses the exact API status (e.g. "Delays")
             final_title = f"{icon} | {alert_type}" + (f" {route_tags}" if route_tags else "")
             
             embed_data = {
@@ -285,7 +278,6 @@ try:
                         elif p_start:
                             schedule_lines.append(f"• Starts <t:{p_start}:f>")
                 else:
-                    # Fallback to our perfectly scrubbed text dates!
                     schedule_lines = extracted_text_dates
                 
                 if schedule_lines:
@@ -296,17 +288,12 @@ try:
                 try:
                     embed_data["timestamp"] = datetime.fromtimestamp(int(posted_timestamp), tz=timezone.utc).isoformat().replace("+00:00", "Z")
                     embed_data["footer"] = {"text": "MTA Official Post Time"}
-                    
                     embed_data["description"] += f"\n\n-# 🕒 Posted <t:{posted_timestamp}:R>"
-                    
                 except: pass
             
-            # Generate the graphic
             image_stream = generate_mta_banner(affected_routes, banner_text)
             
-            import json
             payload = {"embeds": [embed_data]}
-            
             files = {
                 "payload_json": (None, json.dumps(payload), "application/json"),
                 "file": ("mta_banner.png", image_stream, "image/png")
@@ -315,6 +302,18 @@ try:
             requests.post(webhook_url, files=files)
             print(f"Sent detailed graphical alert {alert_id} to Discord.")
             
+    # --- NEW: "All Clear" Status Heartbeat Logic ---
+    # If the endpoint checked everything and found nothing new to report, send a clean heartbeat.
+    if new_alerts_processed == 0:
+        current_unix = int(time.time())
+        status_embed = {
+            "title": "✅ Live Feed Connected",
+            "description": f"Ms. Silly has searched around and concluded that there are **no new alerts available**. :3\n\n-# 🔄 Last verified: <t:{current_unix}:f> (<t:{current_unix}:R>)",
+            "color": 3066993  # Clean green line
+        }
+        requests.post(webhook_url, json={"embeds": [status_embed]})
+        print("No new updates found. Transmitted all-clear status signal to Discord.")
+
     active_ids = [e.get('id') for e in current_entities if e.get('id')]
     with open(seen_file, "w") as f:
         f.write("\n".join(active_ids))

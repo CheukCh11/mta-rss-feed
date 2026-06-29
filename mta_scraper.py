@@ -308,7 +308,7 @@ try:
         current_unix = int(time.time())
         status_embed = {
             "title": "✅ Live Feed Connected",
-            "description": f"Ms. Silly has searched around and concluded that there are **no new alerts available**. :3\n\n-# 🔄 Last verified: <t:{current_unix}:f> (<t:{current_unix}:R>)",
+            "description": f"Ms. Silly has searched around and concluded that there are **no new alerts available**. hooray!!! :3\n\n-# 🔄 Last verified: <t:{current_unix}:f> (<t:{current_unix}:R>)",
             "color": 3066993  # Clean green line
         }
         requests.post(webhook_url, json={"embeds": [status_embed]})

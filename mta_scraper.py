@@ -23,7 +23,7 @@ seen_file = "seen_alerts.txt"
 seen_ids = set()
 status_msg_id = None
 
-# --- UPGRADED: Read both seen alerts and the Heartbeat ID from a single file ---
+# --- Read both seen alerts and the Heartbeat ID from a single file ---
 if os.path.exists(seen_file):
     with open(seen_file, "r") as f:
         for line in f.read().splitlines():
@@ -78,7 +78,7 @@ def generate_mta_banner(affected_routes, banner_text="Service Alert"):
     img = Image.new("RGB", (width, height), color="#FFFFFF")
     draw = ImageDraw.Draw(img)
     
-    # 1. Draw the Black Top Header Bar
+    # Draw the Black Top Header Bar
     draw.rectangle([0, 0, width, 130], fill="#000000")
     
     # Load NYCTA Standard font / Helvetica from the Others folder
@@ -93,7 +93,7 @@ def generate_mta_banner(affected_routes, banner_text="Service Alert"):
 
     draw.text((40, 25), banner_text, font=font_header, fill="#FFFFFF")
     
-    # --- Draw the right-aligned MTA Logo ---
+    # Draw the right-aligned MTA Logo
     try:
         mta_logo = Image.open("Rollsigns/Others/mta_logo (1).png").convert("RGBA")
         target_height = 85
@@ -106,7 +106,7 @@ def generate_mta_banner(affected_routes, banner_text="Service Alert"):
     except IOError:
         draw.text((width - 160, 25), "MTA", font=font_header, fill="#FFFFFF")
     
-    # 2. Draw the Route Bullets
+    # Draw the Route Bullets
     if not affected_routes:
         affected_routes = ["S"] 
         
@@ -255,7 +255,8 @@ try:
             affected_routes = []
             for ie in informed_entities:
                 route_id = ie.get('route_id')
-                if route_id and route_id not in affected_routes:
+                # --- THE FIX: Only grab route IDs that we explicitly support! ---
+                if route_id and route_id not in affected_routes and route_id in emoji_map:
                     affected_routes.append(route_id)
             
             route_tags = "".join([emoji_map.get(r, f"[{r}]") for r in affected_routes])

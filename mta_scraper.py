@@ -255,7 +255,7 @@ try:
             affected_routes = []
             for ie in informed_entities:
                 route_id = ie.get('route_id')
-                # --- THE FIX: Only grab route IDs that we explicitly support! ---
+                # Only grab route IDs that we explicitly support!
                 if route_id and route_id not in affected_routes and route_id in emoji_map:
                     affected_routes.append(route_id)
             

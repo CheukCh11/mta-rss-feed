@@ -172,7 +172,19 @@ def format_html_to_discord(text):
     text = html.unescape(text).replace("\r\n", "\n")
     text = text.replace("<br>", "\n").replace("<br/>", "\n").replace("<br />", "\n")
     text = text.replace("</p>", "\n\n").replace("</div>", "\n")
-    text = text.replace("<b>", "**").replace("</b>", "**").replace("<strong>", "**").replace("</strong>", "**")
+    
+    # --- THE FIX: Safely translate and clean up MTA's sloppy bold tags ---
+    text = text.replace("<b>", "[B]").replace("<strong>", "[B]")
+    text = text.replace("</b>", "[/B]").replace("</strong>", "[/B]")
+    
+    # Fix formatting where MTA puts spaces inside the bold tags, which instantly breaks Discord
+    text = re.sub(r'\[B\]\s+', ' [B]', text)
+    text = re.sub(r'\s+\[/B\]', '[/B] ', text)
+    
+    # Swap safely back to Discord markdown
+    text = text.replace("[B]", "**").replace("[/B]", "**")
+    # ---------------------------------------------------------------------
+    
     text = text.replace("<i>", "*").replace("</i>", "*").replace("<em>", "*").replace("</em>", "*")
     text = re.sub(r'<[^>]+>', '', text)
     text = text.replace("\u200c", "").replace("\u200b", "").replace("â€Œ", "").replace("Â", "")
@@ -207,7 +219,7 @@ try:
             description = description.replace("[shuttle bus icon]", "🚌").replace("[accessibility icon]", "♿").replace("[airplane icon]", "✈️")
             title = title.replace(" • ", "\n🔹 ").replace("[shuttle bus icon]", "🚌").replace("[accessibility icon]", "♿").replace("[airplane icon]", "✈️")
             
-            # --- Date Scrubber ---
+            # --- Date Scrubber & Markdown Balancer ---
             raw_lines = description.split('\n')
             filtered_desc_lines = []
             extracted_text_dates = []
@@ -224,6 +236,11 @@ try:
                     if clean_date and clean_date not in extracted_text_dates and len(clean_date) > 8:
                         extracted_text_dates.append(f"• {clean_date}")
                 else:
+                    # --- THE FIX: Balance broken MTA markdown ---
+                    # If the MTA dispatcher forgot to close a bold tag, Discord prints literal asterisks.
+                    # We fix this by ensuring every single line has an even number of asterisks pairs.
+                    if line.count('**') % 2 != 0:
+                        line += '**'
                     filtered_desc_lines.append(line)
                     
             description = '\n'.join(filtered_desc_lines).strip()
@@ -310,7 +327,7 @@ try:
             requests.post(webhook_url, files=files)
             print(f"Sent detailed graphical alert {alert_id} to Discord.")
             
-    # --- UPGRADED: Smart Live-Editing Heartbeat Logic ---
+    # --- Smart Live-Editing Heartbeat Logic ---
     if new_alerts_processed > 0:
         # If new alerts were posted, abandon the old heartbeat so the next one drops cleanly at the bottom!
         status_msg_id = None

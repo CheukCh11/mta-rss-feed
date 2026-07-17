@@ -173,17 +173,17 @@ def format_html_to_discord(text):
     text = text.replace("<br>", "\n").replace("<br/>", "\n").replace("<br />", "\n")
     text = text.replace("</p>", "\n\n").replace("</div>", "\n")
     
-    # --- THE FIX: Safely translate and clean up MTA's sloppy bold tags ---
-    text = text.replace("<b>", "[B]").replace("<strong>", "[B]")
-    text = text.replace("</b>", "[/B]").replace("</strong>", "[/B]")
+    # --- THE FIX: Unique tags that will never conflict with MTA train lines ---
+    text = text.replace("<b>", "[[BOLD_ON]]").replace("<strong>", "[[BOLD_ON]]")
+    text = text.replace("</b>", "[[BOLD_OFF]]").replace("</strong>", "[[BOLD_OFF]]")
     
-    # Fix formatting where MTA puts spaces inside the bold tags, which instantly breaks Discord
-    text = re.sub(r'\[B\]\s+', ' [B]', text)
-    text = re.sub(r'\s+\[/B\]', '[/B] ', text)
+    # Fix formatting where MTA puts spaces inside the bold tags
+    text = re.sub(r'\[\[BOLD_ON\]\]\s+', ' [[BOLD_ON]]', text)
+    text = re.sub(r'\s+\[\[BOLD_OFF\]\]', '[[BOLD_OFF]] ', text)
     
     # Swap safely back to Discord markdown
-    text = text.replace("[B]", "**").replace("[/B]", "**")
-    # ---------------------------------------------------------------------
+    text = text.replace("[[BOLD_ON]]", "**").replace("[[BOLD_OFF]]", "**")
+    # ------------------------------------------------------------------------
     
     text = text.replace("<i>", "*").replace("</i>", "*").replace("<em>", "*").replace("</em>", "*")
     text = re.sub(r'<[^>]+>', '', text)
@@ -236,9 +236,7 @@ try:
                     if clean_date and clean_date not in extracted_text_dates and len(clean_date) > 8:
                         extracted_text_dates.append(f"• {clean_date}")
                 else:
-                    # --- THE FIX: Balance broken MTA markdown ---
-                    # If the MTA dispatcher forgot to close a bold tag, Discord prints literal asterisks.
-                    # We fix this by ensuring every single line has an even number of asterisks pairs.
+                    # Balance broken MTA markdown
                     if line.count('**') % 2 != 0:
                         line += '**'
                     filtered_desc_lines.append(line)
@@ -272,7 +270,6 @@ try:
             affected_routes = []
             for ie in informed_entities:
                 route_id = ie.get('route_id')
-                # Only grab route IDs that we explicitly support!
                 if route_id and route_id not in affected_routes and route_id in emoji_map:
                     affected_routes.append(route_id)
             
@@ -329,7 +326,6 @@ try:
             
     # --- Smart Live-Editing Heartbeat Logic ---
     if new_alerts_processed > 0:
-        # If new alerts were posted, abandon the old heartbeat so the next one drops cleanly at the bottom!
         status_msg_id = None
         
     if new_alerts_processed == 0:
@@ -342,7 +338,6 @@ try:
         
         edited_successfully = False
         if status_msg_id:
-            # Safely parse the base webhook URL just in case GitHub Actions injects query parameters
             base_url = webhook_url.split('?')[0].rstrip('/')
             edit_url = f"{base_url}/messages/{status_msg_id}"
             try:
@@ -353,10 +348,8 @@ try:
             except:
                 pass
                 
-        # If it's the first run, or the previous message was manually deleted, drop a fresh one
         if not edited_successfully:
             try:
-                # Use params dict so it doesn't break your secret URL formatting
                 post_resp = requests.post(webhook_url, params={"wait": "true"}, json={"embeds": [status_embed]})
                 if post_resp.status_code == 200:
                     status_msg_id = post_resp.json().get("id")

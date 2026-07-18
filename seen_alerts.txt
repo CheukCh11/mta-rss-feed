@@ -1,4 +1,9 @@
 lmm:alert:555972
+lmm:alert:555983
+lmm:alert:555978
+lmm:alert:555979
+lmm:alert:555984
+lmm:alert:555985
 lmm:planned_work:33379
 lmm:planned_work:33378
 lmm:planned_work:33377
@@ -132,7 +137,6 @@ lmm:planned_work:32659
 lmm:planned_work:32658
 lmm:planned_work:32657
 lmm:planned_work:32655
-lmm:planned_work:32648
 lmm:planned_work:32647
 lmm:planned_work:32645
 lmm:planned_work:32425

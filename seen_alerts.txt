@@ -1,9 +1,7 @@
 lmm:alert:557546
-lmm:alert:557557
-lmm:alert:557553
-lmm:alert:557564
 lmm:alert:557562
 lmm:alert:557567
+lmm:alert:557581
 lmm:planned_work:33470
 lmm:planned_work:33419
 lmm:planned_work:33417
@@ -126,8 +124,6 @@ lmm:planned_work:32836
 lmm:planned_work:32832
 lmm:planned_work:32831
 lmm:planned_work:32829
-lmm:planned_work:32828
-lmm:planned_work:32827
 lmm:planned_work:32825
 lmm:planned_work:32824
 lmm:planned_work:32821

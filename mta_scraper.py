@@ -173,7 +173,7 @@ def format_html_to_discord(text):
     text = text.replace("<br>", "\n").replace("<br/>", "\n").replace("<br />", "\n")
     text = text.replace("</p>", "\n\n").replace("</div>", "\n")
     
-    # --- THE FIX: Unique tags that will never conflict with MTA train lines ---
+    # --- Unique tags that will never conflict with MTA train lines ---
     text = text.replace("<b>", "[[BOLD_ON]]").replace("<strong>", "[[BOLD_ON]]")
     text = text.replace("</b>", "[[BOLD_OFF]]").replace("</strong>", "[[BOLD_OFF]]")
     
@@ -183,7 +183,6 @@ def format_html_to_discord(text):
     
     # Swap safely back to Discord markdown
     text = text.replace("[[BOLD_ON]]", "**").replace("[[BOLD_OFF]]", "**")
-    # ------------------------------------------------------------------------
     
     text = text.replace("<i>", "*").replace("</i>", "*").replace("<em>", "*").replace("</em>", "*")
     text = re.sub(r'<[^>]+>', '', text)
@@ -219,17 +218,19 @@ try:
             description = description.replace("[shuttle bus icon]", "🚌").replace("[accessibility icon]", "♿").replace("[airplane icon]", "✈️")
             title = title.replace(" • ", "\n🔹 ").replace("[shuttle bus icon]", "🚌").replace("[accessibility icon]", "♿").replace("[airplane icon]", "✈️")
             
-            # --- Date Scrubber & Markdown Balancer ---
+            # --- UPGRADED: Strict Regex Word Boundary Date Scrubber ---
             raw_lines = description.split('\n')
             filtered_desc_lines = []
             extracted_text_dates = []
             
-            date_keywords = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", 
-                             "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "AM", "PM", "Beginning", "Starts", "Until"]
+            # Ensure words like 'Jun' are completely isolated so 'Junction' is ignored
+            date_keywords = [r"\bJan", r"\bFeb", r"\bMar", r"\bApr", r"\bMay", r"\bJun", r"\bJul", r"\bAug", r"\bSep", r"\bOct", r"\bNov", r"\bDec", 
+                             r"\bMon", r"\bTue", r"\bWed", r"\bThu", r"\bFri", r"\bSat", r"\bSun", r"\bAM\b", r"\bPM\b", r"\bBeginning\b", r"\bStarts\b", r"\bUntil\b"]
+            date_pattern = re.compile("|".join(date_keywords))
             
             for line in raw_lines:
                 has_number = any(char.isdigit() for char in line)
-                is_schedule_line = '**' in line and has_number and any(k in line for k in date_keywords)
+                is_schedule_line = '**' in line and has_number and bool(date_pattern.search(line))
                 
                 if is_schedule_line:
                     clean_date = line.replace('🔹', '').replace('**', '').replace('-#', '').replace('*', '').strip()
@@ -303,7 +304,13 @@ try:
                     schedule_lines = extracted_text_dates
                 
                 if schedule_lines:
-                    embed_data["fields"] = [{"name": "📅 Scheduled Timeframes", "value": "\n".join(schedule_lines[:15]), "inline": False}]
+                    # --- NEW: Format Emojis inside the Schedule Field! ---
+                    sched_text = "\n".join(schedule_lines[:15])
+                    for route, emoji_code in emoji_map.items():
+                        sched_text = sched_text.replace(f"[{route}]", emoji_code)
+                    sched_text = sched_text.replace("[]", "")
+                    
+                    embed_data["fields"] = [{"name": "📅 Scheduled Timeframes", "value": sched_text, "inline": False}]
             
             posted_timestamp = mercury_alert.get('updated_at', mercury_alert.get('created_at'))
             if posted_timestamp:
@@ -332,7 +339,7 @@ try:
         current_unix = int(time.time())
         status_embed = {
             "title": "✅ Live Feed Connected",
-            "description": f"Ms. Silly has searched around and concluded that there are **no new alerts available**. hooray!!! :3\n\n-# 🔄 Last verified: <t:{current_unix}:f> (<t:{current_unix}:R>)",
+            "description": f"Ms. Silly has searched around and concluded that there are **no new alerts available**. hooray!!! ⸜(｡˃ ᵕ ˂)⸝♡\n\n-# 🔄 Last verified: <t:{current_unix}:f> (<t:{current_unix}:R>)",
             "color": 3066993
         }
         

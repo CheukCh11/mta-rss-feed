@@ -1,11 +1,6 @@
-lmm:alert:560697
-lmm:alert:560698
-lmm:alert:560679
-lmm:alert:560674
-lmm:alert:560707
-lmm:alert:560686
-lmm:alert:560702
-lmm:alert:560701
+lmm:alert:560758
+lmm:alert:560756
+lmm:alert:560757
 lmm:planned_work:33676
 lmm:planned_work:33674
 lmm:planned_work:33567

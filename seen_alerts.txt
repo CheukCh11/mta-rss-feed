@@ -1,10 +1,6 @@
 lmm:alert:262878:26
-lmm:alert:262901:26
-lmm:alert:262902:26
-lmm:alert:262903:26
-lmm:alert:262906:26
-lmm:alert:262904:26
-lmm:alert:262907:26
+lmm:alert:262909:26
+lmm:alert:262912:26
 lmm:planned_work:33902
 lmm:planned_work:33870
 lmm:planned_work:33869

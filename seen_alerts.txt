@@ -1,5 +1,6 @@
-HEARTBEAT_MSG_ID:1538873489690333185
-lmm:alert:263478:30
+lmm:alert:263478:26
+lmm:alert:263499:26
+lmm:alert:263500:26
 lmm:planned_work:34048
 lmm:planned_work:34047
 lmm:planned_work:34046

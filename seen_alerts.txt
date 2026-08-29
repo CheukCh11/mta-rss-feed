@@ -1,7 +1,4 @@
-lmm:alert:265164:26
-lmm:alert:265168:26
-lmm:alert:265170:26
-lmm:alert:265166:26
+lmm:alert:265209:26
 lmm:planned_work:34305
 lmm:planned_work:34304
 lmm:planned_work:34303
@@ -13,7 +10,6 @@ lmm:planned_work:34298
 lmm:planned_work:34297
 lmm:planned_work:34279
 lmm:planned_work:34246
-lmm:planned_work:34237
 lmm:planned_work:34230
 lmm:planned_work:34218
 lmm:planned_work:34215
@@ -184,12 +180,9 @@ lmm:planned_work:33686
 lmm:planned_work:33684
 lmm:planned_work:33683
 lmm:planned_work:33567
-lmm:planned_work:33526
 lmm:planned_work:33522
-lmm:planned_work:33505
 lmm:planned_work:33502
 lmm:planned_work:33501
-lmm:planned_work:33499
 lmm:planned_work:33497
 lmm:planned_work:33495
 lmm:planned_work:33493
